@@ -1,0 +1,31 @@
+:local .containerSellConfirm {
+  text-align: center;
+}
+
+:local .imgSellConfirm {
+  margin-top: 20%;
+}
+
+:local .textSellConfirm {
+  padding: 0 11%;
+  padding-top: 60px;
+  font-weight: bold;
+}
+
+:local .boxBtnSellConfirm {
+  width: 75%;
+  padding-top: 20%;
+  display: inline-block;
+}
+
+:local .btnSellConfirm {
+  composes: buttonEnable from "../../../../components/bases/buttonBase.css";
+  font-weight: bold;
+}
+
+:local .arrowBack {
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 75%;
+  max-width: 18px;
+}

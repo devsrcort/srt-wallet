@@ -1,0 +1,2040 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"POT-Creation-Date: 2018-12-15T21:53:05.610Z\n"
+"PO-Revision-Date: 2018-12-15T21:53:05.610Z\n"
+"Language: pt_BR\n"
+
+msgid "FEBRUARY"
+msgstr "Fevereiro"
+
+msgid "JANUARY"
+msgstr "Janeiro"
+
+msgid "MARCH"
+msgstr "Março"
+
+msgid "APRIL"
+msgstr "Abril"
+
+msgid "MAY"
+msgstr "Maio"
+
+msgid "JUNE"
+msgstr "Junho"
+
+msgid "JULY"
+msgstr "Julho"
+
+msgid "AUGUST"
+msgstr "Agosto"
+
+msgid "SEPTEMBER"
+msgstr "Setembro"
+
+msgid "OCTOBER"
+msgstr "Outubro"
+
+msgid "NOVEMBER"
+msgstr "Novembro"
+
+msgid "DECEMBER"
+msgstr "Dezembro"
+
+msgid "LEASING"
+msgstr "Leasing"
+
+msgid "UNKNOWN"
+msgstr "Desconhecido"
+
+msgctxt "FAILED"
+msgid "MESSAGE_TRANSACTION"
+msgstr "Sua transação não pôde ser completada."
+
+msgctxt "FAILED"
+msgid "MESSAGE_LOGIN"
+msgstr "Usuário ou senha incorretos."
+
+msgctxt "VOUCHER"
+msgid "MESSAGE_INVALID"
+msgstr "Voucher Inválido"
+
+msgctxt "AMOUNT"
+msgid "MESSAGE_INVALID"
+msgstr "Quantia Inválida"
+
+msgctxt "AMOUNT"
+msgid "WALLET_MY"
+msgstr "Saldo"
+
+msgctxt "AMOUNT"
+msgid "LEASING_TITLE"
+msgstr "Em Leasing"
+
+msgctxt "AMOUNT"
+msgid "PAYMENT_FEE"
+msgstr "Taxa da sua transação na rede "
+
+msgctxt "AMOUNT"
+msgid "MODAL_SEND"
+msgstr "Insira a quantidade"
+
+msgctxt "AMOUNT"
+msgid "MODAL_SEND_MIN"
+msgstr "Você está tentando enviar uma quantia muito baixa."
+
+msgctxt "PASSWORD"
+msgid "MESSAGE_INVALID"
+msgstr "Senha inválida"
+
+msgctxt "PASSWORD"
+msgid "PLACEHOLDER_USER"
+msgstr "Usuário ou Senha"
+
+msgctxt "PASSWORD"
+msgid "SETTINGS_USER"
+msgstr "Troque a senha"
+
+msgctxt "PASSWORD"
+msgid "SETTINGS_USER_CURRENT"
+msgstr "Senha atual"
+
+msgctxt "PASSWORD"
+msgid "SETTINGS_USER_NEW"
+msgstr "Nova Senha"
+
+msgctxt "PASSWORD"
+msgid "SETTINGS_USER_CONFIRM_NEW"
+msgstr "Confirme a nova senha"
+
+msgctxt "PASSWORD"
+msgid "SETTINGS_USER_CHANGE"
+msgstr "Troque a senha"
+
+msgctxt "PASSWORD"
+msgid "MESSAGE"
+msgstr "Senha"
+
+msgctxt "PASSWORD"
+msgid "PLACEHOLDER"
+msgstr "Senha"
+
+msgctxt "P2P"
+msgid "SETTINGS"
+msgstr "Configurações P2P"
+
+msgctxt "FEE"
+msgid "MESSAGE_SELECT"
+msgstr "Selecione uma taxa"
+
+msgctxt "FEE"
+msgid "LEASING"
+msgstr "Taxa"
+
+msgctxt "SERVICE"
+msgid "MESSAGE_NOT"
+msgstr "Serviço não disponível"
+
+msgctxt "SERVICE"
+msgid "MESSAGE_TERMS_OF"
+msgstr "Você precisa aceitar os termos de serviço"
+
+msgctxt "SERVICE"
+msgid "PLACEHOLDER_TERMS_OF"
+msgstr "Termos de Serviço"
+
+msgctxt "FOUND"
+msgid "MESSAGE_NOTHING"
+msgstr "Nada encontrado"
+
+msgctxt "YET"
+msgid "MESSAGE_NOT_SERVICE"
+msgstr "Serviço ainda não disponível"
+
+msgctxt "TERMS"
+msgid "MESSAGE"
+msgstr "Você tem que aceitar e baixar os termos."
+
+msgctxt "TERMS"
+msgid "NEW_ACCOUNT_ACCEPT"
+msgstr "Eu concordo com os Termos de Serviço"
+
+msgctxt "AGE"
+msgid "MESSAGE"
+msgstr "Você deve ser maior de 18 anos."
+
+msgctxt "AGE"
+msgid "NEW_ACCOUNT_ACCEPT"
+msgstr "Eu confirmo que eu tenho mais de 18 anos"
+
+msgctxt "IS"
+msgid "TEXT"
+msgstr "é"
+
+msgctxt "LOW"
+msgid "TEXT"
+msgstr "Baixa"
+
+msgctxt "LOW"
+msgid "FEE"
+msgstr "Baixa"
+
+msgctxt "MEDIUM"
+msgid "TEXT"
+msgstr "Médio"
+
+msgctxt "MEDIUM"
+msgid "FEE"
+msgstr "Médio"
+
+msgctxt "HIGH"
+msgid "TEXT"
+msgstr "Alta"
+
+msgctxt "HIGH"
+msgid "FEE"
+msgstr "Alto"
+
+msgctxt "PREV"
+msgid "TEXT"
+msgstr "Anterior"
+
+msgctxt "PREV"
+msgid "BTN"
+msgstr "Anterior"
+
+msgctxt "UNAVAILABLE"
+msgid "TEXT"
+msgstr "Indisponível"
+
+msgctxt "TO"
+msgid "TEXT"
+msgstr "Para:"
+
+msgctxt "TO"
+msgid "PAYMENT_PASS"
+msgstr "Para o endereço"
+
+msgctxt "TO"
+msgid "RECHARGE_PASS"
+msgstr "Para"
+
+msgctxt "FROM"
+msgid "TEXT"
+msgstr "De:"
+
+msgctxt "PROMOTIONAL"
+msgid "TEXT"
+msgstr "Promo:"
+
+msgctxt "ID"
+msgid "TEXT"
+msgstr "ID:"
+
+msgctxt "BLOCKEXPLORER"
+msgid "TEXT"
+msgstr "Blockexplorer:"
+
+msgctxt "ATTENTION"
+msgid "TEXT"
+msgstr "ATENÇÃO"
+
+msgctxt "GO"
+msgid "BTN"
+msgstr "Ir"
+
+msgctxt "SOON"
+msgid "BTN_COMMING"
+msgstr "Em breve"
+
+msgctxt "SOON"
+msgid "P2P_COMING"
+msgstr "Avaliação em breve disponível !"
+
+msgctxt "DESCRIPTION"
+msgid "LOGIN_SLIDE"
+msgid_plural "LOGIN_SLIDE"
+msgstr[0] ""
+"Recarregue créditos em seu celular usando suas moedas virtuais com rapidez "
+"e segurança."
+msgstr[1] ""
+"Envie, receba e armazene as principais moedas no mercado em uma carteira "
+"descentralizada."
+msgstr[2] ""
+"Faça pagamentos usando suas criptomoedas favoritas em uma interface fácil e "
+"intuitiva."
+msgstr[3] ""
+"Transforme as moedas digitais em Reais por transferência eletrônica para os "
+"principais bancos do Brasil."
+
+msgctxt "DESCRIPTION"
+msgid "SETTINGS_CONSENTS_TERMS"
+msgstr "Você aceita os termos GDPR?"
+
+msgctxt "DESCRIPTION"
+msgid "SET_ALIAS"
+msgstr ""
+"Você pode customizar o endereço de sua Carteira Lunes se preferir. Se você "
+"fizer essa mudança, uma taxa de 5 Lunes será aplicada."
+
+msgctxt "DESCRIPTION"
+msgid "CARD_HOME"
+msgid_plural "CARD_HOME"
+msgstr[0] ""
+"Recarregue seu celular, em qualquer lugar, a qualquer hora, usando as "
+"criptomedas disponíveis na carteira do Lunes, de forma rápida, fácil e "
+"segura."
+msgstr[1] ""
+"Pague seus boletos bancários com moedas criptográficas da maneira mais "
+"simples possível. Um procedimento rápido e fácil, com toda a segurança e "
+"confiança que só o Lunes tem."
+msgstr[2] ""
+"Agora você pode escolher e favorecer suas moedas favoritas. Trabalhe apenas "
+"com as moedas desejadas, sem a necessidade de visualizar todas."
+msgstr[3] ""
+"Complete o passo-a-passo e resgate suas moedas compradas através do cupom "
+"ou voucher em um dos pontos de venda da criptomoeda."
+msgstr[4] ""
+"A carteira Lunes é a maneira mais segura de armazenar suas moedas de "
+"criptografia. Importe carteiras, veja seu histórico, transfira, receba, "
+"confira cotações e muito mais."
+msgstr[5] ""
+"Faça o investimento de baixo risco que lhe devolve até 5% ao ano. Tenha "
+"total segurança e controle de suas moedas, com uma renda melhor que a "
+"poupança."
+
+msgctxt "DESCRIPTION"
+msgid "PAYMENT_SHORT"
+msgstr "Descrição curta"
+
+msgctxt "DESCRIPTION"
+msgid "RECHARGE"
+msgstr "Use criptomoedas para recarregar seu celular com créditos."
+
+msgctxt "DESCRIPTION"
+msgid "BUYCOINS"
+msgstr "Compre suas criptomoedas de forma rápida, simples e segura."
+
+msgctxt "DESCRIPTION"
+msgid "COINSALE"
+msgstr "Compre suas criptomoedas de forma rápida, simples e segura."
+
+msgctxt "DESCRIPTION"
+msgid "P2P_CREATE_OFFER"
+msgstr "Descrição"
+
+msgctxt "DESCRIPTION"
+msgid "P2P_PROFILE"
+msgstr "Descrição"
+
+msgctxt "DESCRIPTION"
+msgid "P2P_HEADER"
+msgstr "Descrição"
+
+msgctxt "DESCRIPTION"
+msgid "P2P_PLANS"
+msgstr ""
+"O serviço de assinatura da plataforma de negociações P2P será liberada em "
+"período de beta aberto por um mês a partir da data de lançamento. A partir "
+"desse período, o acesso a negociações na plataforma irá ocorrer através da "
+"compra de pacotes com pagamento em Lunes."
+
+msgctxt "DESCRIPTION"
+msgid "P2P_MONTHLY_SIGNATURE"
+msgstr "O plano básico de P2P te permitirá usar o sistema Lunes de P2P por um mês."
+
+msgctxt "DESCRIPTION"
+msgid "P2P_QUARTERLY_SIGNATURE"
+msgstr ""
+"O plano básico de P2P te permitirá usar o sistema Lunes de P2P por três "
+"meses."
+
+msgctxt "DESCRIPTION"
+msgid "P2P_SEMESTER_SIGNATURE"
+msgstr ""
+"O plano básico de P2P te permitirá usar o sistema Lunes de P2P por seis "
+"meses."
+
+msgctxt "DESCRIPTION"
+msgid "P2P_YEARLY_SIGNATURE"
+msgstr "O plano básico de P2P te permitirá usar o sistema Lunes de P2P por um ano."
+
+msgctxt "RULES"
+msgid "ALIAS"
+msgid_plural "ALIAS"
+msgstr[0] "Apenas esses caracteres são permitidos: "
+msgstr[1] "-.0123456789@_abcdefghijklmnopqrstuvwxyz"
+
+msgctxt "ADDRESS"
+msgid "PLACEHOLDER_EX"
+msgstr "Ex: 37n724hxf4XnCFfJFnCzj4TbYryoizdfGCV"
+
+msgctxt "ADDRESS"
+msgid "SETTINGS_USER"
+msgstr "Endereço"
+
+msgctxt "ADDRESS"
+msgid "MESSAGE_INVALID"
+msgstr "Endereço Inválido"
+
+msgctxt "ADDRESS"
+msgid "MODAL_SEND"
+msgstr "Insira o endereço da carteira"
+
+msgctxt "ADDRESS"
+msgid "MODAL_SEND_QR_CODE"
+msgstr "Envie escaneando o QR Code"
+
+msgctxt "ADDRESS"
+msgid "MODAL_SEND_TO"
+msgstr " para o endereço"
+
+msgctxt "ADDRESS"
+msgid "P2P_CREATE_OFFER"
+msgstr "Endereço de pagamento"
+
+msgctxt "ADDRESS"
+msgid "P2P_CHANGE"
+msgstr "Preencha o endereço para recebimento"
+
+msgctxt "INSTRUCTIONS"
+msgid "2FA"
+msgid_plural "2FA"
+msgstr[0] ""
+"Confirme com o código fornecido no google authenticator e insira os 6 "
+"dígitos abaixo"
+msgstr[1] "Digite o código de seis dígitos do 2FA da sua carteira Lunes!"
+
+msgctxt "INSTRUCTIONS"
+msgid "RESET"
+msgstr "Nós enviaremos as instruções"
+
+msgctxt "INSTRUCTIONS"
+msgid "COUPON"
+msgstr "Informações"
+
+msgctxt "INSTRUCTIONS"
+msgid "MODAL_SEND_QR_CODE"
+msgstr ""
+"Se você está utilizando o computador, será necessário escanear o QRCode por "
+"uma webcam para enviar suas moedas. "
+
+msgctxt "INSTRUCTIONS"
+msgid "MODAL_SEND_AMOUNT"
+msgstr "Você também pode enviar uma parte de suas moedas."
+
+msgctxt "HINT"
+msgid "RESET_NEW_PASSWORD"
+msgid_plural "RESET_NEW_PASSWORD"
+msgstr[0] "Números"
+msgstr[1] "Símbolos"
+msgstr[2] "Min. 8 caracteres"
+msgstr[3] "Letra Maiúscula"
+msgstr[4] "Letra Minúscula"
+
+msgctxt "ERROR"
+msgid "RESET_NEW_PASSWORD"
+msgid_plural "RESET_NEW_PASSWORD"
+msgstr[0] "A senha deve atender aos itens descritos."
+msgstr[1] "Senhas não correspondem"
+
+msgctxt "ERROR"
+msgid "SETTINGS_NEW_PASSWORD"
+msgstr "A nova senha é inválida"
+
+msgctxt "ERROR"
+msgid "SETTINGS_CONFIRM_NEW_PASSWORD"
+msgstr "A nova senha e a confirmação da nova senha estão diferentes "
+
+msgctxt "ERROR"
+msgid "PAGE"
+msgid_plural "PAGE"
+msgstr[0] "Sua sessão expirou, por favor entre novamente"
+msgstr[1] "Sua sessão expirou, por favor faça novamente o login"
+msgstr[2] "Oh, Não!... Página não encontrada"
+
+msgctxt "ERROR"
+msgid "BTN_SEND"
+msgstr "Indisponível"
+
+msgctxt "ERROR"
+msgid "COUPON_SERVER"
+msgstr "Um erro ocorreu em nosso servidor, tente novamente mais tarde"
+
+msgctxt "ERROR"
+msgid "COUPON_UNKNOWN"
+msgid_plural "COUPON_UNKNOWN"
+msgstr[0] "Ocorreu um erro desconhecido ao tentar verificar o código do cupom"
+msgstr[1] "Ocorreu um erro desconhecido ao tentar verificar o código do cupom"
+msgstr[2] "Ocorreu um erro desconhecido ao tentar verificar o código do cupom"
+
+msgctxt "ERROR"
+msgid "VOUCHER_BUTTON"
+msgstr "Erro"
+
+msgctxt "ERROR"
+msgid "WALLET_UTXOS_UNKNOWN"
+msgstr "Há um problema desconhecido com a UTXOS"
+
+msgctxt "ERROR"
+msgid "PAYMENT_TERMS"
+msgstr "Você deve concordar com os Termos GDPR para continuar"
+
+msgctxt "ERROR"
+msgid "PAYMENT_AMOUNT"
+msgstr "Seu saldo é insuficiente para realizar o pagamento"
+
+msgctxt "ERROR"
+msgid "MODAL_SEND_INFO"
+msgstr "Procedimento de envio falhou"
+
+msgctxt "ERROR"
+msgid "ASSETS_SERVER"
+msgstr "Ocorreu um erro no nosso servidor, tente novamente mais tarde"
+
+msgctxt "ERROR"
+msgid "ASSETS_UNKNOWN"
+msgstr "Erro desconhecido ao tentar fazer um pedido de ativos"
+
+msgctxt "ERROR"
+msgid "RECHARGE_AMOUNT"
+msgstr "Seu saldo é insuficiente para realizar essa recarga"
+
+msgctxt "ERROR"
+msgid "BUYCOINS_INFO"
+msgstr "Procedimento de compra falhou"
+
+msgctxt "ERROR"
+msgid "INVITE"
+msgid_plural "INVITE"
+msgstr[0] "E-mail inválido"
+msgstr[1] "Preencha o e-mail destino"
+msgstr[2] "Aguarde o endereço carregar"
+
+msgctxt "ERROR"
+msgid "SEND_MAIL_INVITE"
+msgstr "Falha ao enviar"
+
+msgctxt "ERROR"
+msgid "COINSALE_INFO"
+msgstr "Procedimento de compra falhou"
+
+msgctxt "ERROR"
+msgid "P2P"
+msgid_plural "P2P"
+msgstr[0] "Informe a moeda de pagamento"
+msgstr[1] "Informe a quantidade"
+msgstr[2] "Informe o valor"
+msgstr[3] "Informe o endereço de recebimento"
+msgstr[4] "Informe uma breve descrição"
+msgstr[5] "Escolha o tipo"
+msgstr[6] "Informe a moeda de venda"
+
+msgctxt "BARCODE"
+msgid "PAYMENT_MESSAGE"
+msgstr ""
+"Não foi possível identificar o código de barras. Insira os números "
+"manualmente"
+
+msgctxt "SIZE"
+msgid "PAYMENT_FILE"
+msgstr "O tamanho do arquivo ultrapassa o limite estabelecido (3MB)"
+
+msgctxt "SUCCESS"
+msgid "MODAL_LEASING_MESSAGE"
+msgstr "Leasing iniciado!"
+
+msgctxt "SUCCESS"
+msgid "SETTINGS_CHANGE_PASSWORD"
+msgstr "Troca de senha efetuada com sucesso!"
+
+msgctxt "SUCCESS"
+msgid "MODAL_LEASING_CANCEL"
+msgstr "Cancelamento efetuado com sucesso!"
+
+msgctxt "SUCCESS"
+msgid "PAYMENT"
+msgid_plural "PAYMENT"
+msgstr[0] "Você acabou de pagar o boleto"
+msgstr[1] " na sua carteira Lunes"
+
+msgctxt "SUCCESS"
+msgid "MODAL_SEND_INFO"
+msgstr "Envio com sucesso"
+
+msgctxt "SUCCESS"
+msgid "RECHARGE"
+msgid_plural "RECHARGE"
+msgstr[0] "Você recarregou seu celular com sucesso!"
+msgstr[1] "Visualize seu histórico de recargas na guia Histórico"
+
+msgctxt "SUCCESS"
+msgid "ALIAS_CREATED"
+msgstr "Alias criado com sucesso!"
+
+msgctxt "SUCCESS"
+msgid "BUYCOINS"
+msgid_plural "BUYCOINS"
+msgstr[0] "Você realizou a compra com sucesso!"
+msgstr[1] "Visualize seu histórico de compras na a Histórico"
+
+msgctxt "SUCCESS"
+msgid "SEND_MAIL_INVITE"
+msgstr "Enviado com sucesso"
+
+msgctxt "SUCCESS"
+msgid "COINSALE"
+msgid_plural "COINSALE"
+msgstr[0] "Você realizou a compra com sucesso!"
+msgstr[1] "Visualize seu histórico de compras na a Histórico"
+
+msgctxt "SUCCESS"
+msgid "P2P_MODAL_SEND_INFO"
+msgstr "Avaliação realizada com sucesso"
+
+msgctxt "CUPON"
+msgid "INSTRUCTION_MODAL"
+msgid_plural "INSTRUCTION_MODAL"
+msgstr[0] "Digite o código de 4 dígitos do seu cupom"
+msgstr[1] "Resgatar"
+msgstr[2] "Escolha qual opção você tem"
+msgstr[3] "Digite seu número de telefone celular com DDD e operadora (somente Voucher)"
+
+msgctxt "TITLE"
+msgid "COUPON"
+msgid_plural "COUPON"
+msgstr[0] "Cupom"
+msgstr[1] "Voucher"
+msgstr[2] "Promoção"
+
+msgctxt "TITLE"
+msgid "SETTING_WALLETS"
+msgstr "Carteiras"
+
+msgctxt "TITLE"
+msgid "SECURITY"
+msgstr "2FA Autenticador"
+
+msgctxt "TITLE"
+msgid "DEFINITIONS"
+msgstr "Definições"
+
+msgctxt "TITLE"
+msgid "CONSENT"
+msgstr "Consentimento"
+
+msgctxt "TITLE"
+msgid "SET_SEED"
+msgstr "INFORMAÇÃO DE BACKUP DE CONTA"
+
+msgctxt "TITLE"
+msgid "CARD_HOME"
+msgid_plural "CARD_HOME"
+msgstr[0] "Recargas"
+msgstr[1] "Boletos"
+msgstr[2] "Moedas Favoritas"
+msgstr[3] "Resgate"
+msgstr[4] "Carteira"
+msgstr[5] "Leasing"
+
+msgctxt "TITLE"
+msgid "2FA_INSTRUCTIONS"
+msgstr "Verificação de dispositivo"
+
+msgctxt "TITLE"
+msgid "WALLET_MODAL_SEND"
+msgstr "Transação"
+
+msgctxt "TITLE"
+msgid "WALLET_MODAL_RECEIVE"
+msgstr "Receber"
+
+msgctxt "TITLE"
+msgid "TRANSACTION_HISTORY"
+msgstr "Transações"
+
+msgctxt "TITLE"
+msgid "SETTINGS"
+msgstr "Escolha a melhor configuração de privacidade para você"
+
+msgctxt "TITLE"
+msgid "PAYMENT_MODAL"
+msgstr "Pagamento de Boleto"
+
+msgctxt "TITLE"
+msgid "PAYMENT_TERMS"
+msgstr "Termo GDPR"
+
+msgctxt "TITLE"
+msgid "PAYMENT_HEADER"
+msgstr "Pagamento Online"
+
+msgctxt "TITLE"
+msgid "PAYMENT"
+msgstr "Boletos"
+
+msgctxt "TITLE"
+msgid "RECHARGE"
+msgstr "Recarga de Celular"
+
+msgctxt "TITLE"
+msgid "BUYCOINS"
+msgstr "COMPRAR CRIPTOMOEDAS"
+
+msgctxt "TITLE"
+msgid "BUYCOINS_PURCHASE_TAB"
+msgstr "Comprar moedas"
+
+msgctxt "TITLE"
+msgid "BUYCOINS_HISTORY_TAB"
+msgstr "Histórico"
+
+msgctxt "TITLE"
+msgid "COINSALE"
+msgstr "COMPRAR CRIPTOMOEDAS"
+
+msgctxt "TITLE"
+msgid "COINSALE_PURCHASE_TAB"
+msgstr "Comprar moedas"
+
+msgctxt "TITLE"
+msgid "COINSALE_HISTORY_TAB"
+msgstr "Histórico"
+
+msgctxt "CARD"
+msgid "SETTINGS"
+msgid_plural "SETTINGS"
+msgstr[0] "CARTEIRAS"
+msgstr[1] "CONSENTIMENTO"
+msgstr[2] "DEFINIÇÕES"
+msgstr[3] "P2P"
+msgstr[4] "DADOS DO USUÁRIO"
+msgstr[5] "2FA AUTENTICAÇÃO"
+
+msgctxt "USER"
+msgid "SETTINGS"
+msgstr "Perfil de Usuário"
+
+msgctxt "BACK"
+msgid "SETTINGS_USER"
+msgstr "Voltar para configurações"
+
+msgctxt "BACK"
+msgid "BTN"
+msgstr "Voltar"
+
+msgctxt "IMAGE"
+msgid "SETTINGS_USER"
+msgstr "Imagem de Perfil"
+
+msgctxt "STATUS"
+msgid "SETTINGS_USER"
+msgstr "Status"
+
+msgctxt "STATUS"
+msgid "LEASING_TITLE"
+msgstr "Status "
+
+msgctxt "STATUS"
+msgid "INVITE_TITLE"
+msgstr "Status"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_ACCOUNT"
+msgstr "Conta verificada"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_ACCOUNT_NOT"
+msgstr "Conta não verificada"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_EMAIL"
+msgstr "E-mail verificado"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_EMAIL_NOT"
+msgstr "E-mail não verificado"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_2FA"
+msgstr "2FA verificado"
+
+msgctxt "VERIFIED"
+msgid "SETTINGS_USER_2FA_NOT"
+msgstr "2FA não verificado"
+
+msgctxt "VERIFIED"
+msgid "EMAIL_NOT"
+msgstr "Email não verificado, favor verifique sua caixa de entrada"
+
+msgctxt "NAME"
+msgid "SETTINGS_USER_FIRST"
+msgstr "Nome"
+
+msgctxt "NAME"
+msgid "SET_ALIAS_SAVE"
+msgstr "Salvar"
+
+msgctxt "NAME"
+msgid "PLACEHOLDER_FIRST"
+msgstr "Nome"
+
+msgctxt "NAME"
+msgid "PLACEHOLDER_LAST"
+msgstr "Sobrenome"
+
+msgctxt "NAME"
+msgid "PAYMENT_TITLE"
+msgstr "Nome"
+
+msgctxt "NAME"
+msgid "PAYMENT"
+msgstr "Nome"
+
+msgctxt "NAME"
+msgid "PAYMENT_FIND"
+msgstr "Encontrar pelo nome"
+
+msgctxt "SURNAME"
+msgid "SETTINGS_USER"
+msgstr "Sobrenome"
+
+msgctxt "CONTACT"
+msgid "SETTINGS_USER"
+msgstr "Contato"
+
+msgctxt "CODE"
+msgid "SETTINGS_USER"
+msgstr "Código"
+
+msgctxt "CODE"
+msgid "SETTINGS_USER_ZIP"
+msgstr "Código Postal"
+
+msgctxt "CODE"
+msgid "VOUCHER"
+msgstr "Código"
+
+msgctxt "CODE"
+msgid "MODAL_SEND_QR"
+msgstr "Enviar escaneando o QR Code"
+
+msgctxt "NUMBER"
+msgid "SETTINGS_USER"
+msgstr "Número do Telefone"
+
+msgctxt "NUMBER"
+msgid "VOUCHER"
+msgstr "Número"
+
+msgctxt "BIRTHDATE"
+msgid "SETTINGS_USER"
+msgstr "Data de Nascimento"
+
+msgctxt "DAY"
+msgid "SETTINGS_USER"
+msgstr "Dia"
+
+msgctxt "MONTH"
+msgid "SETTINGS_USER"
+msgstr "Mês"
+
+msgctxt "YEAR"
+msgid "SETTINGS_USER"
+msgstr "Ano"
+
+msgctxt "SELECT"
+msgid "SETTINGS_USER"
+msgstr "Selecione"
+
+msgctxt "SELECT"
+msgid "BUY_PAYMENT"
+msgstr "Selecione um método de pagamento"
+
+msgctxt "SELECT"
+msgid "COINSALE_PAYMENT"
+msgstr "Selecione um método de pagamento"
+
+msgctxt "CITY"
+msgid "SETTINGS_USER"
+msgstr "Cidade"
+
+msgctxt "STATE"
+msgid "SETTINGS_USER"
+msgstr "Estado"
+
+msgctxt "DATA"
+msgid "SETTINGS_USER_SAVE"
+msgstr "Salvar informações"
+
+msgctxt "DATA"
+msgid "P2P_PROFILE"
+msgstr "Dados"
+
+msgctxt "LUNES"
+msgid "SETTINGS_ALIAS_WALLET"
+msgstr "Lunes"
+
+msgctxt "ITEM"
+msgid "SECURITY"
+msgid_plural "SECURITY"
+msgstr[0] "Digite o Número de Autenticação para ativar o 2FA na sua conta."
+msgstr[1] "Instale o Google Authenticator no seu smartphone"
+msgstr[2] ""
+"Abra o Google Authenticator, insira o código manualmente ou leia o código "
+"QR abaixo"
+
+msgctxt "RETURN"
+msgid "SETTING_LINK"
+msgstr "Voltar para configurações"
+
+msgctxt "RETURN"
+msgid "SECURITY_LINK"
+msgstr "Voltar para configurações"
+
+msgctxt "REGISTRED"
+msgid "SECURITY_2FA"
+msgstr "2FA já ativado!"
+
+msgctxt "REGISTRED"
+msgid "NOTIFICATION_SERVICE_ALREADY"
+msgstr "Você já está registrado"
+
+msgctxt "WORDS"
+msgid "SET_SEED"
+msgstr "Sua Seed"
+
+msgctxt "IMPORT"
+msgid "SET_BUTTON_SEED"
+msgstr "Importar Seed"
+
+msgctxt "REMOVE"
+msgid "SET_BUTTON"
+msgstr "Remover"
+
+msgctxt "FAV"
+msgid "SET_BUTTON"
+msgstr "Favoritar"
+
+msgctxt "TITLE1"
+msgid "SET_DEFINITIONS"
+msgstr "Configurações padrão por região"
+
+msgctxt "DESC1"
+msgid "SET_DEFINITIONS"
+msgstr ""
+"O idioma selecionado será automaticamente mostrado quando você acessar a "
+"plataforma."
+
+msgctxt "TITLE2"
+msgid "SET_DEFINITIONS"
+msgstr "Opções de saída"
+
+msgctxt "OPTION1"
+msgid "SET_DEFINITIONS"
+msgstr ""
+"Deletar o cache quando deslogar - seu próximo login levará mais tempo para "
+"ser processado."
+
+msgctxt "OPTION2"
+msgid "SET_DEFINITIONS"
+msgstr ""
+"Salve o cache encriptado localmente para um login mais rápido em sua "
+"próxima sessão."
+
+msgctxt "LANG"
+msgid "SET_DEFINITIONS_LABEL"
+msgstr "Idioma de Interface"
+
+msgctxt "LANG"
+msgid "LOGIN_FOOTER"
+msgstr "English"
+
+msgctxt "CURR"
+msgid "SET_DEFINITIONS_LABEL"
+msgstr "Moeda Fiat padrão"
+
+msgctxt "COIN"
+msgid "SET_DEFINITIONS_LABEL"
+msgstr "Criptomoeda Padrão"
+
+msgctxt "COIN"
+msgid "BUY_SEL"
+msgstr "Selecione uma moeda"
+
+msgctxt "COIN"
+msgid "BUY_PAYMENT"
+msgstr "Moeda para pagamento"
+
+msgctxt "COIN"
+msgid "BUY_METHOD"
+msgstr "Criptomoedas"
+
+msgctxt "COIN"
+msgid "BUY_ERROR"
+msgstr "Selecione uma moeda"
+
+msgctxt "COIN"
+msgid "COINSALE_SEL"
+msgstr "Selecione uma moeda"
+
+msgctxt "COIN"
+msgid "COINSALE_PAYMENT"
+msgstr "Moeda para pagamento"
+
+msgctxt "COIN"
+msgid "COINSALE_METHOD"
+msgstr "Criptomoedas"
+
+msgctxt "COIN"
+msgid "COINSALE_ERROR"
+msgstr "Selecione uma moeda"
+
+msgctxt "REDIRECT"
+msgid "PAGE_ERROR_500"
+msgstr "Redirecionando em"
+
+msgctxt "DEFAULT"
+msgid "LEASING_SELECT_NODE"
+msgstr "Nodes Profissionais"
+
+msgctxt "FIELD"
+msgid "LEASING_NOT_INFORMED"
+msgstr "Sem informação"
+
+msgctxt "CONFIRM"
+msgid "MODAL_LEASING"
+msgstr "Você realmente deseja cancelar?"
+
+msgctxt "CONFIRM"
+msgid "BTN"
+msgstr "Confirmar"
+
+msgctxt "CONFIRM"
+msgid "PAYMENT"
+msgid_plural "PAYMENT"
+msgstr[0] ""
+"O tempo médio de confirmação de pagamento é de até 30 minutos. Confirme o "
+"pagamento apenas se você concordar."
+msgstr[1] "Confirme seus dados para concluir seu pagamento"
+msgstr[2] "Você será cobrado da sua carteira "
+
+msgctxt "CONFIRM"
+msgid "RECHARGE"
+msgid_plural "RECHARGE"
+msgstr[0] ""
+"O tempo médio de confirmação de recarga é de até 30 minutos. Só complete a "
+"recarga se você concordar."
+msgstr[1] "Confirme seus dados para concluir sua recarga"
+msgstr[2] "Você será cobrado da sua carteira "
+
+msgctxt "CONFIRM"
+msgid "BUYCOINS"
+msgid_plural "BUYCOINS"
+msgstr[0] "envio"
+msgstr[1] "Insira sua senha e confirme o "
+
+msgctxt "CONFIRM"
+msgid "COINSALE"
+msgid_plural "COINSALE"
+msgstr[0] "envio"
+msgstr[1] "Insira sua senha e confirme o "
+
+msgctxt "CONFIRM"
+msgid "P2P_BUTTON"
+msgstr "Concluir"
+
+msgctxt "FAILURE"
+msgid "MODAL_LEASING_MESSAGE"
+msgstr "Leasing não pôde ser iniciado"
+
+msgctxt "FAILURE"
+msgid "MODAL_LEASING_CANCEL"
+msgstr "Leasing não pôde ser cancelado"
+
+msgctxt "FILEDS"
+msgid "MESSAGE_ERROR"
+msgstr "Os seguintes campos estão faltando ou estão errados"
+
+msgctxt "FILEDS"
+msgid "MESSAGE_ERROR_EMPTY"
+msgstr "Alguns campos estão vazios"
+
+msgctxt "EMAIL"
+msgid "MESSAGE_USER"
+msgstr "Usuário/E-mail"
+
+msgctxt "EMAIL"
+msgid "PLACEHOLDER_USERNAME"
+msgstr "Usuário ou E-mail"
+
+msgctxt "EMAIL"
+msgid "PLACEHOLDER"
+msgstr "E-mail"
+
+msgctxt "EMAIL"
+msgid "BTN_RECEIVE"
+msgstr "E-mail"
+
+msgctxt "EMAIL"
+msgid "INVITE_TITLE"
+msgstr "E-mail"
+
+msgctxt "EMAIL"
+msgid "INVITE_ERROR"
+msgstr ""
+"Seu e-mail não foi verificado, por favor tente novamente clicando no botão "
+"a baixo."
+
+msgctxt "EMAIL"
+msgid "INVITE_SUCCESS"
+msgstr "E-mail confirmado."
+
+msgctxt "SEED"
+msgid "PLACEHOLDER"
+msgstr ""
+"Anote a seed que você gerou (12 palavras em inglês) em um local bem seguro. "
+"Somente você tem acesso a ela e através das 12 palavras que é possível "
+"acessar sua carteira na blockchain."
+
+msgctxt "SEED"
+msgid "BTN_IMPORT"
+msgstr "Importar"
+
+msgctxt "SEED"
+msgid "BTN_NEW"
+msgstr "GERAR NOVA SEED"
+
+msgctxt "SEED"
+msgid "SEED_INSERT"
+msgstr "Insira suas SeedWords"
+
+msgctxt "REPEAT"
+msgid "PLACEHOLDER_PASSWORD"
+msgstr "Repetir senha"
+
+msgctxt "SUBMIT"
+msgid "BTN"
+msgstr "Enviar"
+
+msgctxt "SEND"
+msgid "BTN"
+msgstr "Enviar"
+
+msgctxt "SEND"
+msgid "MODAL_TO_SEND"
+msgstr " Você está enviando "
+
+msgctxt "SEND"
+msgid "INVITE_BUTTON"
+msgstr "Enviar"
+
+msgctxt "DISABLED"
+msgid "BTN"
+msgstr "Desabilitado"
+
+msgctxt "LOADING"
+msgid "BTN_SEND"
+msgstr "Carregando..."
+
+msgctxt "RECEIVE"
+msgid "BTN"
+msgstr "Receber"
+
+msgctxt "CREATE"
+msgid "BTN"
+msgstr "Criar"
+
+msgctxt "CREATE"
+msgid "PIN"
+msgstr "Crie seu PIN"
+
+msgctxt "NEXT"
+msgid "BTN"
+msgstr "Próximo"
+
+msgctxt "LOGIN"
+msgid "BTN"
+msgstr "Login"
+
+msgctxt "LOGIN"
+msgid "NOTIFICATION_SERVICE_INVALID"
+msgstr "Usuário/Email ou Senha Inválido"
+
+msgctxt "PIN"
+msgid "BTN_CONFIRM"
+msgstr "Validar"
+
+msgctxt "RESET"
+msgid "BTN"
+msgstr "Resetar"
+
+msgctxt "SAVE"
+msgid "BTN"
+msgstr "Salvar"
+
+msgctxt "2FA"
+msgid "BTN"
+msgstr "Habilitar 2FA"
+
+msgctxt "2FA"
+msgid "NOTIFICATION_SERVICE_NOT"
+msgstr "2FA não pôde ser verificado"
+
+msgctxt "2FA"
+msgid "NOTIFICATION_SERVICE_ENABLE"
+msgstr "Autenticação de dois fatores não pôde ser habilitado"
+
+msgctxt "2FA"
+msgid "NOTIFICATION_SERVICE_INVALID"
+msgstr "Token 2FA inválido"
+
+msgctxt "FINALIZE"
+msgid "BTN"
+msgstr "Finalizar"
+
+msgctxt "CONTINUE"
+msgid "BTN"
+msgstr "Continuar"
+
+msgctxt "HOME"
+msgid "BTN"
+msgstr "Início"
+
+msgctxt "HOME"
+msgid "LOGIN_FOOTER"
+msgstr "Principal"
+
+msgctxt "HOME"
+msgid "MENU"
+msgstr "Início"
+
+msgctxt "HEADER"
+msgid "LOGIN"
+msgstr "Insira seus dados"
+
+msgctxt "HEADER"
+msgid "NEW_ACCOUNT"
+msgstr "Insira a informação necessária para efetuar seu registro"
+
+msgctxt "HEADER"
+msgid "NEW_ACCOUNT_PASSWORD"
+msgstr "Digite sua senha"
+
+msgctxt "HEADER"
+msgid "2FA"
+msgstr "2FA Confirmação"
+
+msgctxt "HEADER"
+msgid "RESET"
+msgstr "Esqueceu sua senha"
+
+msgctxt "HEADER"
+msgid "RESET_NEW_PASSWORD"
+msgstr "Digite sua nova senha"
+
+msgctxt "LINK"
+msgid "LOGIN_FORGET_PASSWORD"
+msgstr "Esqueceu sua senha?"
+
+msgctxt "LINK"
+msgid "LOGIN_SINGUP_ACCOUNT"
+msgstr "Registrar-se"
+
+msgctxt "LINK"
+msgid "PIN_FORGET_PIN"
+msgstr "Esqueceu seu PIN"
+
+msgctxt "LABEL"
+msgid "LOGIN_CREATE_ACCOUNT"
+msgstr "Ainda não possui uma conta?"
+
+msgctxt "LABEL"
+msgid "LEASING_AMOUNT"
+msgstr "Quantidade para o Leasing"
+
+msgctxt "LABEL"
+msgid "LEASING_BALANCE"
+msgstr "Seu saldo"
+
+msgctxt "LABEL"
+msgid "ACCEPT_INVITE"
+msgstr "Você foi convidado por "
+
+msgctxt "ASSETS"
+msgid "MENU"
+msgstr "Tokens"
+
+msgctxt "SUPPORT"
+msgid "LOGIN_FOOTER"
+msgstr "Suporte"
+
+msgctxt "SUPPORT"
+msgid "MENU"
+msgstr "Suporte"
+
+msgctxt "FOOTER"
+msgid "LOGIN"
+msgstr "2018 lunes.io Todos direitos reservados"
+
+msgctxt "ENTER"
+msgid "PIN"
+msgstr "INSIRA seu PIN"
+
+msgctxt "SENDED"
+msgid "NEW_ACCOUNT_MESSAGE"
+msgstr "Conta criada com sucesso."
+
+msgctxt "SENDED"
+msgid "RESET_EMAIL"
+msgstr "Uma mensagem com sua senha temporária foi enviada ao seu e-mail."
+
+msgctxt "DOWNLOAD"
+msgid "NEW_ACCOUNT_TERMS"
+msgstr "Clique aqui para efetuar o download e finalizar o registro"
+
+msgctxt "AUTHORIZED"
+msgid "COUPON_USER_NOT"
+msgstr ""
+"Você não está autorizado a realizar esta ação, verifique se você está "
+"corretamente logado"
+
+msgctxt "LENGTH"
+msgid "SHORT_COUPON"
+msgstr "Campo do cupom possui menos de 19 caracteres"
+
+msgctxt "INVALID"
+msgid "COUPON"
+msgstr "O cupom não é válido"
+
+msgctxt "EXPIRED"
+msgid "COUPON"
+msgstr "O cupom está expirado"
+
+msgctxt "FIND"
+msgid "2FA_INSTRUCTIONS_LINK_WHERE_TO"
+msgstr "Onde eu encontro o código?"
+
+msgctxt "FIND"
+msgid "RECHARGE"
+msgstr "Procurar pelo número"
+
+msgctxt "INSTRUCTIONS2"
+msgid "RESET"
+msgstr "Informações sobre reset"
+
+msgctxt "INSTRUCTION"
+msgid "RESET_NEW_PASSWORD"
+msgstr "Sua senha deve seguir as regras abaixo"
+
+msgctxt "LOGOUT"
+msgid "MENU"
+msgstr "Sair"
+
+msgctxt "PORTFOLIO"
+msgid "MENU"
+msgstr "Portfólio"
+
+msgctxt "WALLET"
+msgid "MENU"
+msgstr "Carteira"
+
+msgctxt "RECHARGE"
+msgid "MENU"
+msgstr "Recarga"
+
+msgctxt "RECHARGE"
+msgid "RECHARGE_TAB_TITLE"
+msgstr "Nova recarga"
+
+msgctxt "PAY"
+msgid "MENU"
+msgstr "Boleto"
+
+msgctxt "PAY"
+msgid "PAYMENT_BTN"
+msgstr "Pagar agora"
+
+msgctxt "PAY"
+msgid "INSTRUCTION_MODAL"
+msgid_plural "INSTRUCTION_MODAL"
+msgstr[0] "Lunes (LUNES)"
+msgstr[1] "Acima de R$3.000,01 - 4,5%"
+msgstr[2] "Até R$1.000,00 - 6%"
+msgstr[3] "De R$1.000,01 a R$3.000,00 - 5%"
+
+msgctxt "PAY"
+msgid "BUY_ERROR_COIN"
+msgstr "Selecione uma moeda de pagamento"
+
+msgctxt "PAY"
+msgid "COINSALE_ERROR_COIN"
+msgstr "Selecione uma moeda de pagamento"
+
+msgctxt "PURCHASE"
+msgid "MENU"
+msgstr "Comprar"
+
+msgctxt "PURCHASE"
+msgid "P2P_TAB"
+msgstr "Compra"
+
+msgctxt "COUPONS"
+msgid "MENU"
+msgstr "Cupons"
+
+msgctxt "SETTING"
+msgid "MENU"
+msgstr "Configurações"
+
+msgctxt "LEASING"
+msgid "MENU"
+msgstr "Leasing"
+
+msgctxt "LEASING"
+msgid "MODAL_TITLE_START"
+msgstr "Iniciar Leasing"
+
+msgctxt "PRIVACY"
+msgid "MENU"
+msgstr "Privacidade"
+
+msgctxt "EMPTY"
+msgid "WALLET_UTXOS"
+msgid_plural "WALLET_UTXOS"
+msgstr[0] "Rede congestionada ou saldo insuficiente."
+msgstr[1] "There's a problem: no UTXOS, code 2"
+
+msgctxt "MESSAGE"
+msgid "MODAL_RECEIVE"
+msgstr "Endereço copiado"
+
+msgctxt "COPY"
+msgid "BTN_RECEIVE"
+msgstr "Copiar"
+
+msgctxt "PRINT"
+msgid "BTN_RECEIVE"
+msgstr "Print"
+
+msgctxt "SHARE"
+msgid "BTN_RECEIVE"
+msgstr "Compartilhar"
+
+msgctxt "SHARE"
+msgid "INVITE_LINK"
+msgstr "Link de compartilhamento"
+
+msgctxt "BALANCE"
+msgid "WALLET"
+msgstr "Saldo"
+
+msgctxt "BALANCE"
+msgid "LEASING"
+msgstr "Saldo Total Lunes"
+
+msgctxt "BALANCE"
+msgid "INVITE_ACCUMULATED"
+msgstr "Saldo acumulado"
+
+msgctxt "BALANCE"
+msgid "INVITE_NO"
+msgstr "Saldo indisponível"
+
+msgctxt "TEXT"
+msgid "LEASING_HELP"
+msgstr ""
+"Sempre deixe 1 Lunes ou mais em sua carteira. Uma pequena quantidade de "
+"Lunes é necessária para cancelar o Leasing"
+
+msgctxt "TEXT"
+msgid "PAYMENT_FEE"
+msgid_plural "PAYMENT_FEE"
+msgstr[0] "Você está enviando "
+msgstr[1] " para o endereço "
+
+msgctxt "TEXT"
+msgid "PAYMENT_DETAILS"
+msgid_plural "PAYMENT_DETAILS"
+msgstr[0] ", de acordo com as informações abaixo:"
+msgstr[1] ""
+"Atenção: Confira abaixo os dados da sua solicitação, para que não haja "
+"erros. Se as informações estiverem incorretas, clique em Voltar."
+msgstr[2] " e será pago um título de "
+
+msgctxt "TEXT"
+msgid "RECHARGE_FEE"
+msgid_plural "RECHARGE_FEE"
+msgstr[0] "Você está enviando "
+msgstr[1] " para "
+
+msgctxt "TEXT"
+msgid "BUYCOINS_FEE"
+msgid_plural "BUYCOINS_FEE"
+msgstr[0] "Você está enviando "
+msgstr[1] " para "
+
+msgctxt "TEXT"
+msgid "INVITE"
+msgstr ""
+"Você e o usuário convidado vão ganhar 5 Lunes após o usuário que você "
+"convidou se cadastrar e transacionar dentro da carteira, seja recebendo uma "
+"moeda ou executando algum serviço."
+
+msgctxt "TEXT"
+msgid "COINSALE_FEE"
+msgid_plural "COINSALE_FEE"
+msgstr[0] "Você está enviando "
+msgstr[1] " para "
+
+msgctxt "TEXT"
+msgid "P2P_STATUS"
+msgid_plural "P2P_STATUS"
+msgstr[0] "Cancelado"
+msgstr[1] "Andamento"
+msgstr[2] "Concluído"
+
+msgctxt "TEXT"
+msgid "P2P"
+msgid_plural "P2P"
+msgstr[0] "Classifique o vendedor"
+msgstr[1] "Utilize o QR CODE ou endereço da carteira abaixo para realizar o deposito"
+msgstr[2] "Copiar código"
+msgstr[3] "Concluir"
+msgstr[4] "Um Player se interessou pela sua oferta e quer abrir um chat com você!"
+msgstr[5] "Conversar"
+msgstr[6] "Agora não"
+msgstr[7] "Você está mandando"
+msgstr[8] "Para pagamento na plataforma P2P"
+msgstr[9] "O fee da sua transação na rede Lunes é"
+msgstr[10] ""
+"Parabéns, você acaba de fazer uma venda. Assim que você se certificar que o "
+"depósito foi realizado, confirme que a transação foi um sucesso!"
+msgstr[11] "Classifique o comprador"
+msgstr[12] "Criado com sucesso"
+msgstr[13] "Concluir e voltar"
+
+msgctxt "START"
+msgid "LEASING_BT"
+msgstr "INICIAR LEASING"
+
+msgctxt "CANCEL"
+msgid "LEASING_BT"
+msgstr "Cancelar"
+
+msgctxt "EXPLORER"
+msgid "LEASING_TITLE"
+msgstr "Blockexplorer"
+
+msgctxt "ACTIVE"
+msgid "LEASING_BALANCE"
+msgstr "Leasing"
+
+msgctxt "NEW"
+msgid "LEASING_TITLE"
+msgstr "Novo Leasing"
+
+msgctxt "NODE"
+msgid "LEASING_TITLE"
+msgstr "Node"
+
+msgctxt "BUTTON"
+msgid "VOUCHER"
+msgstr "Resgatar"
+
+msgctxt "BUTTON"
+msgid "INVITE_COPY"
+msgstr "Copiar"
+
+msgctxt "BUTTON"
+msgid "INVITE_SHARE"
+msgstr "Compartilhar"
+
+msgctxt "BUTTON"
+msgid "INVITE_TEXT"
+msgstr "Sacar"
+
+msgctxt "INFO"
+msgid "SETTINGS_HEADER"
+msgstr ""
+"Controle sua informação pessoal. Com estas configurações você pode "
+"gerenciar qual informação é privada e qual fica salva em sua conta para "
+"melhorar sua experiência na Carteira Lunes"
+
+msgctxt "INFO"
+msgid "INSTRUCTION_MODAL_PAY"
+msgid_plural "INSTRUCTION_MODAL_PAY"
+msgstr[0] " 7:00 às 20:00 horas."
+msgstr[1] ""
+"Em caso de problemas com o atendimento do pedido, as moedas enviadas serão "
+"automaticamente devolvidas ao endereço Lunes da moeda."
+msgstr[2] ""
+" Taxa de mineração de rede (O valor varia de acordo com a rede da moeda + "
+"20% da taxa Lunes) + (A), (B) ou (C) da taxa de serviço."
+msgstr[3] " Varia de acordo com a concessionária."
+
+msgctxt "INFO"
+msgid "INSTRUCTION_MODAL_RECHARGE"
+msgid_plural "INSTRUCTION_MODAL_RECHARGE"
+msgstr[0] ""
+" Taxa de mineração de rede (O valor varia de acordo com a rede da moeda + "
+"20% da taxa Lunes) + 5% da taxa de serviço."
+msgstr[1] ""
+" Em caso de problemas com o atendimento do pedido, as moedas enviadas serão "
+"automaticamente devolvidas ao endereço Lunes da moeda."
+
+msgctxt "INFO"
+msgid "INSTRUCTION_MODAL_BUY"
+msgid_plural "INSTRUCTION_MODAL_BUY"
+msgstr[0] ""
+"O tempo da operação varia de acordo com a rede da moeda escolhida como meio "
+"de pagamento."
+msgstr[1] ""
+"A taxa de uso do serviço é de 5%. Ou seja, a cotação usada como base na "
+"carteira é acrescida dos 5% para a manutenção do serviço pela Lunes."
+msgstr[2] ""
+"Usando criptomoeda como forma de pagamento, ao finalizar a compra as moedas "
+"serão automaticamente descontadas da sua carteira Lunes e a escolhida para "
+"comprar será enviada para o endereço da moeda em sua carteira Lunes."
+
+msgctxt "INFO"
+msgid "INSTRUCTION_MODAL_COINSALE"
+msgid_plural "INSTRUCTION_MODAL_COINSALE"
+msgstr[0] ""
+"O tempo da operação varia de acordo com a rede da moeda escolhida como meio "
+"de pagamento."
+msgstr[1] ""
+"A taxa de uso do serviço é de 5%. Ou seja, a cotação usada como base na "
+"carteira é acrescida dos 5% para a manutenção do serviço pela Lunes."
+msgstr[2] ""
+"Usando criptomoeda como forma de pagamento, ao finalizar a compra as moedas "
+"serão automaticamente descontadas da sua carteira Lunes e a escolhida para "
+"comprar será enviada para o endereço da moeda em sua carteira Lunes."
+
+msgctxt "CONFIRMATION"
+msgid "PAYMENT_PASS"
+msgstr "Para confirmar sua transação, insira sua senha e complete o"
+
+msgctxt "CONFIRMATION"
+msgid "RECHARGE_PASS"
+msgstr "Insira sua senha e complete o"
+
+msgctxt "CONFIRMATION"
+msgid "P2P_CREATE_OFFER_BUTTON"
+msgstr "CRIAR ANÚNCIO"
+
+msgctxt "HISTORY"
+msgid "PAYMENT_TEXT"
+msgstr "Você pode visualizar a transação na seção de \"Histórico\""
+
+msgctxt "HISTORY"
+msgid "PAYMENT"
+msgstr "Histórico"
+
+msgctxt "HISTORY"
+msgid "ASSETS_NO_TX"
+msgid_plural "ASSETS_NO_TX"
+msgstr[0] "Você não tem nenhum histórico para ser mostrado.."
+msgstr[1] "Você não tem nenhum histórico para ser mostrado."
+msgstr[2] "Você não tem nenhum histórico para ser mostrado.."
+
+msgctxt "HISTORY"
+msgid "RECHARGE_TAB_TITLE"
+msgstr "Histórico"
+
+msgctxt "BANK"
+msgid "PAYMENT_TITLE"
+msgstr "Banco / Instituição"
+
+msgctxt "DATE"
+msgid "PAYMENT_TITLE"
+msgstr "Identificação Pessoal"
+
+msgctxt "DATE"
+msgid "PAYMENT_DUE"
+msgstr "Data de Vencimento"
+
+msgctxt "DATE"
+msgid "P2P_PROFILE_USER"
+msgstr "Usuário desde"
+
+msgctxt "DOC"
+msgid "PAYMENT_TITLE"
+msgstr "CPF/CNPJ"
+
+msgctxt "VALUE"
+msgid "PAYMENT_TITLE"
+msgstr "Valor"
+
+msgctxt "VALUE"
+msgid "PAYMENT"
+msgstr "Valor"
+
+msgctxt "VALUE"
+msgid "RECHARGE_SELECT_TITLE"
+msgstr "Valor"
+
+msgctxt "LIMIT"
+msgid "PAYMENT_AMOUNT"
+msgstr "Valor excede o limite diário de R$ 3.000,00"
+
+msgctxt "DESC"
+msgid "PAYMENT_TERMS"
+msgstr "Você aceita os termos?"
+
+msgctxt "HIGHT"
+msgid "FEE"
+msgstr "Alta"
+
+msgctxt "SUBTITLE"
+msgid "PAYMENT_HEADER"
+msgstr "Pague contas e boletos usando criptomoedas."
+
+msgctxt "INVOICE"
+msgid "PAYMENT"
+msgstr "Pagamento de Contas e Boletos"
+
+msgctxt "INVOICE"
+msgid "RECHARGE_TITLE"
+msgstr "Racarga de Créditos"
+
+msgctxt "ASSIGNOR"
+msgid "PAYMENT"
+msgstr "Recebedor"
+
+msgctxt "CNPJ"
+msgid "PAYMENT_CPF"
+msgstr "CPF / CNPJ (apenas números)"
+
+msgctxt "SYMBOL"
+msgid "PAYMENT_VALUE"
+msgstr "$"
+
+msgctxt "SEPARATOR"
+msgid "PAYMENT_DECIMAL"
+msgstr ","
+
+msgctxt "NOW"
+msgid "PAYMENT_PAY"
+msgstr "Pagar Agora"
+
+msgctxt "UNAUTHORIZED"
+msgid "PAYMENT"
+msgstr "Recibo inválido ou não autorizado"
+
+msgctxt "INSTRUCIONS"
+msgid "MODAL_TITLE"
+msgstr "Informações"
+
+msgctxt "TRANSACTION"
+msgid "MODAL_SEND_INFO"
+msgstr "Para confirmar sua transação, insira sua senha e complete o"
+
+msgctxt "TRANSACTION"
+msgid "MODAL_SEND_FEE"
+msgstr "Sua taxa de transação na rede"
+
+msgctxt "TRANSACTION"
+msgid "ALIAS_ERROR"
+msgstr "Não foi possível fazer a transação de Alias"
+
+msgctxt "TRANSACTION"
+msgid "ALIAS_MODAL"
+msgstr "Para confirmar sua transação, insira sua senha: "
+
+msgctxt "BLOCKCHAIN"
+msgid "MODAL_SEND_INFO"
+msgstr "Sua transação está sendo processada na Blockchain"
+
+msgctxt "DETAILS"
+msgid "RECHARGE"
+msgid_plural "RECHARGE"
+msgstr[0] " em créditos para recarregar o número abaixo: "
+msgstr[1] ""
+"Atenção: Confira abaixo os dados da sua solicitação para que não haja "
+"erros. Se as informações estiverem incorretas, reinicie."
+msgstr[2] " e será adicionado "
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_PAY_INFO_1"
+msgstr "Pagar Taxas:"
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_PAY_INFO_2"
+msgstr "Limite:"
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_PAY_INFO_3"
+msgstr "Horário de Funcionamento:"
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_PAY_INFO_4"
+msgstr "Devolução:"
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_RECHARGE_INFO_1"
+msgstr "Taxas de Recarga:"
+
+msgctxt "TITTLE"
+msgid "INSTRUCTION_MODAL_RECHARGE_INFO_2"
+msgstr "Devolução:"
+
+msgctxt "INIT"
+msgid "RECHARGE_BT"
+msgstr "EFETUAR RECARGA "
+
+msgctxt "INIT"
+msgid "BUY_BT"
+msgstr "COMPRAR"
+
+msgctxt "INIT"
+msgid "COINSALE_BT"
+msgstr "COMPRAR"
+
+msgctxt "TOKEN"
+msgid "ASSETS_USER_DOESNT_HAVE"
+msgstr "Você não tem nenhum token"
+
+msgctxt "REQUEST"
+msgid "ASSETS_BAD"
+msgstr ""
+"Não foi possível solicitar informações dos recursos, verifique se você está "
+"logado corretamente"
+
+msgctxt "TIME"
+msgid "ASSETS_HISTORY_TX"
+msgstr "Tempo:"
+
+msgctxt "BTC"
+msgid "INSTRUCTION_MODAL_PAY_"
+msgid_plural "INSTRUCTION_MODAL_PAY_"
+msgstr[0] ""
+"Bitcoin (BTC), Litecoin (LTC), Bitcoin Cash (BCH), Dash (DASH), Tether "
+"(USDT) e Ethereum (ETH)"
+msgstr[1] "Acima de R$3.000,01 - 2,5%"
+msgstr[2] "Até R$1.000,00 - 3,5%"
+msgstr[3] "De R$1.000,01 a R$3.000,00 - 3%"
+
+msgctxt "OPERATOR"
+msgid "RECHARGE_SELECT_TITLE"
+msgstr "Operadora"
+
+msgctxt "INSUFICIENT"
+msgid "ALIAS_BALANCE"
+msgstr "Saldo Insuficiente."
+
+msgctxt "CLAIMED"
+msgid "ALIAS_ALREADY"
+msgstr "Este alias já esta sendo utilizado"
+
+msgctxt "INCORRECT"
+msgid "ALIAS_INFORMED"
+msgstr "O alias informado é incorreto!"
+
+msgctxt "BUYCOINS"
+msgid "MENU"
+msgstr "Comprar"
+
+msgctxt "PREFIX"
+msgid "BUYCOINS_PACK_TEXT"
+msgstr "Você está comprando "
+
+msgctxt "PREFIX"
+msgid "COINSALE_PACK_TEXT"
+msgstr "Você está comprando "
+
+msgctxt "SUFIX"
+msgid "BUYCOINS_PACK_TEXT"
+msgstr " e receberá"
+
+msgctxt "SUFIX"
+msgid "COINSALE_PACK_TEXT"
+msgstr " e receberá"
+
+msgctxt "PACK"
+msgid "BUY_ERROR"
+msgstr "Selecione um pacote"
+
+msgctxt "PACK"
+msgid "COINSALE_ERROR"
+msgstr "Selecione um pacote"
+
+msgctxt "RELOAD"
+msgid "BUY_ERROR"
+msgstr "Erro. Tente recarregar a página."
+
+msgctxt "RELOAD"
+msgid "COINSALE_ERROR"
+msgstr "Erro. Tente recarregar a página."
+
+msgctxt "CREDIT"
+msgid "BUY"
+msgstr "Pagamento"
+
+msgctxt "CREDIT"
+msgid "COINSALE"
+msgstr "Pagamento"
+
+msgctxt "INVITE"
+msgid "MENU"
+msgstr "Convites"
+
+msgctxt "INVITE"
+msgid "INVITE_TITLE"
+msgstr "Convites"
+
+msgctxt "COUPON"
+msgid "INVITE_TITLE"
+msgstr "Cupom"
+
+msgctxt "INVITATIONS"
+msgid "INVITE_SEND"
+msgstr "Convites enviados"
+
+msgctxt "INVITATIONS"
+msgid "INVITE_CONFIRMED"
+msgstr "Convites confirmados"
+
+msgctxt "WITHDRAW"
+msgid "INVITE"
+msgstr "Sacado com sucesso!"
+
+msgctxt "SENT"
+msgid "INVITE_STATUS"
+msgstr "Enviado"
+
+msgctxt "REGISTERED"
+msgid "INVITE_STATUS"
+msgstr "Registrado"
+
+msgctxt "TRANSACTED"
+msgid "INVITE_STATUS"
+msgstr "Transacionado"
+
+msgctxt "REDEEMED"
+msgid "INVITE_STATUS"
+msgstr "Resgatado"
+
+msgctxt "RESEND"
+msgid "BTN_INVITE"
+msgstr ""
+
+msgctxt "COINSALE"
+msgid "MENU"
+msgstr "Comprar"
+
+msgctxt "WAITING"
+msgid "COINSALE_STATUS"
+msgstr "Aguardando"
+
+msgctxt "CONFIRMED"
+msgid "COINSALE_STATUS"
+msgstr "Confirmado"
+
+msgctxt "CANCELED"
+msgid "COINSALE_STATUS"
+msgstr "Cancelado"
+
+msgctxt "PLACEHOLDER"
+msgid "P2P_CREATE_OFFER_DESCRIPTION"
+msgstr ""
+"Coloque informações complementares sobre o anúncio que os compradores "
+"precisam saber."
+
+msgctxt "PLACEHOLDER"
+msgid "P2P_CREATE_OFFER_ADDRESS"
+msgstr "Endereço"
+
+msgctxt "NEGOTIATION"
+msgid "P2P_CREATE_OFFER"
+msgstr "Método de negociação"
+
+msgctxt "ANNOUNCED"
+msgid "P2P_CREATE_OFFER_COIN"
+msgstr "Moeda anunciada"
+
+msgctxt "PAYMENT"
+msgid "P2P_CREATE_OFFER_COIN"
+msgstr "Moeda de pagamento"
+
+msgctxt "PAYMENT"
+msgid "P2P_HEADER"
+msgstr "Pagamento"
+
+msgctxt "VALUES"
+msgid "P2P_CREATE_OFFER_COIN"
+msgstr "Entre com a quantidade a vender e a quantidade a receber"
+
+msgctxt "ORDER"
+msgid "P2P_NO"
+msgstr "Nenhuma ordem"
+
+msgctxt "NEGOTIATIONS"
+msgid "P2P_PROFILE"
+msgstr "Negociações"
+
+msgctxt "CONCLUDED"
+msgid "P2P_PROFILE"
+msgstr "Positivas"
+
+msgctxt "FEEDBACK"
+msgid "P2P_PROFILE"
+msgstr "Avaliações"
+
+msgctxt "OFFER"
+msgid "P2P"
+msgstr "Vende"
+
+msgctxt "SELLS"
+msgid "P2P"
+msgstr "Aceita"
+
+msgctxt "NEGOTIATE"
+msgid "P2P_BUTTON"
+msgstr "Negociar"
+
+msgctxt "UNITY"
+msgid "P2P_VALUE"
+msgstr "Unid. "
+
+msgctxt "BUY"
+msgid "P2P_HEADER"
+msgid_plural "P2P_HEADER"
+msgstr[0] "Compra"
+msgstr[1] "Comprar"
+
+msgctxt "AGAIN"
+msgid "P2P_TRY"
+msgstr "Tentar novamente"
+
+msgctxt "SIGNATURE"
+msgid "P2P_MONTHLY"
+msgstr "Mensal"
+
+msgctxt "SIGNATURE"
+msgid "P2P_QUARTERLY"
+msgstr "Trimestral"
+
+msgctxt "SIGNATURE"
+msgid "P2P_SEMESTER"
+msgstr "Semestral"
+
+msgctxt "SIGNATURE"
+msgid "P2P_YEARLY"
+msgstr "Anual"
+
+msgctxt "LISTING"
+msgid "P2P_MY"
+msgstr "Meus anúncios"
+
+msgctxt "SALE"
+msgid "P2P_TAB"
+msgstr "Venda"
+
+msgctxt "RECEIPT"
+msgid "P2P_BUTTON_CONFIRM"
+msgstr "Confirmar Recebimento"

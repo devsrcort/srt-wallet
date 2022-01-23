@@ -1,0 +1,47 @@
+:local .depositContainer {
+  text-align: center;
+}
+
+:local .textDeposit{
+  composes: inputTextDefault from "../../../../components/bases/textBase.css";
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 4vh;
+  font-weight: bold;
+  color: #68f285;
+  
+}
+
+:local .imgQrCodeDeposit{
+  margin-top: 4vh;
+  border: solid 6px #ffffff;
+}
+
+:local .inputDeposit{
+  composes: inputTextDefault from "../../../../components/bases/inputBase.css";
+  width: 60%;
+  height: 30px;
+  top: 4vh;
+  text-align: center;
+  background-color: #654fa4;
+}
+
+:local .copyCodeDeposit{
+  composes: buttonEnable  from "../../../../components/bases/buttonBase.css";
+  width: 70%;
+  height: 33px; 
+  background-color: #654fa4;
+  margin-top: 3vh;
+  font-weight: bold;
+  padding: 0;
+  
+}
+
+:local .btnDeposit{
+  composes: buttonEnable from "../../../../components/bases/buttonBase.css";
+  width: 70%;
+  height: 50px; 
+  margin-top: 4vh;
+  font-weight: bold;
+ 
+}

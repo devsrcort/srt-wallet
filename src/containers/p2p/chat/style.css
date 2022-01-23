@@ -1,0 +1,94 @@
+/*
+1 HERE.
+2 ROOMS
+*/
+:local .chatTarget {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 430px;
+}
+@media (min-width: 960px) {
+  :local .chatTarget {
+    height: 392px;
+  }
+}
+:local .finalMessage {
+  width: 100%;
+  text-align: center;
+}
+:local .finalMessage > .line {
+  width: 40%;
+  height: 1px;
+  background: white;
+  display: block;
+  margin: 20px auto 10px auto;
+}
+/* .finalMessage > .message (cant compose in this way)*/
+:local .message {
+  composes: textDefault from './../../../components/bases/textBase.css'
+}
+
+
+
+/* ROOMS */
+
+:local .roomsWrapper {
+  color: white;
+  width: 100%;
+  background: #442982;
+  height: auto;
+}
+
+:local .room {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px 11px 15px 11px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s opacity;
+}
+:local .room:hover {
+  opacity: 1;
+}
+:local .room:hover > .imageWrapper > img {
+  transform: scale(1.1);
+}
+
+:local .room.light { background: #473088; }
+
+:local .room > .imageWrapper {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 0 11px 0 0;
+}
+:local .room > .imageWrapper > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  transform: scale(1);
+  transition: 0.3s transform;
+}
+:local .room > .messageWrapper {
+  margin: auto 0 auto 0;
+}
+:local .room > .timeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  margin: 0 auto 0 auto;
+  height: 100%;
+}
+
+
+:local .defaultWhiteText {
+  composes: textDefault from "./../../../components/bases/textBase.css";
+  text-align: center;
+}

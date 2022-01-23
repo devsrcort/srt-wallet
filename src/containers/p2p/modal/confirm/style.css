@@ -1,0 +1,83 @@
+/*
+
+1. PROFILE
+
+
+2. AVALIATION
+
+
+3. BUTTON
+*/
+
+/* PROFILE */
+:local(.profile) {
+  text-align: -webkit-center;
+  margin-top: 40px;
+}
+
+:local(.avatar) {
+  width: 95px !important;
+  height: 95px !important;
+}
+
+:local(.userName) {
+  margin-top: 5%;
+}
+
+:local(.name) {
+  font-size: 24px;
+  color: #68f285;
+}
+
+:local(.hr) {
+  width: 154px;
+  height: 0;
+  border: solid 1px #40217b;
+  margin-top: 3%;
+}
+
+/* AVALIATION */
+
+:local(.avaliation) {
+  text-align: -webkit-center;
+  margin-top: 7%;
+  
+}
+
+:local(.starVotes) {
+   margin-top: 15px;
+   display: table ;
+
+}
+
+
+:local(.spanTitle) {
+  font-size: 12px;
+  color: #68f285;
+}
+
+:local(.comment) {
+  /* composes: inputTextDefault from "../../../../components/bases/inputBase.css"; */
+  width: 60%;
+  border-radius: 5px;
+  border: solid 1px #6351a8;
+  margin-top: 5%;
+  text-align: center;
+  color: #fff !important;
+}
+
+/* BUTTON */
+
+:local(.btnConfirm) {
+  text-align: -webkit-center;
+  margin-top: 15px;
+  
+}
+
+:local(.buttonCard) {
+  composes: buttonEnable from "../../../../components/bases/buttonBase.css";
+  width: 60%;
+  height: 45px;
+  font-weight: bold;
+  margin: 2vh;
+}

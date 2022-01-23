@@ -1,0 +1,15 @@
+{
+  "EXAMPLE_EMAIL": "example@example.com",
+  "BUYCOINS_STATUS_WAITING": "Waiting",
+  "BUYCOINS_STATUS_CONFIRMED": "Confirmed",
+  "BUYCOINS_STATUS_CANCELED": "Canceled",
+  "BUYCOINS_NO_HISTORY": "You have no purchase history",
+  "COINSALE_NO_HISTORY": "You have no purchase history",
+  "P2P_FAILED_GET_PAYMENT_METHOD": "Failed to get payment method to this coin",
+  "P2P_NO_PAYMENT_METHODS": "Application error. There's no payment methods to be used",
+  "P2P_FAILED_TO_BUY_COIN": "Failed to buy this coin, try again later or contact us",
+  "P2P_INPUT_PUT_YOUR_ADDRESS": "Put your address",
+  "P2P_BUY_BTN": "Buy",
+  "P2P_PAYMENT_METHOD": "Payment method",
+  "P2P_TO_BUY": "To buy"
+}

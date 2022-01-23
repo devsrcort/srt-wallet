@@ -1,0 +1,133 @@
+/*
+1. CARD
+  
+2. TEXT
+*/
+
+/* ------------------------------------------------------------------------- */
+
+/* 1. CARD */
+
+:local(.cardBuy) {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 20px 5px 8px 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-height: 305px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: 0.2s;
+}
+
+:local(.cardBuyActive) {
+  background-color: #473088;
+  padding: 20px 5px 8px 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-height: 305px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+}
+
+:local .cardBuy:hover {
+  background-color: #473088;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+:local(.cardIcon) {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:local(.hrCard) {
+  width: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #6351a8;
+}
+
+/* 2. TEXT */
+
+:local(.amount) {
+  font-family: "OffSide";
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 2px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:local(.dollarSign) {
+  font-weight: 300;
+  font-size: 20px;
+  color: #54d467;
+  margin-top: 5%;
+}
+
+:local(.value) {
+  font-size: 50px;
+  font-weight: 500;
+  margin-top: -5px;
+  color: #54d467;
+}
+
+:local(.decimals) {
+  font-size: 20px;
+  font-weight: 500;
+  color: #54d467;
+  margin-top: 7px;
+}
+
+:local(.paragraph) {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 599px) {
+  :local .amount {
+    font-family: "OffSide";
+    font-weight: normal;
+    font-size: 3.5vw;
+    letter-spacing: 2px;
+  }
+
+  :local(.dollarSign) {
+    font-weight: 300;
+    font-size: 10px;
+    color: #54d467;
+    margin-top: 5%;
+  }
+
+  :local(.value) {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: -5px;
+    color: #54d467;
+  }
+
+  :local(.decimals) {
+    font-size: 10px;
+    font-weight: 500;
+    color: #54d467;
+    margin-top: 7px;
+  }
+
+  :local(.valueCard) {
+    padding-top: 20%;
+  }
+}

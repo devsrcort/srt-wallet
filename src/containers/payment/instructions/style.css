@@ -1,0 +1,65 @@
+/* BASE */
+:local(.instructions) {
+  composes: textDefault from "../../../components/bases/textBase.css";
+  text-align: center;
+}
+
+:local(.instructions a) {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+:local(.instructions img) {
+  position: relative;
+  left: 10px;
+  top: 5px;
+}
+
+/* MODAL*/
+:local(.alignInstructions){  
+  margin-top:10vw;
+}
+
+:local(.alignInstructions, ol) {
+  list-style-type: upper-alpha;
+  font-size: 14px;
+  padding-left:15%;
+  padding-right:15%;
+}
+
+:local(.alignInstructions, ol li) {
+  color: #68f285;
+  font-weight: bold;
+  padding: 2vh;
+  
+}
+
+:local(.alignInstructions, ol li, span) {
+  color: white;
+  font-weight: normal;
+}
+
+:local(.infoModal) {
+  
+  padding-left:10%;
+  padding-right:10%;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  :local(.alignInstructions){
+    padding: 20px;
+    margin-top: 8em;
+  }
+  :local(.alignInstructions, ol li) {
+    font-size: 11px;
+  }
+  :local(.infoModal) {
+    font-size: 11px;
+    padding-left:3%;
+    padding-right:3%;
+  }
+}

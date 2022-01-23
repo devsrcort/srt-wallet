@@ -1,0 +1,40 @@
+:local .boxStar {
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+}
+:local .star {
+  opacity: .4;
+  max-width: 16px;
+  max-height: 16px;
+  font-size: 16px;
+  padding-right: 2px;
+}
+
+:local .starActive {
+  composes: star;
+  color: #62D884;
+  opacity: 1;
+}
+
+:local .starRating {
+  opacity: .4;
+  max-width: 32px;
+  max-height: 32px;
+  font-size: 32px;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+:local .starActiveRating {
+  composes: star;
+  color: #62D884;
+  max-width: 32px;
+  max-height: 32px;
+  font-size: 32px;
+  padding-right: 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+

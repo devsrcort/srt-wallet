@@ -1,0 +1,183 @@
+/**
+1. CARDS SETTINGS
+2. HEADER SETTINGS
+
+
+*/
+
+/* ------------------------------------------------------------------------- */
+
+/*1. CARD SETTINGS  */
+
+:local(.cardP2p) {
+  background: rgba(255, 255, 255, 0.02);
+  width: 230px;
+  padding: 20px 5px 8px 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  align-items: center;
+  max-width: 100%;
+  min-height: 305px;
+  cursor: pointer;
+
+  transition: background 0.3s;
+}
+:local .cardP2p:hover {
+  background-color: #473088;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+:local .cardBlue {
+  width: 230px;
+  padding: 20px 5px 8px 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  align-items: center;
+  max-width: 100%;
+  min-height: 305px;
+  cursor: pointer;
+  background: #473088;
+}
+:local .cardGrey {
+  width: 230px;
+  padding: 20px 5px 8px 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  align-items: center;
+  max-width: 100%;
+  min-height: 305px;
+  cursor: pointer;
+  background: gray;
+}
+
+:local(.boxContainer) {
+  margin: 0;
+}
+
+:local(.p2pContainer) {
+  padding-left: 16%;
+}
+
+:local(.hrCard) {
+  width: 30%;
+  border-bottom: 1px solid #6351a8;
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+:local(.dollarSign) {
+  font-weight: 300;
+  font-size: 25px;
+  color: #54d467;
+  margin-top: 5%;
+}
+
+:local(.containerValue) {
+  display: flex;
+}
+
+:local(.status) {
+  color: transparent;
+}
+
+:local(.statusActive) {
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 1023px) {
+  :local(.p2pContainer) {
+    flex-wrap: nowrap !important;
+    overflow-x: scroll;
+    justify-content: space-between;
+    height: 75vh;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  :local(.boxContainer) {
+    margin: 0 5%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  :local(.boxContainer) {
+    margin: 0 15%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  :local(.boxContainer) {
+    margin: 0 20%;
+  }
+}
+
+/* 2. HEADER SETTINGS */
+:local(a) {
+  text-decoration: none;
+}
+
+:local(.containerHeaderSettings) {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+:local(.headerSettingsDefault) {
+  display: flex;
+}
+
+:local(.headerSettingsDefault p) {
+  color: #68f285;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+:local(.headerSettingsDefault h3) {
+  text-align: right;
+  margin: 0;
+  padding-right: 15px;
+}
+
+#hr hr {
+  border: 0;
+  width: 100%;
+  border-bottom: 2px dotted #654fa4;
+  size: 15px;
+  height: 4px;
+}
+
+#hr {
+  display: flex;
+}
+
+:local(.plansDescription) {
+  padding: 0% 0% 0% 17%;
+}
+
+@media screen and (min-width: 1199px) {
+  :local(.headerSettingsDefault p) {
+    padding-left: 0.82cm;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  :local(.headerSettingsDefault p) {
+    float: left;
+    padding: 0 5px;
+    font-size: 9px;
+  }
+  :local(.headerSettingsDefault h3) {
+    font-size: 9px;
+  }
+  :local(.headerSettingsDefault) {
+    display: block;
+  }
+  #hr hr {
+    height: 0.4px;
+  }
+}

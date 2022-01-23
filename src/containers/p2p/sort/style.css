@@ -1,0 +1,19 @@
+:local .title {
+  composes: clGreenDefault from "../../../components/bases/colorBase.css";
+}
+
+:local .boxSort {
+  composes: bgPurpleLight from "../../../components/bases/colorBase.css";
+  margin-top: 40px;
+  padding-left: 20px;
+  width: 170px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 16px;
+  z-index: 999;
+}
+
+:local .labelRadio {
+  margin-bottom: 0;
+}

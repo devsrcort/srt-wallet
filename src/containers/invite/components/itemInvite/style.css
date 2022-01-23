@@ -1,0 +1,64 @@
+/*
+
+1. BASES 
+
+2. TEXTS
+
+3. IMAGES 
+
+4. BUTTONS
+
+*/
+
+/* 1. BASES  */
+#hr hr {
+  height: 0;
+  border: solid 1px #42227d;
+  width: 195%;
+}
+
+@media screen and (max-width: 1024px) {
+  #hr hr {
+    width: 190%;
+  }
+}
+
+/* 2. TEXTS */
+:local(.spanTitle) {
+  color: #68f285;
+}
+
+:local .invitePending {
+  font-size: 14px;
+  color: #ffcf49;
+}
+
+:local .invitePendingResend {
+  color: #ffcf49;
+  font-size: 10px;
+}
+
+:local(.spanSub) {
+  margin: 0%;
+}
+
+@media screen and (max-width: 1024px) {
+  :local(.spanSub) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* 3. IMAGES */
+:local(.imgResend) {
+  cursor: pointer;
+  padding-left: 10px;
+  width: 19px;
+  margin-top:1em;
+}
+
+:local .imgDone {
+  margin-top:10px;
+  margin-left:10px;
+}

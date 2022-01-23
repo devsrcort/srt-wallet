@@ -1,0 +1,433 @@
+/*
+
+1. BASE
+
+2. TEXT
+
+3. IMAGES/UI
+
+4. BUTTONS
+
+*/
+
+/* ------------------------------------------------------------------------- */
+
+/* 1. BASE */
+
+:local .textGreen {
+  composes: clGreenDefault from "../../components/bases/colorBase.css";
+}
+
+:local .headerP2P {
+  composes: bgPurpleClear from "../../components/bases/colorBase.css";
+  border-radius: 8px 8px 0px 0px;
+  text-align: right;
+}
+
+:local .arrowHeader {
+  composes: clGreenDefault from "../../components/bases/colorBase.css";
+  padding: 5px;
+}
+
+:local .baseWidget {
+  composes: bgPurpleDark from "../../components/bases/colorBase.css";
+  position: absolute;
+  bottom: 0px;
+  right: 16px;
+  /* max-height: 580px; */
+  height: 70vh;
+  width: 100%;
+  max-width: 414px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+:local .baseWidgetClose {
+  position: absolute;
+  bottom: -465px;
+  right: 16px;
+  max-height: 500px;
+  height: 90vh;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+:local .tabContent {
+  display: flex;
+  width: 100%;
+  margin-top: -33px;
+  justify-content: space-between;
+  composes: bgPurpleDefault from "../../components/bases/colorBase.css";
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+:local .itemTabBase {
+  padding: 10px;
+  text-align: center;
+  flex: 1;
+  font-size: 12px;
+}
+
+:local .itemTab {
+  composes: itemTabBase;
+  opacity: 0.5;
+  flex: 1;
+  cursor: pointer;
+}
+
+:local .itemTabActive {
+  composes: itemTabBase;
+  composes: clGreenDefault from "../../components/bases/colorBase.css";
+  flex: 1;
+  cursor: pointer;
+}
+
+:local .baseUserProfile {
+  height: calc(95vh - 200px);
+  overflow: auto;
+}
+
+@media (max-width: 1920px) {
+  :local .baseUserProfile {
+    height: calc(84vh - 200px);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 1600px) {
+  :local .baseUserProfile {
+    height: calc(88vh - 200px);
+    overflow: auto;
+  }
+}
+
+:local .cardProfile {
+  composes: bgPurpleDefault from "../../components/bases/colorBase.css";
+  min-height: 195px;
+  width: 97%;
+  margin: 1px 0px 0px 0px;
+  overflow: hidden;
+}
+
+:local .cardProfileLast {
+  composes: cardProfile;
+  margin-bottom: 10%;
+}
+
+:local(.userInfo) {
+  display: flex;
+}
+
+:local(.avatar) {
+  margin: 20px 0px 0px 80px;
+}
+
+:local(.avatarProfile) {
+  margin: 20px 0px 0px 10%;
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+:local(.userDescription) {
+  width: 80%;
+  padding-top: 5%;
+  margin-left: 10%;
+  margin-bottom: 30px;
+}
+
+:local(.textDescription) {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #6351a8;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+}
+
+:local(.noOrder) {
+  composes: textGreen;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+:local(.spanDescription) {
+  font-size: 10px;
+  composes: textGreen;
+}
+
+:local(.hr) {
+  border-top: 1px solid #6351a8;
+}
+
+:local(.data) {
+  width: 80%;
+  padding-top: 5%;
+  margin-left: 10%;
+}
+
+:local(.bar) {
+  height: 5px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+:local(.bars) {
+  width: 80%;
+  margin: 10% 0% 0% 10%;
+  display: flex;
+}
+
+:local(.spanBars) {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+:local(.userFeedback) {
+  margin: 10% 0% 10% 10%;
+  width: 80%;
+}
+
+:local(.boxStar) {
+  padding: 5px 0;
+}
+
+:local(.feedbackBox) {
+  display: inline-flex;
+  float: right;
+  margin-top: 3px;
+}
+
+:local .userName {
+  composes: textGreen;
+  font-size: 17px;
+  display: block;
+  margin: 20px 0px 0px 20px;
+}
+
+:local .textSmall {
+  margin-top: 10px;
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 10px;
+  display: block;
+}
+
+:local .textReturn {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+:local .textSuccess {
+  composes: textReturn;
+  composes: clSuccess from "../../components/bases/colorBase.css";
+}
+
+:local .barsNumbers {
+  width: 100%;
+  text-align: right;
+}
+:local .content {
+  height: calc(145vh - 92vh);
+  overflow: auto;
+}
+
+@media (max-width: 1920px) {
+  :local .content {
+    height: calc(144vh - 95vh);
+    overflow: auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  :local .content {
+    height: calc(144vh - 91vh);
+    overflow: auto;
+  }
+}
+@media (min-width: 1920px) {
+  :local .content {
+    height: calc(144vh - 91vh);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  :local .content {
+    height: calc(144vh - 92vh);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  :local .content {
+    height: calc(144vh - 99vh);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  :local .content {
+    height: calc(144vh - 80vh);
+    overflow: auto;
+  }
+
+  :local .baseUserProfile {
+    height: calc(92vh - 89px);
+    overflow: auto;
+  }
+}
+
+:local .baseContent {
+  margin: 15px;
+}
+
+:local .online {
+  composes: bgGreenDefault from "../../components/bases/colorBase.css";
+  margin-top: 9%;
+  margin-left: -3%;
+  border-radius: 50px;
+  width: 10.9px;
+  height: 10.9px;
+  display: inline;
+}
+
+:local .off {
+  composes: bgGreenDark from "../../components/bases/colorBase.css";
+  margin-top: 9%;
+  margin-left: -3%;
+  border-radius: 50px;
+  width: 10.9px;
+  height: 10.9px;
+  display: inline;
+}
+
+:local .buttonEnable {
+  composes: buttonEnable from "../../components/bases/buttonBase.css";
+}
+
+:local .buttonBorderGreen {
+  composes: buttonBorderGreen from "../../components/bases/buttonBase.css";
+}
+
+:local .headerSelect {
+  composes: bgPurpleClear from "../../components/bases/colorBase.css";
+  padding: 5px;
+  margin-right: 15px;
+  border-radius: 6px;
+}
+
+:local .headerActionFilter {
+  composes: bgPurpleLight from "../../components/bases/colorBase.css";
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 1px solid #6351a8;
+  padding: 10px;
+}
+
+:local(.sort img) {
+  position: relative;
+  height: 20px;
+  left: 2px;
+  top: 7px;
+}
+
+:local .inputDefault {
+  composes: inputTextDefault from "../../components/bases/inputBase.css";
+  font-size: 12px;
+  padding: 5px;
+  width: calc(100% - 10px);
+  height: 24px;
+  margin: 0px;
+  text-align: center;
+  border: none;
+  position: none;
+  margin-top: 1px;
+}
+:local .inputDefault::placeholder {
+  font-size: 12px;
+}
+
+:local .textArea {
+  composes: inputDefault;
+  height: auto;
+  min-height: 100px;
+  padding: 15px;
+  width: calc(100% - 30px);
+  resize: none;
+}
+
+/* . SCROLLBAR */
+:local(.baseWidget *::-webkit-scrollbar) {
+  background-color: #654fa4;
+  border-radius: 6px;
+}
+
+:local(.baseWidget *::-webkit-scrollbar-thumb) {
+  background-color: #68f285;
+  border-radius: 6px;
+}
+
+:local(.scrollSelect *::-webkit-scrollbar) {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+:local(.scrollSelect *::-webkit-scrollbar-thumb) {
+  background-color: #654fa4;
+  border-radius: 6px;
+}
+
+/* BUTTONS */
+
+:local(.btAdvertisement) {
+  height: 47.5px;
+  font-size: 13px;
+  padding: 0;
+  composes: buttonBorderGreen;
+}
+
+@media only screen and (max-width: 599px) {
+  :local .baseWidget {
+    bottom: 0px;
+    right: 0px;
+    height: 90vh;
+    width: 100%;
+  }
+
+  :local .baseWidgetClose {
+    position: absolute;
+    bottom: calc(-100vh -40px);
+    right: 0px;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  :local .buttonEnable {
+    font-size: 12px;
+  }
+
+  :local .buttonBorderGreen {
+    font-size: 12px;
+  }
+}
+:local .editButton {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 30px;
+  left: 28px;
+  cursor: pointer;
+}

@@ -1,0 +1,231 @@
+:local .baseUser {
+  composes: bgPurpleDefault from "../../../components/bases/colorBase.css";
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 57vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+:local .avatar {
+  width: 30px;
+  height: 30px;
+}
+
+:local .textGreen {
+  composes: clGreenDefault from "../../../components/bases/colorBase.css";
+}
+
+:local .name {
+  composes: textGreen;
+  font-size: 16px;
+  display: block;
+}
+
+:local .textSmall {
+  composes: textGreen;
+  font-size: 11px;
+  display: block;
+}
+
+:local .counterDescription {
+  font-size: 11px;
+  display: block;
+  float: right;
+  opacity: 0.5;
+  margin-top: -15px;
+}
+
+:local .textReturn {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  padding-top: 140px;
+}
+
+:local .textError {
+  composes: textReturn;
+  composes: clError from "../../../components/bases/colorBase.css";
+}
+
+:local .textSuccess {
+  composes: textReturn;
+  composes: clSuccess from "../../../components/bases/colorBase.css";
+}
+
+:local .textSmallCoinPayment {
+  composes: textGreen;
+  font-size: 11px;
+  display: block;
+  padding-left: 10px;
+}
+
+:local .numberText {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+:local .arrowPrice {
+  composes: textGreen;
+  margin-left: 20px;
+  margin-top: 10px;
+  max-width: 14px;
+}
+
+:local .arrowBack {
+  color: #fff;
+  margin-top: 10px;
+  max-width: 18px;
+}
+
+:local .hours {
+  font-size: 9px;
+  opacity: 0.5;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+
+:local .boxDetails {
+  position: relative;
+  padding-top: 20px;
+}
+
+:local .textDetails {
+  composes: bgPurpleClear from "../../../components/bases/colorBase.css";
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+:local .btContinue {
+  composes: buttonEnable from "../../../components/bases/buttonBase.css";
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin: 30px 0px 45px 0px;
+}
+@media (min-height: 400px) {
+  :local .btContinue {
+    margin-bottom: 250px;
+  }
+}
+@media (min-height: 450px) {
+  :local .btContinue {
+    margin-bottom: 200px;
+  }
+}
+@media (min-height: 500px) {
+  :local .btContinue {
+    margin-bottom: 150px;
+  }
+}
+@media (min-height: 550px) {
+  :local .btContinue {
+    margin-bottom: 100px;
+  }
+}
+@media (min-height: 600px) {
+  :local .btContinue {
+    margin-bottom: 50px;
+  }
+}
+
+:local .offerText {
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+}
+
+:local .offerText img {
+  width: 14px;
+  height: 14px;
+  margin-right: 9px;
+  margin-top: 3px;
+}
+
+:local .boxStar {
+  margin-top: 10px;
+}
+
+:local .inputDefault {
+  composes: inputTextDefault from "../../../components/bases/inputBase.css";
+  font-size: 12px;
+  padding: 5px;
+  width: calc(100% - 10px);
+  height: 24px;
+  margin: 0px;
+  text-align: center;
+  border: none;
+  position: none;
+  margin-top: 7px;
+}
+:local .inputDefault::placeholder {
+  font-size: 12px;
+}
+
+:local .textArea {
+  composes: inputDefault;
+  height: auto;
+  min-height: 100px;
+  padding: 15px;
+  width: calc(100% - 30px);
+}
+
+:local .textErrorSmall {
+  composes: clError from "../../../components/bases/colorBase.css";
+  line-height: 1.8em;
+  font-size: 12px;
+}
+
+:local .labelRadio {
+  margin-bottom: 0;
+}
+
+:local .formBase {
+  padding-left: 0px;
+  padding-top: 20px;
+  height: 300px;
+}
+
+:local .formBase hr {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+:local .formGroup {
+  margin-bottom: 15px;
+}
+
+:local .headerUser {
+  padding-bottom: 10px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+:local .singleSelect {
+  margin-left: -10px !important;
+}
+
+:local .multiSelect {
+  margin-left: 40px !important;
+}
+:local(.iconListValid) {
+  margin: 0;
+  margin-bottom: -8px;
+  margin-right: 10px;
+  width: 14px;
+}
+
+/* . SCROLLBAR */
+:local(.scrollSelect *::-webkit-scrollbar) {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+:local(.scrollSelect *::-webkit-scrollbar-thumb) {
+  background-color: #654fa4;
+  border-radius: 6px;
+}

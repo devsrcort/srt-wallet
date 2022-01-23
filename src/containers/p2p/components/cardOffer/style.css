@@ -1,0 +1,186 @@
+:local .baseUser {
+  composes: bgPurpleDefault from "../../../../components/bases/colorBase.css";
+  padding: 20px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+:local .avatar {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 599px) {
+  :local .avatar {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    margin-top:0px;
+  }
+}
+
+:local .textGreen {
+  composes: clGreenDefault from "../../../../components/bases/colorBase.css";
+}
+
+:local .name {
+  composes: textGreen;
+  font-size: 16px;
+  display: block;
+  padding-bottom: 3px;
+}
+
+:local .dateCreate {
+  opacity: 0.5;
+  font-size: 8px;
+  display: inline-block;
+}
+
+:local .hourCreate {
+  opacity: 0.5;
+  font-size: 8px;
+  margin-left: 10px;
+
+}
+
+:local .cancelOffer {
+  display: inline;
+  width: 9.7px;
+  height: 9.7px;
+  
+}
+
+:local .unit {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 8px;
+}
+
+:local .defaultFiat {
+  display: inline-block;
+  composes: textGreen;
+  font-size: 8px;
+}
+
+:local .textSmall {
+  composes: textGreen;
+  font-size: 8px;
+  margin-right: 10px;
+  display: block;
+}
+
+:local .numberText {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+
+:local .arrowPrice {
+  composes: textGreen;
+  margin-left: -35px;
+  float: left;
+  margin-top: 20px;
+  max-width: 14px;
+}
+
+:local .boxDetails {
+  position: relative;
+  padding-top: 20px;
+  display: none;
+}
+
+:local .textDetails {
+  composes: bgPurpleClear from "../../../../components/bases/colorBase.css";
+  width: 220px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 11px;
+  word-wrap: break-word;
+}
+
+
+:local .btContinue {
+  composes: buttonEnable from "../../../../components/bases/buttonBase.css";
+  width: 240px;
+}
+:local .btRating {  
+  composes: buttonBorderGreen from "../../../../components/bases/buttonBase.css";  
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  padding: 0px;
+  font-size: 10px;
+  color: #68f285;
+}
+
+:local(.btnClose) {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+
+:local .btnCloseImg {
+  width: 20px;
+  display: block;
+}
+
+:local .offerText {
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+}
+
+:local .offerText img {
+  width: 14px;
+  height: 14px;
+  margin-right: 9px;
+  margin-top: 3px;
+}
+
+:local .boxStar {
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+}
+
+:local .star {
+  opacity: 0.4;
+  width: 12px;
+}
+
+:local .starActive {
+  color: yellow;
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 599px) {
+  :local .name {
+    font-size: 12px;
+  }
+
+  :local .numberText {
+    font-size: 12px;
+  }
+
+  :local .textDetails {
+    width: calc(100% - 10px);
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 10px;
+  }
+
+  :local .btContinue {
+    width: 100%;
+  }
+}
