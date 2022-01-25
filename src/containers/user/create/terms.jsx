@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 // REDUX
 import { connect } from "react-redux";
@@ -84,17 +83,6 @@ class CreateUserTerms extends React.Component {
     return (
       <div>
         <div className={style.alignInfoDownloadTerms}>
-          <Link
-            className={style.linkDownloadTerms}
-            to="documents/termos-pt_BR.pdf"
-            target="_blank"
-          >
-            <img src="/images/login/gdpr-compliant@1x.png" />
-
-            <div className={style.infoDownloadTerms}>
-              {i18n.t("NEW_ACCOUNT_TERMS_DOWNLOAD")}
-            </div>
-          </Link>
         </div>
 
         <div className={style.alignInfoTermsOfServices}>

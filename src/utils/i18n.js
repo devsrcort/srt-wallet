@@ -3,26 +3,22 @@ import LngDetector from "i18next-browser-languagedetector";
 
 // LANGUAGE FILES
 import en_US from "../lang/en_US.json";
-import pt_BR from "../lang/pt_BR.json";
 
 i18next.use(LngDetector).init({
-  interpolation: {
-    escapeValue: false
-  },
-  fallbackLng:  {
-    'default': ['en'],
-  },
-  resources: {
-    en: {
-      translation: en_US
+    interpolation: {
+        escapeValue: false
     },
-    "pt-BR": {
-      translation: pt_BR
+    fallbackLng: {
+        'default': ['en'],
     },
-    es: {
-      translation: en_US
+    resources: {
+        en: {
+            translation: en_US
+        },
+        es: {
+            translation: en_US
+        }
     }
-  }
 });
 
 export default i18next;

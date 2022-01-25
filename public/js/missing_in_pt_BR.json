@@ -1,5 +1,9 @@
 {
   "EXAMPLE_EMAIL": "example@example.com",
+  "SETTINGS_ALIAS_WALLET_SRT": "SRT",
+  "SECURITY_LINK_RETURN": "Back to the security",
+  "SECURITY_2FA_REGISTRED": "Two Factor Authentication already registered!",
+  "BUYCOINS_TITLE": "BUY CRYPTOCURRENCIES",
   "BUYCOINS_STATUS_WAITING": "Waiting",
   "BUYCOINS_STATUS_CONFIRMED": "Confirmed",
   "BUYCOINS_STATUS_CANCELED": "Canceled",
@@ -11,5 +15,11 @@
   "P2P_INPUT_PUT_YOUR_ADDRESS": "Put your address",
   "P2P_BUY_BTN": "Buy",
   "P2P_PAYMENT_METHOD": "Payment method",
-  "P2P_TO_BUY": "To buy"
+  "P2P_TO_BUY": "To buy",
+  "P2P_CHAT_SELECT_AN_USER": "Select an user",
+  "P2P_FAILED_TO_FIND_ORDER": "Failed to find order",
+  "P2P_CHAT_FAILED_TO_OPEN_CHAT": "Failed to open chat",
+  "P2P_NO_USER_ORDERS": "You don't have any orders or an error has occurred",
+  "P2P_CHAT_FAILED_TO_OPEN": "Failed to open chat, try again",
+  "P2P_CHAT_SELECT_AN_USER_TO_CHAT": "Select an user above to chat with"
 }
