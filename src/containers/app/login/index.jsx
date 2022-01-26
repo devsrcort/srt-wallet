@@ -13,7 +13,6 @@ import i18n from "../../../utils/i18n";
 // COMPONENTS
 import Loading from "../../../components/loading";
 import fakeDelay from "../../../components/fakeDelay";
-import Carousel from "../../../components/carousel/carousel";
 import ModalBar from "../../../components/modalBar";
 
 // MATERIAL UI
@@ -98,8 +97,6 @@ const carouselSteps = [
   }
 ];
 
-const maxDots = carouselSteps.length;
-
 class Login extends Component {
   constructor() {
     super();
@@ -133,6 +130,9 @@ class Login extends Component {
                 <ModalBar type={error.type} message={error.message} timer />
               ) : null}
             </div>
+            <Grid item md={7}>
+              
+            </Grid>
             <Grid item xs={12} sm={12} md={5} className={style.colLeft}>
               <Switch>
                 {/* INSIDE ROUTES */}
@@ -150,7 +150,6 @@ class Login extends Component {
 
             <Hidden smDown>
               <Grid item md={7} className={style.colRight}>
-                <Carousel imageSteps={carouselSteps} maxDot={maxDots} />
               </Grid>
             </Hidden>
           </Grid>

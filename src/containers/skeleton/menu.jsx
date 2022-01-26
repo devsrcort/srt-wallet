@@ -72,8 +72,7 @@ class Menu extends React.Component {
   }
 
   onClickFunction = error => {
-    const { actionMenu, errorInput } = this.props;
-    actionMenu();
+    const { errorInput } = this.props;
     if (error) {
       errorInput("Service Unavailable. Try again later.");
     }
@@ -118,7 +117,7 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { openMenu, user, actionLogout, actionMenu } = this.props;
+    const { openMenu, user, actionLogout } = this.props;
     const {activeP2p} = this.state;
 
     const p2pStyleMenu = activeP2p ? style.linkMenuP2P : style.linkMenuP2PActive;
@@ -142,20 +141,6 @@ class Menu extends React.Component {
             <Grid item xs={4} />
 
             <Grid item xs={8}>
-              <Link to="/settings" className={style.link} onClick={actionMenu}>
-                {i18n.t("MENU_SETTING")}
-              </Link>
-              <Link to="/invite" className={style.link} onClick={actionMenu}>
-                {i18n.t("MENU_INVITE")}
-              </Link>
-              <a
-                href="mailto:support@lunes.io"
-                className={style.link}
-                onClick={actionMenu}
-              >
-                {i18n.t("MENU_SUPPORT")}
-                {/* <Link to="/help" className={style.link}></Link> */}
-              </a>
               <Link to="/" onClick={actionLogout} className={style.link}>
                 {i18n.t("MENU_LOGOUT")}
               </Link>
@@ -182,7 +167,6 @@ class Menu extends React.Component {
 Menu.propTypes = {
   location: PropTypes.object,
   openMenu: PropTypes.bool.isRequired,
-  actionMenu: PropTypes.func.isRequired,
   actionLogout: PropTypes.func.isRequired,
   errorInput: PropTypes.func.isRequired,
   user: PropTypes.object,

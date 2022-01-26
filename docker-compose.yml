@@ -15,7 +15,7 @@ services:
       # @see: http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html#the-node_modules-volume-trick
       - /opt/app/node_modules
     ports:
-      - 33127:5503
+      - 33129:6001
     environment:
       - NODE_ENV=dev
       - NODE_HOT_RELOAD=1

@@ -53,7 +53,7 @@ class CreateUserTerms extends React.Component {
     if (
       errors.length > 0 ||
       !user.user.name ||
-      !user.user.surname ||
+      !user.user.phonenum ||
       !user.user.email ||
       !user.user.password
     ) {
@@ -67,7 +67,7 @@ class CreateUserTerms extends React.Component {
       clearMessage();
       createUser(
         user.user.name,
-        user.user.surname,
+        user.user.phonenum,
         user.user.email,
         user.user.password, 
         user.invite.link
@@ -83,22 +83,6 @@ class CreateUserTerms extends React.Component {
     return (
       <div>
         <div className={style.alignInfoDownloadTerms}>
-        </div>
-
-        <div className={style.alignInfoTermsOfServices}>
-          <CustomCheckbox
-            type="checkbox"
-            name="checkboxTerms"
-            label={i18n.t("NEW_ACCOUNT_ACCEPT_TERMS")}
-            required
-            onChange={event => {
-              this.getInput(event.target);
-            }}
-          />
-
-          <div className={style.acceptTermsOfServices}>
-            {i18n.t("NEW_ACCOUNT_ACCEPT_TERMS")}
-          </div>
         </div>
 
         <div className={style.alignInfoTermsOfServices}>

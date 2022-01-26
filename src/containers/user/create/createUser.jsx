@@ -32,14 +32,14 @@ let input = {
 class CreateUser extends React.Component {
   constructor(props) {
     super(props);
-    let { name, surname, email } = props.user.user;
+    let { name, phonenum, email } = props.user.user;
     this.state = {
       inputs: {
-        lastName: {
+        phonenum: {
           type: "text",
-          name: "lastName",
-          value: surname ? surname : "",
-          placeholder: i18n.t("PLACEHOLDER_LAST_NAME"),
+          name: "phonenum",
+          value: phonenum ? phonenum : "",
+          placeholder: i18n.t("PLACEHOLDER_PHONE_NUM"),
           required: true
         },
         firstName: {
@@ -87,7 +87,7 @@ class CreateUser extends React.Component {
   inputValidator = () => {
     let { getCreateUserInfo, clearMessage, errorInput } = this.props;
     let { inputs } = this.state;
-    let { firstName, lastName, email } = this.state.inputs;
+    let { firstName, phonenum, email } = this.state.inputs;
     let { messageError, errors } = inputValidator(inputs);
 
     if (errors.length > 0) {
@@ -98,7 +98,7 @@ class CreateUser extends React.Component {
       });
     } else {
       clearMessage();
-      getCreateUserInfo(firstName.value, lastName.value, email.value);
+      getCreateUserInfo(firstName.value, phonenum.value, email.value);
     }
   };
 
@@ -168,15 +168,15 @@ class CreateUser extends React.Component {
 
           <input
             type="text"
-            name="lastName"
-            value={inputs.lastName.value}
+            name="phonenum"
+            value={inputs.phonenum.value}
             required
-            placeholder={i18n.t("PLACEHOLDER_LAST_NAME")}
+            placeholder={i18n.t("PLACEHOLDER_PHONE_NUM")}
             onChange={event => {
               this.getInput(event.target);
             }}
             className={
-              errors && errors.includes("lastName")
+              errors && errors.includes("phoneNum")
                 ? style.inputTextError
                 : style.inputTextDefault
             }
@@ -199,7 +199,7 @@ class CreateUser extends React.Component {
 
           <button
             className={
-              !errors && inputs.lastName && inputs.firstName && inputs.email
+              !errors && inputs.phonenum && inputs.firstName && inputs.email
                 ? style.buttonEnable
                 : style.buttonBorderGreen
             }

@@ -95,32 +95,8 @@ class CoinService {
 
                     // CREATE ADDRESS
                     let network = undefined;
-                    if (coin.abbreviation === "btc")
-                        network = TESTNET ? networks.BTCTESTNET : networks.BTC;
-
-                    if (coin.abbreviation === "ltc")
-                        network = TESTNET ? networks.LTCTESTNET : networks.LTC;
-
-                    if (coin.abbreviation === "bch")
-                        network = TESTNET ? networks.BCHTESTNET : networks.BCH;
-
-                    if (coin.abbreviation === "lunes")
-                        network = TESTNET ? networks.LUNESTESTNET : networks.LUNES;
-
-                    if (coin.abbreviation === "dash")
-                        network = TESTNET ? undefined : networks.DASH;
-
                     if (coin.abbreviation === "eth")
                         network = TESTNET ? networks.ROPSTEN : networks.ETH;
-
-                    if (coin.abbreviation === "usdt")
-                        network = TESTNET ? networks.BTCTESTNET : networks.BTC;
-
-                    if (coin.abbreviation === "nmc")
-                        network = TESTNET ? networks.NMCTESTNET : networks.NMC;
-
-                    if (coin.abbreviation === "mona")
-                        network = TESTNET ? networks.MONATESTNET : networks.MONA;
 
                     let responseCreateAddress = undefined;
                     if (coin.name === "ethereum") {
