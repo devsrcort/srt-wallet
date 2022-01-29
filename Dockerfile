@@ -16,6 +16,7 @@ USER node
 FROM base as release
 
 USER root
+RUN apk add --no-cache git
 RUN npm install --only=production \
  #&& apk add --no-cache tini \
  && chown -R node /opt/app
@@ -30,7 +31,6 @@ ENTRYPOINT npm run start
 FROM base as build
 
 USER root
-RUN apk add --no-cache git
 RUN npm install -g nodemon \
  && npm install \
  && npm run build \
