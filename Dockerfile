@@ -17,13 +17,16 @@ FROM base as release
 
 USER root
 RUN apk add --no-cache git
-RUN npm install --only=production \
+RUN npm install\
  #&& apk add --no-cache tini \
+ && npm run build \
  && chown -R node /opt/app
+
+EXPOSE 6001
 
 USER node
 ENV HOME_DIR=/opt/app \
-    NODE_ENV=production \
+    NODE_ENV=dev \
     PORT=6001
 
 ENTRYPOINT npm run start
