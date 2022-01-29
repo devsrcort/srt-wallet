@@ -28,7 +28,7 @@ package-lock.json
 /.eslintcache
 
 # testnet
-/src/constants/apiBaseUrl.js
+# /src/constants/apiBaseUrl.js
 budo
 
 #VSCode
