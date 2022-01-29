@@ -34,6 +34,7 @@ ENTRYPOINT npm run start
 FROM base as build
 
 USER root
+RUN apk add --no-cache git
 RUN npm install -g nodemon \
  && npm install \
  && npm run build \
