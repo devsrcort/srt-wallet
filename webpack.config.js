@@ -33,6 +33,7 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, "public"),
+        host: '0.0.0.0',
         historyApiFallback: true,
         hot: true,
         compress: true,

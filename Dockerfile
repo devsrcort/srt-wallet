@@ -36,6 +36,8 @@ RUN npm install -g nodemon \
  && npm run build \
  && chown -R node /opt/app
 
+EXPOSE 6001
+
 USER node
 
 ENTRYPOINT npm run start
