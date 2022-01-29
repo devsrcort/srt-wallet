@@ -32,4 +32,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/ms-srt-users:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/ms-srt-wallet-client:latest
