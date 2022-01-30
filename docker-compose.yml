@@ -5,9 +5,7 @@ services:
     container_name: srt-wallet
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.srt-wallet.rule=PathPrefix(`/home`)"
-      - "traefik.http.routers.srt-wallet.rule=PathPrefix(`/scripts`)"
-      - "traefik.http.routers.srt-wallet.rule=PathPrefix(`/images`)"
+      - "traefik.http.routers.srt-wallet.rule=PathPrefix(`/`)"
     user: root # avoids ton of volume mounting headaches in dev mode.
     build:
       context: .
