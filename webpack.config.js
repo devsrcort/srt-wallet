@@ -37,7 +37,8 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         compress: true,
-        port: 6001
+        port: 6001,
+        disableHostCheck: true
     },
     plugins: [
         new ObjectRestSpreadPlugin(),
