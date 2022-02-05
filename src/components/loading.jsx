@@ -49,7 +49,7 @@ Loading.propTypes = {
   color: PropTypes.oneOf([
     "",
     "white",
-    "purple",
+    "gray",
     "lunes",
     "bitcoin",
     "general",

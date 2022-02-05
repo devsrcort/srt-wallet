@@ -35,7 +35,7 @@ const tabStyles = theme => ({
     opacity: 1,
     borderRadius: "5px 5px 0 0",
     textTransform: "none",
-    backgroundColor: colors.purple.default, 
+    backgroundColor: colors.gray.default, 
   },
   tabSelected: {}
 });

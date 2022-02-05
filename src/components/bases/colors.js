@@ -1,9 +1,9 @@
 const colors = {
-    purple: {
-        default: "#6868ab",
-        clear: "#654fa4",
-        light: "#4b2c82",
-        dark: "#3b1878"
+    gray: {
+        default: "#C0C0C0",
+        clear: "#B0B0B0",
+        light: "#E0E0E0",
+        dark: "#A0A0A0"
     },
     green: {
         default: "#68f285",
