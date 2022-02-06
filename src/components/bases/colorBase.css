@@ -25,7 +25,7 @@
 /* 1.1 BACKGROUND */
 
 :local(.bgGrayDefault) {
-    background-color: #C0C0C0;
+    background-color: #808080;
 }
 
 :local(.bgGrayClear) {
@@ -33,15 +33,15 @@
 }
 
 :local(.bgGrayLight) {
-    background-color: #E0E0E0;
-}
-
-:local(.bgGrayMedium) {
     background-color: #C0C0C0;
 }
 
-:local(.bgGrayDark) {
+:local(.bgGrayMedium) {
     background-color: #A0A0A0;
+}
+
+:local(.bgGrayDark) {
+    background-color: #404040;
 }
 
 
@@ -103,7 +103,7 @@
 /* 2.3 BORDER */
 
 :local(.bdPurpleDefault) {
-    border-color: #473088;
+    border-color: #808080;
 }
 
 :local(.bdGreenDefault) {
