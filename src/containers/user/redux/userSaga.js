@@ -4,9 +4,9 @@ import {
     getAuthToken,
     setUserSeedWords,
     getUserSeedWords,
-    getUsername,
+    // getUsername,
     setUserData,
-    clearAll
+    // clearAll
 } from "../../../utils/localStorage";
 import { encryptHmacSha512Key } from "../../../utils/cryptography";
 // import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
@@ -27,7 +27,7 @@ const changeLoadingState = "CHANGE_LOADING_STATE";
 
 export function* authenticateUser(action) {
     try {
-        let username = yield call(getUsername);
+        // let username = yield call(getUsername);
 
         let response = yield call(
             authService.authenticate,
@@ -43,13 +43,13 @@ export function* authenticateUser(action) {
             return;
         }
 
-        if (response.data.errorMessage) {
-            yield put(modalError(i18n.t("EMAIL_NOT_VERIFIED")));
-        }
+        // if (response.data.errorMessage) {
+        //     yield put(modalError(i18n.t("EMAIL_NOT_VERIFIED")));
+        // }
 
-        if (username !== action.username) {
-            yield call(clearAll);
-        }
+        // if (username !== action.username) {
+        //     yield call(clearAll);
+        // }
 
         setUserData({
             username: action.username
@@ -65,18 +65,18 @@ export function* authenticateUser(action) {
 
         // yield call(setAuthToken, twoFactorResponse.headers[HEADER_RESPONSE]);
 
-        // yield put({
-        //     type: "POST_USER_AUTHENTICATE",
-        //     user: {
-        //         username: action.username,
-        //         password: encryptHmacSha512Key(action.password),
-        //         seed: twoFactor ? undefined : seed
-        //     },
-        //     twoFactor: twoFactor,
-        //     pages: {
-        //         login: twoFactor ? 1 : 2
-        //     }
-        // });
+        yield put({
+            type: "POST_USER_AUTHENTICATE",
+            user: {
+                username: action.username,
+                password: encryptHmacSha512Key(action.password),
+                seed: undefined
+            },
+            twoFactor: false,
+            pages: {
+                login: 2
+            }
+        });
 
         // if (!twoFactor && seed) {
         yield put({
