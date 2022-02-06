@@ -1,6 +1,6 @@
 import { put, call } from "redux-saga/effects";
 import {
-    setAuthToken,
+    // setAuthToken,
     getAuthToken,
     setUserSeedWords,
     getUserSeedWords,
@@ -9,7 +9,7 @@ import {
     clearAll
 } from "../../../utils/localStorage";
 import { encryptHmacSha512Key } from "../../../utils/cryptography";
-import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
+// import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
 import {
     internalServerError,
     modalSuccess,
@@ -55,35 +55,35 @@ export function* authenticateUser(action) {
             username: action.username
         });
 
-        let twoFactorResponse = yield call(
-            authService.hasTwoFactorAuth,
-            response.data.data.token
-        );
+        // let twoFactorResponse = yield call(
+        //     authService.hasTwoFactorAuth,
+        //     response.data.data.token
+        // );
 
-        let twoFactor = twoFactorResponse.data.code === 200 ? true : false;
-        let seed = yield call(getUserSeedWords);
+        // let twoFactor = twoFactorResponse.data.code === 200 ? true : false;
+        // let seed = yield call(getUserSeedWords);
 
-        yield call(setAuthToken, twoFactorResponse.headers[HEADER_RESPONSE]);
+        // yield call(setAuthToken, twoFactorResponse.headers[HEADER_RESPONSE]);
 
+        // yield put({
+        //     type: "POST_USER_AUTHENTICATE",
+        //     user: {
+        //         username: action.username,
+        //         password: encryptHmacSha512Key(action.password),
+        //         seed: twoFactor ? undefined : seed
+        //     },
+        //     twoFactor: twoFactor,
+        //     pages: {
+        //         login: twoFactor ? 1 : 2
+        //     }
+        // });
+
+        // if (!twoFactor && seed) {
         yield put({
-            type: "POST_USER_AUTHENTICATE",
-            user: {
-                username: action.username,
-                password: encryptHmacSha512Key(action.password),
-                seed: twoFactor ? undefined : seed
-            },
-            twoFactor: twoFactor,
-            pages: {
-                login: twoFactor ? 1 : 2
-            }
+            type: "CHANGE_LOADING_GENERAL_STATE",
+            state: true
         });
-
-        if (!twoFactor && seed) {
-            yield put({
-                type: "CHANGE_LOADING_GENERAL_STATE",
-                state: true
-            });
-        }
+        // }
 
         return;
     } catch (error) {
