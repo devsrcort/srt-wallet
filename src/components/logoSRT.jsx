@@ -37,6 +37,8 @@ class LogoSRT extends React.Component {
         >
           <img
             src={"images/icons/tokens/SRT_logo_W.png"}
+            height="50px"
+            width="50px"
           />
           <span>
             S

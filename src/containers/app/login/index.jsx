@@ -130,9 +130,6 @@ class Login extends Component {
                 <ModalBar type={error.type} message={error.message} timer />
               ) : null}
             </div>
-            <Grid item md={7}>
-              
-            </Grid>
             <Grid item xs={12} sm={12} md={5} className={style.colLeft}>
               <Switch>
                 {/* INSIDE ROUTES */}
