@@ -51,13 +51,13 @@ export const inputValidator = inputs => {
             // Check if is undefined
             if (!inputs[input]) {
                 errors.push(input);
-                // } else if (inputs[input].type === "checkbox") {
-                // let { checked, label, required } = inputs[input];
+            } else if (inputs[input].type === "checkbox") {
+                let { checked, label, required } = inputs[input];
 
-                // if (required === true && checked === false) {
-                //     messageError = i18n.t("MESSAGE_TERMS_OF_SERVICE");
-                //     errors.push(label);
-                // }
+                if (required === true && checked === false) {
+                    messageError = i18n.t("MESSAGE_TERMS_OF_SERVICE");
+                    errors.push(label);
+                }
             } else if (inputs[input].type === "date") {
                 // Check if is a valid date in format dd/mm/yyyy
                 let regex = new RegExp(
@@ -106,14 +106,10 @@ export const inputValidator = inputs => {
 
                 // Check if is a valid alias
                 if (name === "alias" || name === "username") {
-                    let regex = new RegExp("^[a-z0-9-.@_]+$");
-
                     if (!isLength(trim(value.toString()), {
                             min: 4,
                             max: 30
-                        }) ||
-                        !regex.test(trim(value.toString()))
-                    ) {
+                        })) {
                         inputName.push(placeholder);
                         errors.push(name);
                     }
@@ -121,7 +117,6 @@ export const inputValidator = inputs => {
 
                 // Check if is username or e-mail
                 if (name === "emailUsername") {
-                    let regex = new RegExp("^[a-z0-9-.@_]+$");
                     let error = 0;
 
                     if (!isEmail(trim(value.toString()))) error += 1;
@@ -129,9 +124,7 @@ export const inputValidator = inputs => {
                     if (!isLength(trim(value.toString()), {
                             min: 4,
                             max: 30
-                        }) ||
-                        !regex.test(trim(value.toString()))
-                    ) {
+                        })) {
                         error += 1;
                     }
 
