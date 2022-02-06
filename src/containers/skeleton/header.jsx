@@ -17,7 +17,7 @@ import style from "./style.css";
 
 //COMPONENTS
 import UserControl from "./userControl.jsx";
-import LogoLunes from  "../../components/logoLunes";
+import LogoSRT from  "../../components/logoSRT";
 
 //UTILS
 import { TESTNET } from "../../constants/apiBaseUrl";
@@ -123,7 +123,7 @@ class Header extends React.Component {
           </Hidden>
           <div className={style.boxLogo}>
 
-          <LogoLunes />
+          <LogoSRT />
             {!TESTNET || <span className={style.textGreen}>Testnet</span>}
           </div>
           {this.renderBalance()}

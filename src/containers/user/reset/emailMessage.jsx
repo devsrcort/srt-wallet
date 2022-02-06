@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import i18n from "../../../utils/i18n";
 
 // COMPONENTS
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // STYLE
 import style from "../style.css";
@@ -15,7 +15,7 @@ class EmailMessage extends React.Component {
     return (
       <div>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <img
           src="../../../../images/icons/email/email@1x.png"

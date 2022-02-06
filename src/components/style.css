@@ -104,13 +104,13 @@
 
 /* 4. LOGO LUNES */
 
-:local .logoLunes span {
+:local .logoSRT span {
     margin: auto;
     font-weight: 500;
     color: white;
     font-family: "Offside";
 }
 
-:local .logoLunes span span {
+:local .logoSRT span span {
     color: #4cd566;
 }

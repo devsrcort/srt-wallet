@@ -1,7 +1,7 @@
 import React from "react";
 
 // COMPONENTS
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
 import i18n from "../../../utils/i18n";
@@ -12,12 +12,12 @@ import style from "../style.css";
 class EmailMessage extends React.Component {
   render() {
     setTimeout(function() {
-      window.location = "https://luneswallet.app/";
+      window.location = "https://srt-wallet.io/";
     }, 6000);
     return (
       <div className={style.contNewAccount}>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
 
         <div>

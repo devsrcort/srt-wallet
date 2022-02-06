@@ -17,7 +17,7 @@ import { inputValidator } from "../../../utils/inputValidator";
 import i18n from "../../../utils/i18n";
 
 // COMPONENTS
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // MATERIAL UI
 import DoneIcon from "@material-ui/icons/Done";
@@ -163,7 +163,7 @@ class Password extends React.Component {
         </Link>
 
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <div className={style.resetHeader}>
           {i18n.t("NEW_ACCOUNT_PASSWORD_HEADER")}

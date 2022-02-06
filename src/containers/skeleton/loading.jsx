@@ -8,7 +8,7 @@ import { loadGeneralInfo } from "./redux/skeletonAction";
 
 // COMPONENTS
 import Loading from "../../components/loading";
-import LogoLunes from "../../components/logoLunes";
+import LogoSRT from "../../components/logoSRT";
 
 // STYLE
 import style from "./style.css";
@@ -33,7 +33,7 @@ class LoadingPage extends Component {
       <div className={style.alignLoadingContainer}>
         <div className={style.itemsLoadingContainer}>
           <center>
-            <LogoLunes large />
+            <LogoSRT large />
           </center>
 
           <div>

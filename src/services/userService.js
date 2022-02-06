@@ -21,14 +21,14 @@ class UserService {
     async createUser(userInfo) {
         try {
             let response = await axios.post(
-                BASE_URL + "/register", {
+                BASE_URL + "/users/register", {
                     name: userInfo.name,
                     phonenum: userInfo.phonenum,
                     email: userInfo.email,
                     password: encryptMd5(userInfo.password),
                     link: userInfo.link
                 },
-                API_HEADER
+                HEADER_REQUEST
             );
 
             return response;

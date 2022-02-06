@@ -14,7 +14,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 
 // COMPONENTS
 import Footer from "../footer";
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // STYLE
 import style from "../style.css";
@@ -140,7 +140,7 @@ class NewPassword extends React.Component {
     return (
       <div className={style.formLogin} onKeyPress={this.handleKeyPress}>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <div className={style.resetHeader}>
           {i18n.t("RESET_NEW_PASSWORD_HEADER")}

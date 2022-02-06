@@ -9,7 +9,7 @@ import { getCreateUserInfo, verifyInvite } from "../redux/userAction";
 import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 
 // COMPONENTS
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
 import { inputValidator } from "../../../utils/inputValidator";
@@ -139,7 +139,7 @@ class CreateUser extends React.Component {
           />
         </Link>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <div>
           <div className={style.newAccountHeader}>

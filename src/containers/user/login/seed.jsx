@@ -10,7 +10,7 @@ import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 // COMPONENTS
 import Footer from "../footer";
 import Loading from "../../../components/loading";
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
 import { inputValidator } from "../../../utils/inputValidator";
@@ -105,7 +105,7 @@ class Seed extends React.Component {
     return (
       <div onKeyPress={this.handleKeyPress}>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
 
         <div className={style.insertSeed}>{i18n.t("PLACEHOLDER_SEED")}</div>

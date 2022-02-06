@@ -11,7 +11,7 @@ import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 // COMPONENTS
 import Loading from "../../../components/loading";
 import Footer from "../footer";
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
 import { inputValidator } from "../../../utils/inputValidator";
@@ -85,7 +85,7 @@ class Auth extends React.Component {
     return (
       <div onKeyPress={this.handleKeyPress}>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <div className={style.description}>{i18n.t("LOGIN_HEADER")}</div>
         <form autoComplete={"on"}>

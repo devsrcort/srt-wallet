@@ -19,11 +19,11 @@ const styles = {
   }
 };
 
-class LogoLunes extends React.Component {
+class LogoSRT extends React.Component {
   render() {
     const { small, medium, large, classes } = this.props;
     return (
-      <div className={style.logoLunes}>
+      <div className={style.logoSRT}>
         <div
           className={
             small
@@ -35,6 +35,9 @@ class LogoLunes extends React.Component {
                   : classes.fontSmall
           }
         >
+          <img
+            src={"images/icons/tokens/SRT_logo_W.png"}
+          />
           <span>
             S
             <span>R</span>T
@@ -45,11 +48,11 @@ class LogoLunes extends React.Component {
   }
 }
 
-LogoLunes.propTypes = {
+LogoSRT.propTypes = {
   classes: PropTypes.object.isRequired,
   small: PropTypes.bool,
   medium: PropTypes.bool,
   large: PropTypes.bool
 };
 
-export default withStyles(styles)(LogoLunes);
+export default withStyles(styles)(LogoSRT);

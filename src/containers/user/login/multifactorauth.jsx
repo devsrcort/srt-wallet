@@ -10,7 +10,7 @@ import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 
 // COMPONENTS
 import Loading from "../../../components/loading";
-import LogoLunes from "../../../components/logoLunes";
+import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
 import { inputValidator } from "../../../utils/inputValidator";
@@ -109,7 +109,7 @@ class MultiFactorAuth extends React.Component {
     return (
       <div onKeyPress={this.handleKeyPress}>
         <center>
-          <LogoLunes medium />
+          <LogoSRT medium />
         </center>
         <div className={style.description}>{i18n.t("2FA_HEADER")}</div>
 
