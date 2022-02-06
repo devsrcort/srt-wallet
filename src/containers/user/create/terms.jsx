@@ -23,7 +23,6 @@ class CreateUserTerms extends React.Component {
     super();
     this.state = {
       inputs: {
-        checkboxTerms: undefined,
         checkboxAge: undefined
       },
       errors: undefined
@@ -103,7 +102,7 @@ class CreateUserTerms extends React.Component {
 
         <button
           className={
-            inputs.checkboxTerms && inputs.checkboxAge
+            inputs.checkboxAge
               ? style.buttonEnable
               : style.buttonBorderGreen
           }
