@@ -96,16 +96,18 @@ export function* authenticateUser(action) {
 
 export function* hasTwoFactorAuth() {
     try {
+
         let userToken = yield call(getAuthToken);
+
         let seed = yield call(getUserSeedWords);
         const response = yield call(authService.hasTwoFactorAuth, userToken);
-        if (response.error) {
-            yield put(response.error);
-            yield put({
-                type: changeLoadingState
-            });
-            return;
-        }
+        // if (response.error) {
+        //     yield put(response.error);
+        //     yield put({
+        //         type: changeLoadingState
+        //     });
+        //     return;
+        // }
 
         if (seed) {
             yield put({
