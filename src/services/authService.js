@@ -18,7 +18,7 @@ class AuthService {
     async authenticate(email, password) {
         try {
             let response = await axios.post(
-                BASE_URL + "/login", {
+                BASE_URL + "/users/login", {
                     login: email,
                     password: encryptMd5(password)
                 },
