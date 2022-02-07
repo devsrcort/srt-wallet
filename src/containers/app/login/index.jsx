@@ -27,7 +27,7 @@ function Transition({ error }) {
     console.warn(error);
     return "Error!";
   } else {
-    return <Loading color="lunes" width="35px" />;
+    return <Loading color="SRT" width="35px" />;
   }
 }
 
