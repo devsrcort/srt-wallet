@@ -111,15 +111,15 @@ export const getFavoritesCrypto = () => {
 export const getDefaultCrypto = () => {
     let userStorage = getUserData();
     let favoritesCrypto = getFavoritesCrypto();
-    if (!favoritesCrypto) favoritesCrypto = ["lunes"];
+    if (!favoritesCrypto) favoritesCrypto = ["SRT"];
 
     return !userStorage || !userStorage.defaultCoin ?
-        favoritesCrypto.includes("lunes") ?
-        "lunes" :
+        favoritesCrypto.includes("SRT") ?
+        "SRT" :
         favoritesCrypto[0] :
         favoritesCrypto.includes(userStorage.defaultCoin) ?
         userStorage.defaultCoin :
-        "lunes";
+        "SRT";
 };
 
 export const setDefinitionMetadata = value => {

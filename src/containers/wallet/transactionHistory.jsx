@@ -254,7 +254,7 @@ class TransactionHistory extends React.Component {
             </div>
             <div className={style.contentTransactions}>
               {loading ? (
-                <Loading margin={"5% 0 0 0"} color="lunes" />
+                <Loading margin={"5% 0 0 0"} color="SRT" />
               ) : (
                 this.renderHistory()
               )}

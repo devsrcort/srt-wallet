@@ -72,7 +72,7 @@ class CoinsBar extends React.Component {
     let { coins } = this.props.skeleton;
     let defaultFiat = getDefaultFiat();
     let favoritesCoins = getFavoritesCrypto();
-    favoritesCoins = favoritesCoins ? favoritesCoins : ["lunes"];
+    favoritesCoins = favoritesCoins ? favoritesCoins : ["SRT"];
 
     return favoritesCoins.map((val, index) => {
       let coin = coins[val];

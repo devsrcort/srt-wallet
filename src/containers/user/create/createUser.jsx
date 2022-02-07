@@ -122,7 +122,7 @@ class CreateUser extends React.Component {
   renderInvite = () => {
     const {invite} = this.props.user;
 
-    if(invite.loading) return <Loading color="lunes" />;
+    if(invite.loading) return <Loading color="SRT" />;
 
     if(invite.user) return <div>{i18n.t("ACCEPT_INVITE_LABEL")} {invite.user}</div>;
   }

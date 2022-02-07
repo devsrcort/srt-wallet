@@ -50,7 +50,7 @@ Loading.propTypes = {
     "",
     "white",
     "gray",
-    "lunes",
+    "SRT",
     "bitcoin",
     "general",
     "wallet"
