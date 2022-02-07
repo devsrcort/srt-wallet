@@ -333,8 +333,7 @@ class CoinService {
                 return "error";
             }
 
-            if (coin === "SRT" || coin === "
-                LUNES ") {
+            if (coin === "SRT" || coin === "LUNES") {
                 let response = await axios.get(
                     LUNESNODE_URL + "/addresses/validate/" + address
                 );
@@ -410,8 +409,7 @@ class CoinService {
             let dataFeeLunes = response.data.data.feeLunes;
 
             if (response.data.code === 200) {
-                let extraFee = coinName === "SRT" || coinName === "
-                eth " ? 0 : 1000;
+                let extraFee = coinName === "SRT" || coinName === "eth" ? 0 : 1000;
 
                 Object.keys(dataFee).map(value => {
                     fee[value] = convertBiggestCoinUnit(

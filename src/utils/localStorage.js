@@ -30,10 +30,10 @@ export const getUserSeedWords = () => {
 };
 
 export const compareUserSeedWords = seed => {
-    // let userData = getUserData();
-    // if (userData.secretWord === seed) {
-    //     return true;
-    // }
+    let userData = getUserData();
+    if (userData.secretWord === seed) {
+        return true;
+    }
 
     return true;
 };
