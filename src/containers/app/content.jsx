@@ -47,10 +47,10 @@ class Content extends Component {
     //   return;
     // }
 
-    if (loading) {
-      if (type !== "loading") return this.renderLoading();
-      return;
-    }
+    // if (loading) {
+    //   if (type !== "loading") return this.renderLoading();
+    //   return;
+    // }
 
     return this.renderContent();
   }
