@@ -35,17 +35,17 @@ class Content extends Component {
   componentDidUpdate() {
     let { type } = this.state;
     let { loading, errors } = this.props.skeleton;
-    if (errors) {
-      if (type !== "error") {
-        errorRequest();
-        this.changeContent(<InternalError />, "error");
-        setTimeout(() => {
-          window.location.reload();
-        }, 9000);
-      }
+    // if (errors) {
+    //   if (type !== "error") {
+    //     errorRequest();
+    //     this.changeContent(<InternalError />, "error");
+    //     setTimeout(() => {
+    //       window.location.reload();
+    //     }, 9000);
+    //   }
 
-      return;
-    }
+    //   return;
+    // }
 
     if (loading) {
       if (type !== "loading") return this.renderLoading();
