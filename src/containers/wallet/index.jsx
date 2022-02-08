@@ -35,10 +35,10 @@ class Wallet extends React.Component {
 
     return (
       <div>
-        <CoinsBar />
+        {/* <CoinsBar /> */}
         <div>
           <CoinsInfo />
-          <TransactionHistory />
+          {/* <TransactionHistory /> */}
         </div>
       </div>
     );
