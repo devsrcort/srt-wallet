@@ -9,11 +9,11 @@ import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 
 // COMPONENTS
 import Footer from "../footer";
-import Loading from "../../../components/loading";
+// import Loading from "../../../components/loading";
 import LogoSRT from "../../../components/logoSRT";
 
 // UTILS
-import { inputValidator } from "../../../utils/inputValidator";
+// import { inputValidator } from "../../../utils/inputValidator";
 import { generateMnemonic } from "../../../utils/mnemonicSeed";
 import i18n from "../../../utils/i18n";
 
@@ -56,21 +56,22 @@ class Seed extends React.Component {
       required: true
     };
 
-    let { loading, errorInput, setUserSeed, user } = this.props;
-    let { errors, messageError } = inputValidator({ inputs: inputSeed });
+    // let { loading, errorInput, setUserSeed, user } = this.props;
+    let { loading, setUserSeed, user } = this.props;
+    // let { errors, messageError } = inputValidator({ inputs: inputSeed });
 
-    if (errors.length > 0) {
-      errorInput(messageError);
-      this.setState({
-        ...this.state,
-        errors
-      });
-    } else {
-      loading();
-      clearMessage();
-      setUserSeed(inputSeed.value, user.user.password);
-      this.setState({ ...this.state, redirect: true });
-    }
+    // if (errors.length > 0) {
+    //   errorInput(messageError);
+    //   this.setState({
+    //     ...this.state,
+    //     errors
+    //   });
+    // } else {
+    loading();
+    clearMessage();
+    setUserSeed(inputSeed.value, user.user.password);
+    this.setState({ ...this.state, redirect: true });
+    // }
   };
 
   setValueSeed = () => {
@@ -98,17 +99,27 @@ class Seed extends React.Component {
   };
 
   render() {
-    let { loading } = this.props.user;
-    let { seed } = this.state.inputs;
-    let { buttonEnable, errors } = this.state;
+    // let { loading } = this.props.user;
+    // let { seed } = this.state.inputs;
+    // let { buttonEnable, errors } = this.state;
 
     return (
       <div onKeyPress={this.handleKeyPress}>
         <center>
           <LogoSRT medium />
         </center>
-
-        <div className={style.insertSeed}>{i18n.t("PLACEHOLDER_SEED")}</div>
+        <button
+          className={
+            style.buttonBorderGreen
+          }
+          onClick={() => {
+            this.inputValidator();
+          }}
+          
+        >
+          {"로그인을 환영합니다."}
+        </button>
+        {/* <div className={style.insertSeed}>{i18n.t("PLACEHOLDER_SEED")}</div>
         <textarea
           type="textarea"
           name="seed"
@@ -137,7 +148,7 @@ class Seed extends React.Component {
           }}
         >
           {loading ? <Loading /> : i18n.t("BTN_IMPORT_SEED")}
-        </button>
+        </button> */}
 
         <Footer />
       </div>

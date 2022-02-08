@@ -55,13 +55,20 @@ export function* authenticateUser(action) {
             username: action.username
         });
 
+        yield setUserSeedWords(response.data.seed, action.password);
+
+        let seed = yield call(getUserSeedWords);
+
+        yield put({
+            type: "SET_USER_SEED",
+            seed: seed
+        });
         // let twoFactorResponse = yield call(
         //     authService.hasTwoFactorAuth,
         //     response.data.data.token
         // );
 
         // let twoFactor = twoFactorResponse.data.code === 200 ? true : false;
-        let seed = yield call(getUserSeedWords);
 
         yield call(setAuthToken, response.headers[HEADER_RESPONSE]);
 
@@ -261,8 +268,9 @@ export function* resetUser(action) {
 
 export function* setUserSeed(action) {
     try {
-        yield setUserSeedWords(action.seed, action.password);
-        let seed = yield call(getUserSeedWords);
+        let tempSeed = action.seed;
+        let seed = tempSeed;
+        seed = yield call(getUserSeedWords);
 
         yield put({
             type: "CHANGE_LOADING_GENERAL_STATE",

@@ -19,7 +19,7 @@ class Create extends React.Component {
     if (create === 0) return <CreateUser />;
     if (create === 1) return <Password />;
     if (create === 2) return <Terms />;
-    if (create === 2) return <EmailMessage />;
+    if (create === 3) return <EmailMessage />;
   };
 
   render() {
