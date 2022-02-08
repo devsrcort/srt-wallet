@@ -66,19 +66,18 @@ class CoinService {
             let coins = [];
             let defaultCrypto = await getDefaultCrypto();
 
-            let availableCoins = {
-                "coins": [{
-                    abbreviation: "SRT",
-                    blockExplorerUrl: "",
-                    decimalPoint: 18,
-                    family: "SRT",
-                    id: 1,
-                    name: "SRT",
-                    numberConfirmations: 1,
-                    smallerUnit: "SRT",
-                    status: "active",
-                }]
-            };
+            let availableCoins = [{
+                abbreviation: "SRT",
+                blockExplorerUrl: "",
+                decimalPoint: 18,
+                family: "SRT",
+                id: 1,
+                name: "SRT",
+                numberConfirmations: 1,
+                smallerUnit: "SRT",
+                status: "active",
+            }];
+
 
             const promises = availableCoins.map(async(coin, index) => {
                 // CHECK ACTIVE DEFAULT COIN
