@@ -122,24 +122,21 @@ class CoinService {
 
                     if (responseBalance.data.balance) {
                         availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
-                        availableCoins[index].balance = responseBalance.data.balance;
+                        availableCoins[index].balance = {
+                            available: responseBalance.data.balance,
+                            total: responseBalance.data.balance,
+                        };
 
                         // BALANCE CONVERTER
                         availableCoins[index].balance.available = convertBiggestCoinUnit(
-                            availableCoins[index].balance,
+                            availableCoins[index].balance.available,
                             coin.decimalPoint
                         );
 
                         availableCoins[index].balance.total = convertBiggestCoinUnit(
-                            availableCoins[index].balance,
+                            availableCoins[index].balance.total,
                             coin.decimalPoint
                         );
-
-                        Object.keys(availableCoins[index].price).map(fiat => {
-                            let fiatPrice = 1;
-                            availableCoins[index].balance[fiat] =
-                                fiatPrice.price * availableCoins[index].balance;
-                        });
                     } else {
                         availableCoins[index].status = "inactive";
                         availableCoins[index].balance = undefined;
