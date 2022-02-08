@@ -7,9 +7,6 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-// UTILS
-import i18n from "../../../utils/i18n";
-
 // COMPONENTS
 import Loading from "../../../components/loading";
 import fakeDelay from "../../../components/fakeDelay";
@@ -75,27 +72,6 @@ let validate = Loadable({
   serverSideRequirePath: path.resolve(__dirname, "../../user/validate")
 });
 /* eslint-enable */
-
-const imagePath = "/images/carousel/";
-
-const carouselSteps = [
-  {
-    label: i18n.t("LOGIN_SLIDE_DESCRIPTION_1"),
-    imgPath: imagePath + "slider-boleto.png"
-  },
-  {
-    label: i18n.t("LOGIN_SLIDE_DESCRIPTION_2"),
-    imgPath: imagePath + "slider-ted.png"
-  },
-  {
-    label: i18n.t("LOGIN_SLIDE_DESCRIPTION_3"),
-    imgPath: imagePath + "slider-recarga.png"
-  },
-  {
-    label: i18n.t("LOGIN_SLIDE_DESCRIPTION_4"),
-    imgPath: imagePath + "slider-wallet.png"
-  }
-];
 
 class Login extends Component {
   constructor() {

@@ -1,15 +1,15 @@
 import { put, call } from "redux-saga/effects";
 import {
-    // setAuthToken,
+    setAuthToken,
     getAuthToken,
     setUserSeedWords,
     getUserSeedWords,
-    // getUsername,
+    getUsername,
     setUserData,
-    // clearAll
+    clearAll
 } from "../../../utils/localStorage";
 import { encryptHmacSha512Key } from "../../../utils/cryptography";
-// import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
+import { HEADER_RESPONSE } from "../../../constants/apiBaseUrl";
 import {
     internalServerError,
     modalSuccess,
@@ -27,7 +27,7 @@ const changeLoadingState = "CHANGE_LOADING_STATE";
 
 export function* authenticateUser(action) {
     try {
-        // let username = yield call(getUsername);
+        let username = yield call(getUsername);
 
         let response = yield call(
             authService.authenticate,
@@ -43,13 +43,13 @@ export function* authenticateUser(action) {
             return;
         }
 
-        // if (response.data.errorMessage) {
-        //     yield put(modalError(i18n.t("EMAIL_NOT_VERIFIED")));
-        // }
+        if (response.data.errorMessage) {
+            yield put(modalError(i18n.t("EMAIL_NOT_VERIFIED")));
+        }
 
-        // if (username !== action.username) {
-        //     yield call(clearAll);
-        // }
+        if (username !== action.username) {
+            yield call(clearAll);
+        }
 
         setUserData({
             username: action.username
@@ -61,16 +61,16 @@ export function* authenticateUser(action) {
         // );
 
         // let twoFactor = twoFactorResponse.data.code === 200 ? true : false;
-        // let seed = yield call(getUserSeedWords);
+        let seed = yield call(getUserSeedWords);
 
-        // yield call(setAuthToken, twoFactorResponse.headers[HEADER_RESPONSE]);
+        yield call(setAuthToken, response.headers[HEADER_RESPONSE]);
 
         yield put({
             type: "POST_USER_AUTHENTICATE",
             user: {
                 username: action.username,
                 password: encryptHmacSha512Key(action.password),
-                seed: undefined
+                seed: seed
             },
             twoFactor: false,
             pages: {
@@ -101,13 +101,13 @@ export function* hasTwoFactorAuth() {
 
         let seed = yield call(getUserSeedWords);
         const response = yield call(authService.hasTwoFactorAuth, userToken);
-        // if (response.error) {
-        //     yield put(response.error);
-        //     yield put({
-        //         type: changeLoadingState
-        //     });
-        //     return;
-        // }
+        if (response.error) {
+            yield put(response.error);
+            yield put({
+                type: changeLoadingState
+            });
+            return;
+        }
 
         if (seed) {
             yield put({

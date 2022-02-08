@@ -13,9 +13,8 @@ export const getAuthToken = () => JSON.parse(localStorage.getItem(authToken));
 export const getDecodedAuthToken = () => decodeToken(getAuthToken())
 
 export const getUserId = () => {
-    // let token = getDecodedAuthToken()
-    // return token.payload.id
-    return 100;
+    let token = getDecodedAuthToken()
+    return token.payload.id
 }
 
 export const setUserSeedWords = (seed, password) => {
@@ -24,15 +23,14 @@ export const setUserSeedWords = (seed, password) => {
 };
 
 export const getUserSeedWords = () => {
-    // let userData = getUserData();
-    // return userData.secretWord;
-    return "GetSeed";
+    let userData = getUserData();
+    return userData.secretWord;
 };
 
 export const compareUserSeedWords = seed => {
     let userData = getUserData();
     if (userData.secretWord === seed) {
-        return true;
+        return false;
     }
 
     return true;
