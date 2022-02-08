@@ -28,7 +28,7 @@ class BoxProcess extends React.Component {
         fee: modal.feeValue.selectedFee,
         feePerByte: modal.feeValue.selectedFeePerByte,
         feeLunes: modal.feeValue.selectedFeeLunes,
-        price: coins[coin].price,
+        price: 0,
         decimalPoint: coins[coin].decimalPoint
       },
       user.password

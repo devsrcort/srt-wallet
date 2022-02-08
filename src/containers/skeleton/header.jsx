@@ -21,7 +21,7 @@ import LogoSRT from  "../../components/logoSRT";
 
 //UTILS
 import { TESTNET } from "../../constants/apiBaseUrl";
-import { getDefaultFiat, getDefaultCrypto } from "../../utils/localStorage";
+import { getDefaultCrypto } from "../../utils/localStorage";
 import i18n from "../../utils/i18n";
 
 class Header extends React.Component {
@@ -71,7 +71,6 @@ class Header extends React.Component {
   renderBalance = () => {
     let { coins } = this.props;
     let coinSelected = getDefaultCrypto();
-    let fiatSelected = getDefaultFiat();
 
     let coinName = coins[coinSelected]
       ? coins[coinSelected].abbreviation.toUpperCase()
@@ -81,14 +80,6 @@ class Header extends React.Component {
       ? coins[coinSelected].balance.available
       : 0;
 
-    let coinFiat = coins[coinSelected]
-      ? (coins[coinSelected].price[fiatSelected].price * coinBalance).toFixed(2)
-      : 0;
-
-    let coinFiatSymbol = coins[coinSelected]
-      ? coins[coinSelected].price[fiatSelected].symbol
-      : "USD";
-
     return (
       <div className={style.boxBalance}>
         <Hidden xsDown>
@@ -96,9 +87,6 @@ class Header extends React.Component {
         </Hidden>
         <span className={style.textBalance}>
           {coinBalance + " " + coinName}
-        </span>
-        <span className={style.textBalanceFiat}>
-          {coinFiatSymbol + coinFiat}
         </span>
       </div>
     );

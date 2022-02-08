@@ -119,17 +119,6 @@ class TransactionHistory extends React.Component {
                   ).toFixed(decimalPoint)}
                 </div>
                 <div>
-                  {this.defineSymbol(
-                    coins[defaultCoin].price[defaultFiat].symbol || "$",
-                    transaction.price[defaultFiat]
-                  )}
-                  {this.hasDefaultPrice(
-                    transaction.price[defaultFiat],
-                    convertBiggestCoinUnit(
-                      transaction.amount,
-                      decimalPoint
-                    ).toFixed(decimalPoint)
-                  )}
                 </div>
               </Grid>
             </Grid>

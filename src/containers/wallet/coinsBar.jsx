@@ -14,7 +14,7 @@ import {
 import { clearMessage, errorInput } from "../errors/redux/errorAction";
 
 // UTILS
-import { getFavoritesCrypto, getDefaultFiat } from "../../utils/localStorage";
+import { getFavoritesCrypto } from "../../utils/localStorage";
 
 // MATERIAL UI
 import Grid from "@material-ui/core/Grid";
@@ -70,7 +70,6 @@ class CoinsBar extends React.Component {
   renderCoins = () => {
     let { wallet } = this.props;
     let { coins } = this.props.skeleton;
-    let defaultFiat = getDefaultFiat();
     let favoritesCoins = getFavoritesCrypto();
     favoritesCoins = favoritesCoins ? favoritesCoins : ["SRT"];
 
@@ -85,21 +84,11 @@ class CoinsBar extends React.Component {
         coin.status === "active" && coinBalanceStatus && coinAddressStatus
           ? true
           : false;
-      let coinBalance = coinStatus ? coin.balance.available : 0;
-      let coinFiatBalance = coinStatus
-        ? (coinBalance * coin.price[defaultFiat].price).toFixed(0)
-        : 0;
-      let coinPercent = coinStatus ? coin.price.percent : 0;
 
       return (
         <div
           className={coinStatus ? null : style.boxCoinDisabled}
           key={index}
-          onClick={
-            coinPercent
-              ? () => this.setCoin(coin.abbreviation, coin.address)
-              : null
-          }
         >
           <div
             className={
@@ -117,10 +106,7 @@ class CoinsBar extends React.Component {
             <Hidden smDown>
               {coinStatus ? (
                 <div className={style.boxLabelCoin}>
-                  {coin.price[defaultFiat].symbol + coinFiatBalance} <br />
                   <div className={style.labelPercent}>
-                    {this.renderArrowPercent(coinPercent)}
-                    {coinPercent}
                   </div>
                 </div>
               ) : (
@@ -130,13 +116,6 @@ class CoinsBar extends React.Component {
               )}
             </Hidden>
             <Hidden mdUp>
-              <div className={style.boxArrowPercent}>
-                {coinStatus ? (
-                  this.renderArrowPercent(coinPercent)
-                ) : (
-                  <Close className={style.arrowPercentDisabled} />
-                )}
-              </div>
             </Hidden>
           </div>
         </div>

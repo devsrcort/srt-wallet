@@ -33,7 +33,6 @@ import Loading from "../../components/loading.jsx";
 
 // UTILS
 import i18n from "../../utils/i18n";
-import { getDefaultFiat } from "../../utils/localStorage";
 
 class CoinsInfo extends React.Component {
   constructor() {
@@ -106,7 +105,6 @@ class CoinsInfo extends React.Component {
   };
 
   render() {
-    let defaultCoin = getDefaultFiat();
     let {
       setWalletSendModalOpen,
       setWalletReceiveModalOpen,
@@ -119,9 +117,6 @@ class CoinsInfo extends React.Component {
     if (!coins[selectedCoin]) return null;
 
     let coin = coins[wallet.selectedCoin];
-    let coinPrice = coins[selectedCoin].price[defaultCoin].price;
-    let coinPercent = coins[selectedCoin].price.percent;
-    let fiatBalance = coin.balance[defaultCoin].toFixed(2);
     let balance = coin.balance.available;
     let utxos = !wallet.utxos ? {} : wallet.utxos;
     return (
@@ -155,10 +150,7 @@ class CoinsInfo extends React.Component {
                   className={style.iconCoinSelected}
                 />
                 <div className={style.percentageCoinSelected}>
-                  {this.renderArrowPercent(coinPercent)}
-                  {coinPercent}
                 </div>
-                <h2>{coin.price[defaultCoin].symbol + coinPrice.toFixed(3)}</h2>
               </Grid>
             </Grid>
 
@@ -168,11 +160,6 @@ class CoinsInfo extends React.Component {
                   <h2>{i18n.t("WALLET_BALANCE")}</h2>
                   <p>{balance} </p>
                   <div className={style.alignValues}>
-                    {coin.price[defaultCoin].symbol + fiatBalance}
-                    <div className={style.coinBalanceGreen}>
-                      {" "}
-                      {defaultCoin}{" "}
-                    </div>
                   </div>
                 </Grid>
 
@@ -209,11 +196,6 @@ class CoinsInfo extends React.Component {
                   <h2>{i18n.t("WALLET_BALANCE")}</h2>
                   <p>{balance} </p>
                   <div className={style.alignValues}>
-                    {coin.price[defaultCoin].symbol + fiatBalance}
-                    <div className={style.coinBalanceGreen}>
-                      {" "}
-                      {defaultCoin}{" "}
-                    </div>
                   </div>
                 </Grid>
               </Grid>
