@@ -111,7 +111,7 @@ class Header extends React.Component {
           </Hidden>
           <div className={style.boxLogo}>
 
-          <LogoSRT />
+          <LogoSRT medium />
             {!TESTNET || <span className={style.textGreen}>Testnet</span>}
           </div>
           {this.renderBalance()}

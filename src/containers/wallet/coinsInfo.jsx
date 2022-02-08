@@ -29,7 +29,6 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 import Modal from "../../components/modal";
 import SendModal from "./modal/sendModal/";
 import ReceiveModal from "./modal/receiveModal/";
-import Loading from "../../components/loading.jsx";
 
 // UTILS
 import i18n from "../../utils/i18n";
@@ -118,7 +117,6 @@ class CoinsInfo extends React.Component {
 
     let coin = coins[wallet.selectedCoin];
     let balance = coin.balance.available;
-    let utxos = !wallet.utxos ? {} : wallet.utxos;
     return (
       <div>
         <Modal
@@ -161,31 +159,6 @@ class CoinsInfo extends React.Component {
                   <p>{balance} </p>
                   <div className={style.alignValues}>
                   </div>
-                </Grid>
-
-                <Grid item className={style.alignButtons}>
-                  <button
-                    className={style.receiveButton}
-                    onClick={() => setWalletReceiveModalOpen()}
-                  >
-                    {i18n.t("BTN_RECEIVE")}
-                  </button>
-
-                  <button
-                    className={style.sentButton}
-                    onClick={() => {
-                      if (utxos.status === "loading") return;
-                      this.handleSendModalOpen();
-                    }}
-                  >
-                    {utxos.status == "loading" ? (
-                      <Loading />
-                    ) : utxos.status == "error" ? (
-                      i18n.t("BTN_SEND_ERROR")
-                    ) : (
-                      i18n.t("BTN_SEND")
-                    )}
-                  </button>
                 </Grid>
               </Grid>
             </Hidden>

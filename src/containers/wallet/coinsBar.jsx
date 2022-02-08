@@ -20,7 +20,7 @@ import { getFavoritesCrypto } from "../../utils/localStorage";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import Hidden from "@material-ui/core/Hidden";
-import { AddCircle, Close } from "@material-ui/icons";
+import { AddCircle } from "@material-ui/icons";
 
 // MATERIAL ICONS
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";

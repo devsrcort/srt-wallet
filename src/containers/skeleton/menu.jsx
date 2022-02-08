@@ -31,36 +31,6 @@ const menuItens = [
     label: i18n.t("MENU_WALLET"),
     icon: "../../images/icons/general/wallet@1x.png"
   },
-  {
-    link: "/leasing",
-    label: i18n.t("MENU_LEASING"),
-    icon: "../../images/icons/general/leasing@1x.png"
-  },
-  {
-    link: "/assets",
-    label: i18n.t("MENU_ASSETS"),
-    icon: "../../images/icons/general/assets@1x.png"
-  },
-  {
-    link: "/coinsale",
-    label: i18n.t("MENU_COINSALE"),
-    icon: "../../images/icons/general/buycoin@1x.png"
-  },
-  {
-    link: "/invoices",
-    label: i18n.t("MENU_PAY"),
-    icon: "../../images/icons/general/pay@1x.png"
-  },
-  {
-    link: "/recharge",
-    label: i18n.t("MENU_RECHARGE"),
-    icon: "../../images/icons/general/recharge@1x.png"
-  },
-  {
-    link: "/coupons",
-    label: i18n.t("MENU_COUPONS"),
-    icon: "../../images/icons/general/cupon@1x.png"
-  }
 ];
 
 class Menu extends React.Component {
@@ -77,16 +47,6 @@ class Menu extends React.Component {
       errorInput("Service Unavailable. Try again later.");
     }
     return;
-  };
-
-  openP2PComponent = () => {
-    const { actionP2PComponent } = this.props;
-    actionP2PComponent();
-
-    this.setState({
-      ...this.state,
-      activeP2p: !this.state.activeP2p,
-    })
   };
 
   renderMenu = () => {
@@ -118,9 +78,6 @@ class Menu extends React.Component {
 
   render() {
     const { openMenu, user, actionLogout } = this.props;
-    const {activeP2p} = this.state;
-
-    const p2pStyleMenu = activeP2p ? style.linkMenuP2P : style.linkMenuP2PActive;
     
     return (
       <div
@@ -148,17 +105,6 @@ class Menu extends React.Component {
           </Grid>
         </Hidden>
         {this.renderMenu()}
-        <div className={style.menuP2P}>
-          <button
-            className={p2pStyleMenu}
-            onClick={() => this.openP2PComponent()}
-          >
-            <img
-              src={"../../images/icons/general/p2p@3x.png"}
-              className={style.iconP2p}
-            />
-          </button>
-        </div>
       </div>
     );
   }
