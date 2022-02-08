@@ -123,8 +123,8 @@ class CoinService {
                     if (responseBalance.data.balance) {
                         availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
                         availableCoins[index].balance = {
-                            available: responseBalance.data.balance,
-                            total: responseBalance.data.balance,
+                            available: parseInt(responseBalance.data.balance),
+                            total: parseInt(responseBalance.data.balance),
                         };
 
                         // BALANCE CONVERTER
