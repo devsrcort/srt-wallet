@@ -9,7 +9,6 @@ import {
     HEADER_RESPONSE,
     TESTNET
 } from "../constants/apiBaseUrl";
-import { networks } from "../constants/network";
 
 // ERROR
 import { internalServerError } from "../containers/errors/statusCodeMessage";
@@ -20,14 +19,12 @@ import {
     getDefaultCrypto,
     setDefaultCrypto,
     setAuthToken,
-    convertSmallerCoinUnit,
-    convertBiggestCoinUnit
 } from "../utils/localStorage";
-
+import {
+    convertBiggestCoinUnit,
+    convertSmallerCoinUnit
+} from "../utils/numbers";
 // import i18n from "../utils/i18n.js";
-
-// COINS
-import { EthServices } from "./coins";
 
 // let getPriceHistory = async(coiName, token) => {
 //     try {
@@ -89,29 +86,10 @@ class CoinService {
                 }
 
                 availableCoins[index].coinHistory = undefined;
+                let localSeed = seed;
+                availableCoins[index].address = localSeed;
 
                 if (coin.status === "active") {
-
-                    // CREATE ADDRESS
-                    let network = undefined;
-                    if (coin.abbreviation === "eth")
-                        network = TESTNET ? networks.ROPSTEN : networks.ETH;
-
-                    let responseCreateAddress = undefined;
-                    if (coin.name === "ethereum") {
-                        let ethereum = new EthServices();
-                        responseCreateAddress = await ethereum.getEthAddress({
-                            seed: seed,
-                            network: network
-                        });
-                    }
-                    if (responseCreateAddress) {
-                        availableCoins[index].address =
-                            responseCreateAddress;
-                    } else {
-                        availableCoins[index].status = "inactive";
-                        availableCoins[index].address = undefined;
-                    }
 
                     // GET BALANCE
                     let responseBalance = await axios.get(
