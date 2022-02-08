@@ -16,15 +16,14 @@ import { internalServerError } from "../containers/errors/statusCodeMessage";
 
 // UTILS
 import {
+    getUsername,
     getDefaultCrypto,
     setDefaultCrypto,
     setAuthToken,
     convertSmallerCoinUnit,
     convertBiggestCoinUnit
 } from "../utils/localStorage";
-import {
-    percentCalcByRange,
-} from "../utils/numbers";
+
 // import i18n from "../utils/i18n.js";
 
 // COINS
@@ -66,11 +65,21 @@ class CoinService {
             API_HEADER.headers.Authorization = token;
             let coins = [];
             let defaultCrypto = await getDefaultCrypto();
-            let responseAvailableCoins = await axios.get(
-                BASE_URL + "/coin",
-                API_HEADER
-            );
-            let availableCoins = responseAvailableCoins.data.data.coins;
+
+            let availableCoins = {
+                "coins": [{
+                    abbreviation: "SRT",
+                    blockExplorerUrl: "",
+                    decimalPoint: 18,
+                    family: "SRT",
+                    id: 1,
+                    name: "SRT",
+                    numberConfirmations: 1,
+                    smallerUnit: "SRT",
+                    status: "active",
+                }]
+            };
+
             const promises = availableCoins.map(async(coin, index) => {
                 // CHECK ACTIVE DEFAULT COIN
                 if (defaultCrypto === coin.abbreviation && coin.status !== "active") {
@@ -83,15 +92,6 @@ class CoinService {
                 availableCoins[index].coinHistory = undefined;
 
                 if (coin.status === "active") {
-                    let responsePrice = await axios.get(
-                        BASE_URL + "/coin/" + coin.abbreviation + "/price",
-                        API_HEADER
-                    );
-                    availableCoins[index].price = responsePrice.data.data;
-                    availableCoins[index].price.BRL.symbol = "R$";
-                    availableCoins[index].price.USD.symbol = "$";
-                    availableCoins[index].price.EUR.symbol = "€";
-                    availableCoins[index].price.percent = percentCalcByRange(1, 3) + "%"; //CALCULAR PORCENTAGEM
 
                     // CREATE ADDRESS
                     let network = undefined;
@@ -114,52 +114,37 @@ class CoinService {
                         availableCoins[index].address = undefined;
                     }
 
-                    // GET PRICE
-                    // let priceHistory = await getPriceHistory(coin.abbreviation, token);
-
-                    // if (responsePrice.data.data) {
-                    //     availableCoins[index].price = responsePrice.data.data;
-                    //     availableCoins[index].price.percent =
-                    //         percentCalcByRange(priceHistory.initial, priceHistory.last) + "%";
-                    // } else {
-                    //     availableCoins[index].status = "inactive";
-                    //     availableCoins[index].price = undefined;
-                    // }
-
                     // GET BALANCE
-                    // let responseBalance = await axios.get(
-                    //     BASE_URL +
-                    //     "/coin/" +
-                    //     coin.abbreviation +
-                    //     "/balance/" +
-                    //     coin.address,
-                    //     API_HEADER
-                    // );
+                    let responseBalance = await axios.get(
+                        BASE_URL +
+                        "/users/getbalance", { params: { id: getUsername() } },
+                        API_HEADER
+                    );
 
-                    // if (responseBalance.data.data) {
-                    //     availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
-                    //     availableCoins[index].balance = responseBalance.data.data;
+                    if (responseBalance.data.data) {
+                        availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
+                        availableCoins[index].balance = responseBalance.data.data;
 
-                    //     // BALANCE CONVERTER
-                    //     availableCoins[index].balance.available = convertBiggestCoinUnit(
-                    //         availableCoins[index].balance.available,
-                    //         coin.decimalPoint
-                    //     );
+                        // BALANCE CONVERTER
+                        availableCoins[index].balance.available = convertBiggestCoinUnit(
+                            availableCoins[index].balance.available,
+                            coin.decimalPoint
+                        );
 
-                    //     availableCoins[index].balance.total = convertBiggestCoinUnit(
-                    //         availableCoins[index].balance.total,
-                    //         coin.decimalPoint
-                    //     );
+                        availableCoins[index].balance.total = convertBiggestCoinUnit(
+                            availableCoins[index].balance.total,
+                            coin.decimalPoint
+                        );
 
-                    //     Object.keys(availableCoins[index].price).map(fiat => {
-                    //         let fiatPrice = availableCoins[index].price[fiat];
-                    //         availableCoins[index].balance[fiat] =
-                    //             fiatPrice.price * availableCoins[index].balance.available;
-                    //     });
-                    // } else {
-                    //     availableCoins[index].status = "inactive";
-                    //     availableCoins[index].balance = undefined;
-                    // }
+                        Object.keys(availableCoins[index].price).map(fiat => {
+                            let fiatPrice = availableCoins[index].price[fiat];
+                            availableCoins[index].balance[fiat] =
+                                fiatPrice.price * availableCoins[index].balance.available;
+                        });
+                    } else {
+                        availableCoins[index].status = "inactive";
+                        availableCoins[index].balance = undefined;
+                    }
                 } else {
                     availableCoins[index].address = undefined;
                     availableCoins[index].balance = undefined;
