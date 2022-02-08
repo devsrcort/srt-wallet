@@ -18,47 +18,47 @@ import { internalServerError } from "../containers/errors/statusCodeMessage";
 import {
     getDefaultCrypto,
     setDefaultCrypto,
-    setAuthToken
+    setAuthToken,
+    convertSmallerCoinUnit,
+    convertBiggestCoinUnit
 } from "../utils/localStorage";
 import {
-    convertBiggestCoinUnit,
     percentCalcByRange,
-    convertSmallerCoinUnit
 } from "../utils/numbers";
-import i18n from "../utils/i18n.js";
+// import i18n from "../utils/i18n.js";
 
 // COINS
 import { EthServices } from "./coins";
 
-let getPriceHistory = async(coiName, token) => {
-    try {
-        let coinService = new CoinService();
-        let prices = {
-            initial: 0.01,
-            last: 0.01
-        };
-        let priceHistories = await coinService.getCoinPriceHistory(
-            coiName,
-            "usd",
-            "1_D",
-            null,
-            token
-        );
+// let getPriceHistory = async(coiName, token) => {
+//     try {
+//         let coinService = new CoinService();
+//         let prices = {
+//             initial: 0.01,
+//             last: 0.01
+//         };
+//         let priceHistories = await coinService.getCoinPriceHistory(
+//             coiName,
+//             "usd",
+//             "1_D",
+//             null,
+//             token
+//         );
 
-        if (!priceHistories.data.data) return prices;
+//         if (!priceHistories.data.data) return prices;
 
-        setAuthToken(priceHistories.headers[HEADER_RESPONSE]);
+//         setAuthToken(priceHistories.headers[HEADER_RESPONSE]);
 
-        let maxHistories = priceHistories.data.data.history.length - 1;
-        prices.initial = priceHistories.data.data.history[0].price;
-        prices.last = priceHistories.data.data.history[maxHistories].price;
+//         let maxHistories = priceHistories.data.data.history.length - 1;
+//         prices.initial = priceHistories.data.data.history[0].price;
+//         prices.last = priceHistories.data.data.history[maxHistories].price;
 
-        return prices;
-    } catch (error) {
-        internalServerError();
-        return;
-    }
-};
+//         return prices;
+//     } catch (error) {
+//         internalServerError();
+//         return;
+//     }
+// };
 
 class CoinService {
     async getGeneralInfo(token, seed) {
@@ -115,51 +115,51 @@ class CoinService {
                     }
 
                     // GET PRICE
-                    let priceHistory = await getPriceHistory(coin.abbreviation, token);
+                    // let priceHistory = await getPriceHistory(coin.abbreviation, token);
 
-                    if (responsePrice.data.data) {
-                        availableCoins[index].price = responsePrice.data.data;
-                        availableCoins[index].price.percent =
-                            percentCalcByRange(priceHistory.initial, priceHistory.last) + "%";
-                    } else {
-                        availableCoins[index].status = "inactive";
-                        availableCoins[index].price = undefined;
-                    }
+                    // if (responsePrice.data.data) {
+                    //     availableCoins[index].price = responsePrice.data.data;
+                    //     availableCoins[index].price.percent =
+                    //         percentCalcByRange(priceHistory.initial, priceHistory.last) + "%";
+                    // } else {
+                    //     availableCoins[index].status = "inactive";
+                    //     availableCoins[index].price = undefined;
+                    // }
 
                     // GET BALANCE
-                    let responseBalance = await axios.get(
-                        BASE_URL +
-                        "/coin/" +
-                        coin.abbreviation +
-                        "/balance/" +
-                        coin.address,
-                        API_HEADER
-                    );
+                    // let responseBalance = await axios.get(
+                    //     BASE_URL +
+                    //     "/coin/" +
+                    //     coin.abbreviation +
+                    //     "/balance/" +
+                    //     coin.address,
+                    //     API_HEADER
+                    // );
 
-                    if (responseBalance.data.data) {
-                        availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
-                        availableCoins[index].balance = responseBalance.data.data;
+                    // if (responseBalance.data.data) {
+                    //     availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
+                    //     availableCoins[index].balance = responseBalance.data.data;
 
-                        // BALANCE CONVERTER
-                        availableCoins[index].balance.available = convertBiggestCoinUnit(
-                            availableCoins[index].balance.available,
-                            coin.decimalPoint
-                        );
+                    //     // BALANCE CONVERTER
+                    //     availableCoins[index].balance.available = convertBiggestCoinUnit(
+                    //         availableCoins[index].balance.available,
+                    //         coin.decimalPoint
+                    //     );
 
-                        availableCoins[index].balance.total = convertBiggestCoinUnit(
-                            availableCoins[index].balance.total,
-                            coin.decimalPoint
-                        );
+                    //     availableCoins[index].balance.total = convertBiggestCoinUnit(
+                    //         availableCoins[index].balance.total,
+                    //         coin.decimalPoint
+                    //     );
 
-                        Object.keys(availableCoins[index].price).map(fiat => {
-                            let fiatPrice = availableCoins[index].price[fiat];
-                            availableCoins[index].balance[fiat] =
-                                fiatPrice.price * availableCoins[index].balance.available;
-                        });
-                    } else {
-                        availableCoins[index].status = "inactive";
-                        availableCoins[index].balance = undefined;
-                    }
+                    //     Object.keys(availableCoins[index].price).map(fiat => {
+                    //         let fiatPrice = availableCoins[index].price[fiat];
+                    //         availableCoins[index].balance[fiat] =
+                    //             fiatPrice.price * availableCoins[index].balance.available;
+                    //     });
+                    // } else {
+                    //     availableCoins[index].status = "inactive";
+                    //     availableCoins[index].balance = undefined;
+                    // }
                 } else {
                     availableCoins[index].address = undefined;
                     availableCoins[index].balance = undefined;
@@ -483,123 +483,6 @@ class CoinService {
         } catch (error) {
             console.warn(error, error.response);
             internalServerError();
-        }
-    }
-
-    async getVoucherCoin(phone, voucher, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let response = await axios.get(
-                BASE_URL +
-                "/voucher/" +
-                voucher +
-                "?ddi=" +
-                55 +
-                "&ddd=" +
-                phone[0] +
-                "&phone=" +
-                phone[1],
-                API_HEADER
-            );
-
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            if (!response.data.code || response.data.code !== 200) {
-                return;
-            }
-
-            return response.data.data.coin;
-        } catch (error) {
-            internalServerError();
-        }
-    }
-
-    async voucherRescue(phone, address, voucher, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let response = await axios.post(
-                BASE_URL + "/voucher/rescue/" + voucher, {
-                    ddi: 55,
-                    ddd: phone[0],
-                    phone: phone[1],
-                    address: address
-                },
-                API_HEADER
-            );
-
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            if (!response.data.code || response.data.code !== 200) {
-                return;
-            }
-
-            return response;
-        } catch (error) {
-            internalServerError();
-        }
-    }
-
-    async verifyCoupon(coupon, addresses, token) {
-        try {
-            let endpoint = BASE_URL + "/coupon/rescue/" + coupon;
-
-            API_HEADER.headers.Authorization = token;
-
-            API_HEADER.validateStatus = function() {
-                return true;
-            };
-
-            let { data, headers } = await axios.post(
-                endpoint, { addresses },
-                API_HEADER
-            );
-
-            let errorMessage = {};
-            if (data.errorMessage) {
-                errorMessage = JSON.parse(data.errorMessage);
-            }
-
-            let status = parseInt(headers.status);
-            let code = parseInt(errorMessage.code) || parseInt(data.code);
-
-            if (status != 200 && code != 200) {
-                let message;
-                if (status === 403 || code === 403)
-                    message = i18n.t("COUPON_USER_NOT_AUTHORIZED");
-                else if (status === 401 || code === 401 || status === 1 || code === 1)
-                    message = i18n.t("COUPON_INVALID");
-                else if (status === 2 || code === 2) {
-                    message = i18n.t("COUPON_EXPIRED");
-                } else if (
-                    (status && status.toString().startsWith("5")) ||
-                    (code && code.toString().startsWith("5"))
-                )
-                    message = i18n.t("COUPON_SERVER_ERROR");
-                else message = i18n.t("COUPON_UNKNOWN_ERROR_1");
-                return {
-                    type: "error",
-                    data: {
-                        message: message
-                    }
-                };
-            }
-
-            return {
-                type: "success",
-                data: {
-                    message: data.message
-                }
-            };
-        } catch (error) {
-            console.warn(error);
-            internalServerError();
-            return {
-                type: "error",
-                data: {
-                    message: typeof error === "string" ?
-                        error : error.message || i18n.t("COUPON_UNKNOWN_ERROR_2")
-                }
-            };
         }
     }
 }
