@@ -91,7 +91,7 @@ export function* loadWalletInfo(action) {
     try {
         const token = yield call(getAuthToken);
         const seed = yield call(getUserSeedWords);
-        // const defaultCrypto = yield call(getDefaultCrypto);
+        const defaultCrypto = yield call(getDefaultCrypto);
         let responseCoins = yield call(
             coinService.getGeneralInfo,
             token,
@@ -101,22 +101,22 @@ export function* loadWalletInfo(action) {
         setAuthToken(responseCoins.token);
         delete responseCoins.token;
 
-        // let responseCoinHistory = yield call(
-        //     coinService.getCoinHistory,
-        //     defaultCrypto,
-        //     responseCoins[defaultCrypto].address,
-        //     token
-        // );
+        let responseCoinHistory = yield call(
+            coinService.getCoinHistory,
+            defaultCrypto,
+            responseCoins[defaultCrypto].address,
+            token
+        );
 
         yield put({
             type: "GET_GENERAL_INFO",
             coins: responseCoins
         });
 
-        // yield put({
-        //     type: "SET_WALLET_HISTORY",
-        //     history: responseCoinHistory
-        // });
+        yield put({
+            type: "SET_WALLET_HISTORY",
+            history: responseCoinHistory
+        });
 
         yield put({
             type: "CHANGE_LOADING_GENERAL_STATE"
