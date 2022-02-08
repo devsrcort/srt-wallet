@@ -93,9 +93,7 @@ class CoinService {
 
                     // GET BALANCE
                     let responseBalance = await axios.get(
-                        BASE_URL +
-                        "/users/getbalance", { params: { id: getUsername() } },
-                        API_HEADER
+                        BASE_URL + "/users/getbalance", { params: { id: getUsername() }, headers: { "Authorization": token } }
                     );
 
                     if (responseBalance.data.balance) {
