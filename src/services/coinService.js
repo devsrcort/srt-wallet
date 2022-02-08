@@ -120,25 +120,25 @@ class CoinService {
                         API_HEADER
                     );
 
-                    if (responseBalance.data.data) {
+                    if (responseBalance.data.balance) {
                         availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
-                        availableCoins[index].balance = responseBalance.data.data;
+                        availableCoins[index].balance = responseBalance.data.balance;
 
                         // BALANCE CONVERTER
                         availableCoins[index].balance.available = convertBiggestCoinUnit(
-                            availableCoins[index].balance.available,
+                            availableCoins[index].balance,
                             coin.decimalPoint
                         );
 
                         availableCoins[index].balance.total = convertBiggestCoinUnit(
-                            availableCoins[index].balance.total,
+                            availableCoins[index].balance,
                             coin.decimalPoint
                         );
 
                         Object.keys(availableCoins[index].price).map(fiat => {
-                            let fiatPrice = availableCoins[index].price[fiat];
+                            let fiatPrice = 1;
                             availableCoins[index].balance[fiat] =
-                                fiatPrice.price * availableCoins[index].balance.available;
+                                fiatPrice.price * availableCoins[index].balance;
                         });
                     } else {
                         availableCoins[index].status = "inactive";
