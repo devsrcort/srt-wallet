@@ -1,6 +1,5 @@
 // node fixer.js
 // missing_in_en_US.json | mostra as propriedades que não tem no en_US.json
-// missing_in_ko_KR | mostra as propriedades que não tem no pt_BR.json
 
 /*eslint-disable*/
 let fs = require('fs')
