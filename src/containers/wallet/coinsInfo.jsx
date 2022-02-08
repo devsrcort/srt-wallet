@@ -71,10 +71,11 @@ class CoinsInfo extends React.Component {
 
   componentDidUpdate() {
     let { lastCoin } = this.state;
-    let { wallet, coins, setUtxos } = this.props;
-    let address = coins[wallet.selectedCoin].address;
+    let { wallet } = this.props;
+    // let { wallet, coins, setUtxos } = this.props;
+    // let address = coins[wallet.selectedCoin].address;
     if (lastCoin !== wallet.selectedCoin) {
-      setUtxos(wallet.selectedCoin, address);
+      // setUtxos(wallet.selectedCoin, address);
       this.setState({ lastCoin: wallet.selectedCoin });
     }
   }

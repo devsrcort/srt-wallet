@@ -210,7 +210,7 @@
     "LOGIN_FOOTER_HOME": "Main",
     "MENU_HOME": "Home",
     "LOGIN_HEADER": "",
-    "NEW_ACCOUNT_HEADER": "Enter the necessary information to make your registration",
+    "NEW_ACCOUNT_HEADER": "등록에 필요한 정보를 입력하세요.",
     "NEW_ACCOUNT_PASSWORD_HEADER": "비밀번호를 입력하세요.",
     "2FA_HEADER": "2FA Confirmation",
     "RESET_HEADER": "비밀번호를 잊어버렸습니까?",
