@@ -87,7 +87,7 @@ class CoinService {
 
                 availableCoins[index].coinHistory = undefined;
                 let localSeed = seed;
-                availableCoins[index].address = localSeed;
+
 
                 if (coin.status === "active") {
 
@@ -113,12 +113,14 @@ class CoinService {
                             availableCoins[index].balance.total,
                             coin.decimalPoint
                         );
+
+                        availableCoins[index].address = responseBalance.data.addr;
                     } else {
                         availableCoins[index].status = "inactive";
                         availableCoins[index].balance = undefined;
                     }
                 } else {
-                    availableCoins[index].address = undefined;
+                    availableCoins[index].address = localSeed;
                     availableCoins[index].balance = undefined;
                 }
             });
