@@ -106,8 +106,8 @@ class CoinsInfo extends React.Component {
 
   render() {
     let {
-      setWalletSendModalOpen,
-      setWalletReceiveModalOpen,
+      // setWalletSendModalOpen,
+      // setWalletReceiveModalOpen,
       coins,
       wallet
     } = this.props;
@@ -118,6 +118,7 @@ class CoinsInfo extends React.Component {
 
     let coin = coins[wallet.selectedCoin];
     let balance = coin.balance.available;
+    let address = coin.address;
     return (
       <div>
         <Modal
@@ -157,6 +158,7 @@ class CoinsInfo extends React.Component {
               <Grid item xs={8} className={style.floatRight}>
                 <Grid item className={style.balanceItem}>
                   <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                  <p>{address} </p>
                   <p>{balance} </p>
                   <div className={style.alignValues}>
                   </div>
@@ -168,6 +170,7 @@ class CoinsInfo extends React.Component {
               <Grid item xs={8} className={style.floatRight}>
                 <Grid item className={style.balanceItemMobile}>
                   <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                  <p>{address} </p>
                   <p>{balance} </p>
                   <div className={style.alignValues}>
                   </div>
@@ -178,7 +181,7 @@ class CoinsInfo extends React.Component {
 
           <Hidden smUp>
             <Grid item xs={11} className={style.alignButtons}>
-              <button
+              {/* <button
                 className={style.receiveButtonMobile}
                 onClick={() => setWalletReceiveModalOpen()}
               >
@@ -189,7 +192,7 @@ class CoinsInfo extends React.Component {
                 onClick={() => setWalletSendModalOpen()}
               >
                 {i18n.t("BTN_SEND")}
-              </button>
+              </button> */}
             </Grid>
           </Hidden>
         </Grid>
