@@ -25,7 +25,6 @@ const menuItens = [
     label: i18n.t("MENU_HOME"),
     icon: "../../images/icons/general/home@2x.png"
   },
-
   {
     link: "/wallet",
     label: i18n.t("MENU_WALLET"),
@@ -42,11 +41,22 @@ class Menu extends React.Component {
   }
 
   onClickFunction = error => {
-    const { errorInput } = this.props;
+    const { actionMenu, errorInput } = this.props;
+    actionMenu();
     if (error) {
       errorInput("Service Unavailable. Try again later.");
     }
     return;
+  };
+
+  openP2PComponent = () => {
+    const { actionP2PComponent } = this.props;
+    actionP2PComponent();
+
+    this.setState({
+      ...this.state,
+      activeP2p: !this.state.activeP2p,
+    })
   };
 
   renderMenu = () => {
@@ -77,7 +87,10 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { openMenu, user, actionLogout } = this.props;
+    const { openMenu, user, actionLogout, actionMenu } = this.props;
+    const {activeP2p} = this.state;
+
+    const p2pStyleMenu = activeP2p ? style.linkMenuP2P : style.linkMenuP2PActive;
     
     return (
       <div
@@ -98,6 +111,9 @@ class Menu extends React.Component {
             <Grid item xs={4} />
 
             <Grid item xs={8}>
+              <Link to="/settings" className={style.link} onClick={actionMenu}>
+                {i18n.t("MENU_SETTING")}
+              </Link>
               <Link to="/" onClick={actionLogout} className={style.link}>
                 {i18n.t("MENU_LOGOUT")}
               </Link>
@@ -105,6 +121,17 @@ class Menu extends React.Component {
           </Grid>
         </Hidden>
         {this.renderMenu()}
+        <div className={style.menuP2P}>
+          <button
+            className={p2pStyleMenu}
+            onClick={() => this.openP2PComponent()}
+          >
+            <img
+              src={"../../images/icons/general/p2p@3x.png"}
+              className={style.iconP2p}
+            />
+          </button>
+        </div>
       </div>
     );
   }
@@ -113,6 +140,7 @@ class Menu extends React.Component {
 Menu.propTypes = {
   location: PropTypes.object,
   openMenu: PropTypes.bool.isRequired,
+  actionMenu: PropTypes.func.isRequired,
   actionLogout: PropTypes.func.isRequired,
   errorInput: PropTypes.func.isRequired,
   user: PropTypes.object,
