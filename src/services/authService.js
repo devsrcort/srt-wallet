@@ -13,44 +13,25 @@ import {
 import { setAuthToken } from "../utils/localStorage";
 import { encryptMd5 } from "../utils/cryptography";
 import i18n from "../utils/i18n";
-import { firebaseGetAuth, firebaseLogin } from "../utils/firebase";
 
 class AuthService {
     async authenticate(email, password) {
         try {
-            let userCredential = await firebaseLogin(firebaseGetAuth(), email, password)
-
-            const user = userCredential.user;
-            let token = await user.getIdToken();
             let response = await axios.post(
                 BASE_URL + "/users/login", {
                     login: email,
-                    password: encryptMd5(password),
-                    token: token
+                    password: encryptMd5(password)
                 },
                 HEADER_REQUEST
             );
+            if (response.data.code === 401) {
+                let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
+                return unauthorized(notification);
+            }
 
             return response;
-
         } catch (error) {
-            if (error.code === 'auth/wrong-password') {
-                let response = await axios.post(
-                    BASE_URL + "/users/login", {
-                        login: email,
-                        password: encryptMd5(password)
-                    },
-                    HEADER_REQUEST
-                );
-
-                if (response.data.status.code === 200) {
-                    // Try to verification and reset  
-                } else if (response.data.code === 401) {
-                    let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
-                    return unauthorized(notification);
-                }
-
-            } else if (error.response.data.code === 401) {
+            if (error.response.data.code === 401) {
                 let notification = i18n.t("NOTIFICATION_SERVICE_INVALID_LOGIN");
 
                 return unauthorized(notification);

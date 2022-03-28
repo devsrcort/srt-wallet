@@ -3,53 +3,35 @@ import {
     BASE_URL,
     API_HEADER,
     HEADER_REQUEST,
-    HEADER_RESPONSE,
+    HEADER_RESPONSE
 } from "../constants/apiBaseUrl";
 import {
     badRequest,
-    internalServerError,
+    internalServerError
 } from "../containers/errors/statusCodeMessage";
-import { setAuthToken } from "../utils/localStorage";
-import { encryptMd5 } from "../utils/cryptography";
+import {
+    setAuthToken
+} from "../utils/localStorage";
+import {
+    encryptMd5
+} from "../utils/cryptography";
 import i18n from "../utils/i18n";
-import { firebaseGetAuth, firebaseSendEmailVerification, firebaseCreateUser } from "../utils/firebase";
 
 class UserService {
     async createUser(userInfo) {
         try {
-            const auth = firebaseGetAuth();
-            return await firebaseCreateUser(auth, userInfo.email, userInfo.password)
-                .then(async function(userCredential) {
-                    // Signed in
-                    const user = userCredential.user;
-                    await firebaseSendEmailVerification(auth.currentUser);
-                    return user.uid;
-                })
-                .then(async function(uid) {
-                    return await axios.post(
-                        BASE_URL + "/users/register", {
-                            name: userInfo.name,
-                            phonenum: userInfo.phonenum,
-                            email: userInfo.email,
-                            password: encryptMd5(userInfo.password),
-                            link: userInfo.link,
-                            uuid: uid,
-                        },
-                        HEADER_REQUEST
-                    );
-                })
-                .then((response) => { return response; })
-                .catch((error) => {
-                    const errorCode = error.code;
+            let response = await axios.post(
+                BASE_URL + "/users/register", {
+                    name: userInfo.name,
+                    phonenum: userInfo.phonenum,
+                    email: userInfo.email,
+                    password: encryptMd5(userInfo.password),
+                    link: userInfo.link
+                },
+                HEADER_REQUEST
+            );
 
-                    if (errorCode === "auth/credential-already-in-use") {
-                        let response = { status: "InUsedMail" };
-                        return response;
-                    }
-
-                    let response = { status: errorCode };
-                    return response;
-                });
+            return response;
         } catch (error) {
             if (error.response.data.code === 500) {
                 return badRequest(i18n.t("NOTIFICATION_SERVICE_ALREADY_REGISTRED"));
@@ -79,7 +61,7 @@ class UserService {
 
             const response = await axios
                 .patch(BASE_URL + "/user", userInfo, API_HEADER)
-                .catch((error) => {
+                .catch(error => {
                     return error.response;
                 });
 
@@ -115,7 +97,7 @@ class UserService {
             street: data.street,
             city: data.city,
             state: data.state,
-            zipcode: data.zipcode,
+            zipcode: data.zipcode
         };
         API_HEADER.headers.Authorization = token;
         let response = await axios.patch(BASE_URL + "/user", userData, API_HEADER);
@@ -128,7 +110,7 @@ class UserService {
         try {
             const user = {
                 newPassword: encryptMd5(newPassword),
-                oldPassword: encryptMd5(oldPassword),
+                oldPassword: encryptMd5(oldPassword)
             };
 
             API_HEADER.headers.Authorization = token;
@@ -143,8 +125,12 @@ class UserService {
     async resetPass(data) {
         try {
             const response = await axios
-                .post(BASE_URL + "/user/forgotPassword", data, API_HEADER)
-                .catch((error) => {
+                .post(
+                    BASE_URL + "/user/forgotPassword",
+                    data,
+                    API_HEADER
+                )
+                .catch(error => {
                     return error.response;
                 });
 

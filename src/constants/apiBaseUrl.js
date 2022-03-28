@@ -2,7 +2,6 @@ export const TESTNET = false;
 export const BASE_URL = TESTNET ?
     "https://a.lunes.io/wallet/staging" :
     "https://app.srt-wallet.io";
-// "http://localhost:33123";
 
 export const LUNESNODE_URL = TESTNET ?
     "https://lunesnode-testnet.lunes.io" :

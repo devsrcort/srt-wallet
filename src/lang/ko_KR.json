@@ -224,7 +224,7 @@
     "MENU_SUPPORT": "Support",
     "LOGIN_FOOTER": "2022 srt-wallet.io All Rights Reserved",
     "PIN_ENTER": "ENTER your PIN",
-    "NEW_ACCOUNT_MESSAGE_SENDED": "가입 절차를 완료하려면 이메일을 확인해야 합니다. 받은 편지함을 확인하세요.",
+    "NEW_ACCOUNT_MESSAGE_SENDED": "You need to confirm your e-mail to complete the sign up process, please check your inbox",
     "RESET_EMAIL_SENDED": "A message with a temporary password has been sent to your email address",
     "NEW_ACCOUNT_TERMS_DOWNLOAD": "Click Here to download and finish the registration",
     "2FA_INSTRUCTIONS_LINK_WHERE_TO_FIND": "Where do I find the code",
