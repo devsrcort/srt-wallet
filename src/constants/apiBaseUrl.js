@@ -1,6 +1,6 @@
 export const TESTNET = false;
 export const BASE_URL = TESTNET ?
-    "https://a.lunes.io/wallet/staging" :
+    "https://app.dev.srt-wallet.io" :
     "https://app.srt-wallet.io";
 
 export const LUNESNODE_URL = TESTNET ?
