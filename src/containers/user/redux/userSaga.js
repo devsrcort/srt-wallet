@@ -69,8 +69,8 @@ export function* authenticateUser(action) {
         // );
 
         // let twoFactor = twoFactorResponse.data.code === 200 ? true : false;
-        setAuthToken(response.headers[HEADER_RESPONSE])
-            // yield call(setAuthToken, response.headers[HEADER_RESPONSE]);
+
+        yield call(setAuthToken, response.headers[HEADER_RESPONSE]);
 
         yield put({
             type: "POST_USER_AUTHENTICATE",

@@ -38,8 +38,7 @@ class AuthService {
                 let response = await axios.post(
                     BASE_URL + "/users/login", {
                         login: email,
-                        password: encryptMd5(password),
-                        token: ""
+                        password: encryptMd5(password)
                     },
                     HEADER_REQUEST
                 );
