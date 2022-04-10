@@ -106,7 +106,7 @@
     "CARD_HOME_TITLE_plural": "Leasing",
     "2FA_INSTRUCTIONS_TITLE": "Device verification",
     "WALLET_MODAL_SEND_TITLE": "Transaction",
-    "WALLET_MODAL_RECEIVE_TITLE": "Receive",
+    "WALLET_MODAL_RECEIVE_TITLE": "받기",
     "TRANSACTION_HISTORY_TITLE": "Transactions",
     "SETTINGS_TITLE": "Choose the right privacy settings for you",
     "PAYMENT_MODAL_TITLE": "Invoice Payment",
@@ -187,7 +187,7 @@
     "SEED_INSERT_SEED": "시드 단어 삽입",
     "PLACEHOLDER_PASSWORD_REPEAT": "비밀번호 반복",
     "BTN_SUBMIT": "Submit",
-    "BTN_SEND": "Send",
+    "BTN_SEND": "보내기",
     "MODAL_TO_SEND_SEND": "You are sending",
     "BTN_DISABLED": "Disabled",
     "BTN_SEND_LOADING": "Loading...",
@@ -196,7 +196,7 @@
     "PIN_CREATE": "CREATE your PIN",
     "BTN_NEXT": "다음",
     "BTN_LOGIN": "로그인",
-    "NOTIFICATION_SERVICE_INVALID_LOGIN": "Invalid Username/Email or Password",
+    "NOTIFICATION_SERVICE_INVALID_LOGIN": "잘못된 사용자 이름/이메일 또는 비밀번호입니다.",
     "BTN_CONFIRM_PIN": "Validate",
     "BTN_RESET": "초기화",
     "BTN_SAVE": "저장",
@@ -380,5 +380,6 @@
     "INVITE_SUCCESS_EMAIL": "Confirmed E-mail",
     "MENU_COINSALE": "Buy",
 
-    "SELECT_COIN": "Select a coin"
+    "SELECT_COIN": "Select a coin",
+    "LOCKED_WALLET": "현재 지갑은 잠금상태입니다."
 }

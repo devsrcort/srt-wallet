@@ -75,7 +75,6 @@ class CoinService {
                 status: "active",
             }];
 
-
             const promises = availableCoins.map(async(coin, index) => {
                 // CHECK ACTIVE DEFAULT COIN
                 if (defaultCrypto === coin.abbreviation && coin.status !== "active") {
@@ -87,7 +86,6 @@ class CoinService {
 
                 availableCoins[index].coinHistory = undefined;
                 let localSeed = seed;
-
 
                 if (coin.status === "active") {
 
@@ -132,7 +130,7 @@ class CoinService {
             availableCoins.map(async(coin, index) => {
                 coins[coin.abbreviation] = availableCoins[index];
             });
-            setAuthToken(availableCoins.token);
+            setAuthToken(token);
             coins.token = availableCoins.token;
             return coins;
         } catch (error) {
@@ -154,11 +152,11 @@ class CoinService {
         }
     }
 
-    async getCoinBalance(coinName, address, token) {
+    async getCoinBalance(email, token) {
         try {
             API_HEADER.headers.Authorization = token;
             let response = await axios.get(
-                BASE_URL + "/coin/" + coinName + "/balance/" + address,
+                BASE_URL + "/users/getbalance", { params: { id: email } },
                 API_HEADER
             );
             setAuthToken(response.headers[HEADER_RESPONSE]);
@@ -277,13 +275,11 @@ class CoinService {
         try {
             let valid = false;
 
-            if (coin === "usdt") coin = "btc"; // USDT/TETHER address === BTC address
-
             if (!coin || !address || address.length < 10) {
                 return "error";
             }
 
-            if (coin === "SRT" || coin === "LUNES") {
+            if (coin === "SRT") {
                 let response = await axios.get(
                     LUNESNODE_URL + "/addresses/validate/" + address
                 );

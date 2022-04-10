@@ -6,10 +6,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
   setWalletSendModalOpen,
-  setWalletReceiveModalOpen,
   setWalletModalStep,
   setWalletLoading,
-  setUtxos,
   resetModalSend
 } from "./redux/walletAction";
 import { errorRequest } from "../errors/redux/errorAction.js";
@@ -28,7 +26,6 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 //COMPONENTS
 import Modal from "../../components/modal";
 import SendModal from "./modal/sendModal/";
-import ReceiveModal from "./modal/receiveModal/";
 
 // UTILS
 import i18n from "../../utils/i18n";
@@ -72,10 +69,8 @@ class CoinsInfo extends React.Component {
   componentDidUpdate() {
     let { lastCoin } = this.state;
     let { wallet } = this.props;
-    // let { wallet, coins, setUtxos } = this.props;
     // let address = coins[wallet.selectedCoin].address;
     if (lastCoin !== wallet.selectedCoin) {
-      // setUtxos(wallet.selectedCoin, address);
       this.setState({ lastCoin: wallet.selectedCoin });
     }
   }
@@ -107,7 +102,6 @@ class CoinsInfo extends React.Component {
   render() {
     let {
       // setWalletSendModalOpen,
-      // setWalletReceiveModalOpen,
       coins,
       wallet
     } = this.props;
@@ -121,13 +115,6 @@ class CoinsInfo extends React.Component {
     let address = coin.address;
     return (
       <div>
-        <Modal
-          title={i18n.t("WALLET_MODAL_RECEIVE_TITLE")}
-          content={<ReceiveModal coin={coin} />}
-          show={wallet.modalReceive.open}
-          close={() => setWalletReceiveModalOpen()}
-        />
-
         <Modal
           title={i18n.t("WALLET_MODAL_SEND_TITLE")}
           content={<SendModal />}
@@ -179,20 +166,27 @@ class CoinsInfo extends React.Component {
             </Hidden>
           </Grid>
 
-          <Hidden smUp>
+          <Hidden xsDown>
             <Grid item xs={11} className={style.alignButtons}>
-              {/* <button
-                className={style.receiveButtonMobile}
-                onClick={() => setWalletReceiveModalOpen()}
-              >
-                {i18n.t("BTN_RECEIVE")}
-              </button>
+              {
               <button
-                className={style.sentButtonMobile}
-                onClick={() => setWalletSendModalOpen()}
+                className={style.sentButton}
+                onClick={() => alert("현재 지갑은 잠금상태입니다.")}
               >
                 {i18n.t("BTN_SEND")}
-              </button> */}
+              </button>}
+            </Grid>
+          </Hidden>
+
+          <Hidden smUp>
+            <Grid item xs={11} className={style.alignButtons}>
+              {
+              <button
+                className={style.sentButtonMobile}
+                onClick={() => alert("현재 지갑은 잠금상태입니다.")}
+              >
+                {i18n.t("BTN_SEND")}
+              </button>}
             </Grid>
           </Hidden>
         </Grid>
@@ -205,12 +199,10 @@ CoinsInfo.propTypes = {
   user: PropTypes.object.isRequired,
   wallet: PropTypes.object.isRequired,
   coins: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-  setUtxos: PropTypes.func.isRequired,
   loadWalletInfo: PropTypes.func.isRequired,
   setWalletLoading: PropTypes.func.isRequired,
   setWalletModalStep: PropTypes.func.isRequired,
   setWalletSendModalOpen: PropTypes.func.isRequired,
-  setWalletReceiveModalOpen: PropTypes.func,
   errorRequest: PropTypes.func,
   resetModalSend: PropTypes.func
 };
@@ -228,8 +220,6 @@ const mapDispatchToProps = dispatch =>
       setWalletLoading,
       setWalletModalStep,
       setWalletSendModalOpen,
-      setWalletReceiveModalOpen,
-      setUtxos,
       errorRequest,
       resetModalSend
     },

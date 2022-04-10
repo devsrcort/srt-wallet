@@ -11,7 +11,6 @@ import { connect } from "react-redux";
 import fakeDelay from "../../../components/fakeDelay";
 import Loading from "../../../components/loading";
 import Skeleton from "../../skeleton";
-import ModalBar from "../../../components/modalBar";
 
 function loading({ error }) {
   if (error) {
@@ -23,12 +22,6 @@ function loading({ error }) {
 }
 
 /* eslint-disable */
-let home = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../home")),
-  loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../home")
-});
-
 let wallet = Loadable({
   loader: () => fakeDelay(400).then(() => import("../../wallet")),
   loading: loading,
@@ -51,15 +44,9 @@ let errorInternal = Loadable({
 
 class App extends Component {
   render() {
-    const { error } = this.props;
     return (
       <Router>
         <div>
-          <div>
-            {error.active ? (
-              <ModalBar type={error.type} message={error.message} timer />
-            ) : null}
-          </div>
           <Skeleton>
             <Switch>
               {/* INSIDE ROUTES */}

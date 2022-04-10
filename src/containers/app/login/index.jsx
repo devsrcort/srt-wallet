@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 // COMPONENTS
 import Loading from "../../../components/loading";
 import fakeDelay from "../../../components/fakeDelay";
-import ModalBar from "../../../components/modalBar";
 
 // MATERIAL UI
 import Grid from "@material-ui/core/Grid";
@@ -95,17 +94,10 @@ class Login extends Component {
   };
 
   render() {
-    const { error } = this.props;
-
     return (
       <Router>
         <div>
           <Grid container>
-            <div>
-              {error.active ? (
-                <ModalBar type={error.type} message={error.message} timer />
-              ) : null}
-            </div>
             <Grid item xs={12} sm={12} md={5} className={style.colLeft}>
               <Switch>
                 {/* INSIDE ROUTES */}

@@ -1,3 +1,3 @@
-import EthServices from "./eth";
+import SRTServices from "./srt";
 
-export { EthServices };
+export { SRTServices };

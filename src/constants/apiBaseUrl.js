@@ -1,4 +1,4 @@
-export const TESTNET = false;
+export const TESTNET = true;
 export const BASE_URL = TESTNET ?
     "https://app.dev.srt-wallet.io" :
     "https://app.srt-wallet.io";
@@ -44,9 +44,4 @@ export const chat = {
 export const blockexplorer = {
     lunes: TESTNET ?
         "https://blockexplorer-testnet.lunes.io/tx/" : "https://blockexplorer.lunes.io/tx/",
-    btc: TESTNET ? "https://live.blockcypher.com/btc-testnet/block/" : "https://live.blockcypher.com/btc/tx/",
-    ltc: TESTNET ? "https://chain.so/tx/LTCTEST/" : "https://live.blockcypher.com/ltc/tx/",
-    bch: "https://live.blockcypher.com/bch/tx/",
-    dash: "https://chainz.cryptoid.info/dash/search.dws?q=",
-    eth: TESTNET ? "https://ropsten.etherscan.io/tx/" : "https://etherscan.io/tx/"
 };
