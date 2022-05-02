@@ -172,17 +172,19 @@ class CoinsInfo extends React.Component {
 
             <Hidden smUp>
               <Grid item xs={8} className={style.floatRight}>
-                <Grid item className={style.balanceItemMobile}>
-                  <h2>안녕하세요, XXX님</h2>
-                </Grid>
-                <Grid item className={style.balanceItemMobile}>
-                  <h2>{i18n.t("WALLET_BALANCE")}</h2>
-                  <h3>{strBalance} </h3>
-                  <div className={style.alignValues}>
-                    <h3> $0.00 USD</h3>
-                  </div>
-                  <h3>출금예정일 D-X</h3>
-                  <h3>출금가능비율 : -%</h3>
+                <Grid item className={style.floatRight}>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>안녕하세요, XXX님</h2>
+                  </Grid>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                    <h3>{strBalance} </h3>
+                    <div className={style.alignValues}>
+                      <h3> $0.00 USD</h3>
+                    </div>
+                    <h3>출금예정일 D-X</h3>
+                    <h3>출금가능비율 : -%</h3>
+                  </Grid>
                 </Grid>
               </Grid>
             </Hidden>
