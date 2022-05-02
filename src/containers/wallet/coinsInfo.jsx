@@ -171,7 +171,7 @@ class CoinsInfo extends React.Component {
             </Hidden>
 
             <Hidden smUp>
-              <Grid item xs={8} className={style.floatRight}>
+              <Grid item xs={8} className={style.contentInfo}>
                 <Grid item className={style.floatRight}>
                   <Grid item className={style.balanceItemMobile}>
                     <h2>안녕하세요, XXX님</h2>
