@@ -114,7 +114,8 @@ class UserService {
             };
 
             API_HEADER.headers.Authorization = token;
-            const response = await axios.patch(BASE_URL + "/user", user, API_HEADER);
+            const response = await axios.post(BASE_URL + "/users/resetUserPassword", user,
+                API_HEADER);
 
             return response;
         } catch (error) {
