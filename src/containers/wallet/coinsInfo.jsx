@@ -171,21 +171,19 @@ class CoinsInfo extends React.Component {
             </Hidden>
 
             <Hidden smUp>
-              <Grid item xs={11} sm={7} md={6} className={style.contentInfo}>
-                <Grid item xs={8} className={style.floatRight}>
-                  <Grid item className={style.floatRight}>
-                    <Grid item className={style.balanceItemMobile}>
-                      <h2>안녕하세요, XXX님</h2>
-                    </Grid>
-                    <Grid item className={style.balanceItemMobile}>
-                      <h2>{i18n.t("WALLET_BALANCE")}</h2>
-                      <h3>{strBalance} </h3>
-                      <div className={style.alignValues}>
-                        <h3> $0.00 USD</h3>
-                      </div>
-                      <h3>출금예정일 D-X</h3>
-                      <h3>출금가능비율 : -%</h3>
-                    </Grid>
+              <Grid item xs={8} className={style.floatRight}>
+                <Grid item className={style.floatRight}>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>안녕하세요, XXX님</h2>
+                  </Grid>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                    <h3>{strBalance} </h3>
+                    <div className={style.alignValues}>
+                      <h3> $0.00 USD</h3>
+                    </div>
+                    <h3>출금예정일 D-X</h3>
+                    <h3>출금가능비율 : -%</h3>
                   </Grid>
                 </Grid>
               </Grid>
@@ -193,15 +191,13 @@ class CoinsInfo extends React.Component {
           </Grid>
 
           <Hidden smUp>
-            <Grid item xs={11} className={style.floatRight}>
-              <Grid item xs={11} className={style.alignButtons}>
-                <button
-                  className={style.sentButtonMobile}
-                  onClick={() => alert("현재 지갑은 잠금상태입니다.")}
-                >
-                  {i18n.t("BTN_SEND")}
-                </button>
-              </Grid>
+            <Grid item xs={11} className={style.alignButtons}>
+              <button
+                className={style.sentButtonMobile}
+                onClick={() => alert("현재 지갑은 잠금상태입니다.")}
+              >
+                {i18n.t("BTN_SEND")}
+              </button>
             </Grid>
           </Hidden>
         </Grid>
