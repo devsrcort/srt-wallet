@@ -168,12 +168,34 @@ class CoinsInfo extends React.Component {
             </Hidden>
 
             <Hidden smUp>
-
+              <Grid item xs={8} className={style.contentInfo}>
+                <Grid item className={style.floatRight}>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>안녕하세요, {userName} 님</h2>
+                  </Grid>
+                  <Grid item className={style.balanceItemMobile}>
+                    <h2>{i18n.t("WALLET_BALANCE")}</h2>
+                    <h3>{strBalance} </h3>
+                    <div className={style.alignValues}>
+                      <h3> $0.00 USD</h3>
+                    </div>
+                    <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")} D-</h3>
+                    <h3>{i18n.t("WITHDRAWABLE_RATE")} : -%</h3>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Hidden>
           </Grid>
 
           <Hidden smUp>
-
+            <Grid item xs={11} className={style.alignButtons}>
+              <button
+                className={style.sentButtonMobile}
+                onClick={() => alert(i18n.t("LOCKED_WALLET"))}
+              >
+                {i18n.t("BTN_SEND")}
+              </button>
+            </Grid>
           </Hidden>
         </Grid>
       </div>
