@@ -91,11 +91,11 @@ class CoinService {
 
                     // GET BALANCE
                     let responseBalance = await axios.get(
-                        BASE_URL + "/users/getbalance", { params: { id: getUsername() }, headers: { "Authorization": token } }
+                        BASE_URL + "/users/getUserInfo", { params: { id: getUsername() }, headers: { "Authorization": token } }
                     );
 
                     if (responseBalance.data.balance) {
-                        availableCoins.token = responseBalance.headers[HEADER_RESPONSE];
+                        availableCoins.token = responseBalance.data.token;
                         availableCoins[index].balance = {
                             available: parseInt(responseBalance.data.balance),
                             total: parseInt(responseBalance.data.balance),

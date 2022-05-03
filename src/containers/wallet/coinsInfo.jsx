@@ -101,7 +101,7 @@ class CoinsInfo extends React.Component {
 
   render() {
     let {
-      // setWalletSendModalOpen,
+      user,
       coins,
       wallet,
     } = this.props;
@@ -113,6 +113,7 @@ class CoinsInfo extends React.Component {
     let coin = coins[wallet.selectedCoin];
     let balance = coin.balance.available;
     let strBalance = parseInt(balance).toLocaleString();
+    let userName = user.name;
     // let address = coin.address;
     return (
       <div>
@@ -147,7 +148,7 @@ class CoinsInfo extends React.Component {
               <Grid item xs={8} className={style.floatRight}>
                 <Grid item className={style.floatRight}>
                   <Grid item className={style.balanceItem}>
-                    <h2>안녕하세요, XXX님</h2>
+                    <h2>안녕하세요, {userName} 님</h2>
                   </Grid>
                   <Grid item className={style.balanceItem}>
                     <h2>{i18n.t("WALLET_BALANCE")}</h2>
@@ -155,13 +156,13 @@ class CoinsInfo extends React.Component {
                     <div className={style.alignValues}>
                       <h3> $0.00 USD</h3>
                     </div>
-                    <h3>출금예정일 D-X</h3>
-                    <h3>출금가능비율 : -%</h3>
+                    <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")} D-</h3>
+                    <h3>{i18n.t("WITHDRAWABLE_RATE")} : -%</h3>
                   </Grid>
                   <Grid item xs={11} className={style.alignButtons}>
                     <button
                       className={style.sentButton}
-                      onClick={() => alert("현재 지갑은 잠금상태입니다.")}
+                      onClick={() => alert(i18n.t("LOCKED_WALLET"))}
                     >
                       {i18n.t("BTN_SEND")}
                     </button>
@@ -182,8 +183,8 @@ class CoinsInfo extends React.Component {
                     <div className={style.alignValues}>
                       <h3> $0.00 USD</h3>
                     </div>
-                    <h3>출금예정일 D-X</h3>
-                    <h3>출금가능비율 : -%</h3>
+                    <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")} D-</h3>
+                    <h3>{i18n.t("WITHDRAWABLE_RATE")} : -%</h3>
                   </Grid>
                 </Grid>
               </Grid>
@@ -194,7 +195,7 @@ class CoinsInfo extends React.Component {
             <Grid item xs={11} className={style.alignButtons}>
               <button
                 className={style.sentButtonMobile}
-                onClick={() => alert("현재 지갑은 잠금상태입니다.")}
+                onClick={() => alert(i18n.t("LOCKED_WALLET"))}
               >
                 {i18n.t("BTN_SEND")}
               </button>

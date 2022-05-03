@@ -175,7 +175,7 @@
     "BTN_CONFIRM": "Confirm",
     "PAYMENT_CONFIRM": "The average payment confirmation time is up to 30 minutes. Only complete the payment if you agree.",
     "PAYMENT_CONFIRM_plural": "",
-    "MESSAGE_ERROR_FILEDS": "The following fields are missing or wrong",
+    "MESSAGE_ERROR_FILEDS": "다음 필드가 누락되었거나 잘못되었습니다.",
     "MESSAGE_ERROR_EMPTY_FILEDS": "Some fields are empty",
     "MESSAGE_USER_EMAIL": "User/Email",
     "PLACEHOLDER_USERNAME_EMAIL": "Email",
@@ -381,5 +381,7 @@
     "MENU_COINSALE": "Buy",
 
     "SELECT_COIN": "Select a coin",
-    "LOCKED_WALLET": "현재 지갑은 잠금상태입니다."
+    "LOCKED_WALLET": "현재 지갑은 잠금상태입니다.",
+    "EXPECTED_WITHDRAWAL_DATE": "출금예정일",
+    "WITHDRAWABLE_RATE": "출금가능비율"
 }

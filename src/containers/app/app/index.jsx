@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Loadable from "react-loadable";
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import ModalBar from "../../../components/modalBar";
 
 // REDUX
 import { connect } from "react-redux";
@@ -25,28 +26,35 @@ function loading({ error }) {
 let wallet = Loadable({
   loader: () => fakeDelay(400).then(() => import("../../wallet")),
   loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../wallet")
+  serverSideRequirePath: path.resolve(__dirname, "../../wallet"),
 });
 
 let errorNotFound = Loadable({
   loader: () => fakeDelay(0).then(() => import("../../errors/404")),
   loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../errors/404")
+  serverSideRequirePath: path.resolve(__dirname, "../../errors/404"),
 });
 
 let errorInternal = Loadable({
   loader: () => fakeDelay(0).then(() => import("../../errors/500")),
   loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../errors/500")
+  serverSideRequirePath: path.resolve(__dirname, "../../errors/500"),
 });
 
 /* eslint-enable */
 
 class App extends Component {
   render() {
+    const { error } = this.props;
+
     return (
       <Router>
         <div>
+          <div>
+            {error.active ? (
+              <ModalBar type={error.type} message={error.message} timer />
+            ) : null}
+          </div>
           <Skeleton>
             <Switch>
               {/* INSIDE ROUTES */}
@@ -67,11 +75,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-  error: PropTypes.object
+  error: PropTypes.object,
 };
 
-const mapSateToProps = store => ({
-  error: store.error.message
+const mapSateToProps = (store) => ({
+  error: store.error.message,
 });
 
 export default connect(mapSateToProps)(App);
