@@ -175,7 +175,7 @@ class CoinsInfo extends React.Component {
               <Grid item xs={8} className={style.contentInfo}>
                 <Grid item className={style.floatRight}>
                   <Grid item className={style.balanceItemMobile}>
-                    <h2>안녕하세요, XXX님</h2>
+                    <h2>안녕하세요, {userName} 님</h2>
                   </Grid>
                   <Grid item className={style.balanceItemMobile}>
                     <h2>{i18n.t("WALLET_BALANCE")}</h2>
