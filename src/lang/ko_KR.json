@@ -317,7 +317,7 @@
     "PAGE_ERROR_404": "Oh, No!... Page not found",
     "ASSETS_USER_DOESNT_HAVE_TOKEN": "You don't have any token",
     "ASSETS_BAD_REQUEST": "Couldn't request assets' info, check if you are correctly logged in",
-    "ASSETS_SERVER_ERROR": "An error ocurred in our server, try again later on",
+    "ASSETS_SERVER_ERROR": "서버에서 오류가 발생했습니다. 나중에 다시 시도하세요.",
     "ASSETS_UNKNOWN_ERROR": "Unknown error on trying to do assets' request",
     "ASSETS_UNKNOWN_ERROR_1": "Unknown error on trying to do assets' request.",
     "ASSETS_NO_TX_HISTORY_1": "You dont have any history to be shown up.",
