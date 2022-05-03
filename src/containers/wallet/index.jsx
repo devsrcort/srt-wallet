@@ -9,7 +9,7 @@ import { setWalletLoading, setSelectedCoin } from "./redux/walletAction";
 
 // COMPONENTS
 import CoinsInfo from "./coinsInfo";
-// import TransactionHistory from "./transactionHistory";
+import TransactionHistory from "./transactionHistory";
 import Loading from "../../components/loading";
 
 // UTILS
@@ -36,7 +36,7 @@ class Wallet extends React.Component {
       <div>
         <div>
           <CoinsInfo />
-          {/* <TransactionHistory /> */}
+          <TransactionHistory />
         </div>
       </div>
     );

@@ -10,7 +10,8 @@ import {
     internalServerError
 } from "../containers/errors/statusCodeMessage";
 import {
-    setAuthToken
+    setAuthToken,
+    getUsername
 } from "../utils/localStorage";
 import {
     encryptMd5
@@ -45,9 +46,11 @@ class UserService {
     async getUser(token) {
         try {
             API_HEADER.headers.Authorization = token;
-            let response = await axios.get(BASE_URL + "/user", API_HEADER);
-            setAuthToken(response.headers[HEADER_RESPONSE]);
+            let response = await axios.get(
+                BASE_URL + "/users/getUserInfo", { params: { id: getUsername() }, headers: { "Authorization": token } }
+            );
 
+            setAuthToken(response.data.token);
             return response;
         } catch (error) {
             internalServerError();
@@ -114,7 +117,8 @@ class UserService {
             };
 
             API_HEADER.headers.Authorization = token;
-            const response = await axios.patch(BASE_URL + "/user", user, API_HEADER);
+            const response = await axios.post(BASE_URL + "/users/resetUserPassword", user,
+                API_HEADER);
 
             return response;
         } catch (error) {
