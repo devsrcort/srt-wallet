@@ -3,19 +3,14 @@ import {
     BASE_URL,
     API_HEADER,
     HEADER_REQUEST,
-    HEADER_RESPONSE
+    HEADER_RESPONSE,
 } from "../constants/apiBaseUrl";
 import {
     badRequest,
-    internalServerError
+    internalServerError,
 } from "../containers/errors/statusCodeMessage";
-import {
-    setAuthToken,
-    getUsername
-} from "../utils/localStorage";
-import {
-    encryptMd5
-} from "../utils/cryptography";
+import { setAuthToken, getUsername } from "../utils/localStorage";
+import { encryptMd5 } from "../utils/cryptography";
 import i18n from "../utils/i18n";
 
 class UserService {
@@ -27,7 +22,7 @@ class UserService {
                     phonenum: userInfo.phonenum,
                     email: userInfo.email,
                     password: encryptMd5(userInfo.password),
-                    link: userInfo.link
+                    link: userInfo.link,
                 },
                 HEADER_REQUEST
             );
@@ -46,9 +41,10 @@ class UserService {
     async getUser(token) {
         try {
             API_HEADER.headers.Authorization = token;
-            let response = await axios.get(
-                BASE_URL + "/users/getUserInfo", { params: { id: getUsername() }, headers: { "Authorization": token } }
-            );
+            let response = await axios.get(BASE_URL + "/users/getUserInfo", {
+                params: { id: getUsername() },
+                headers: { Authorization: token },
+            });
 
             setAuthToken(response.data.token);
             return response;
@@ -64,7 +60,7 @@ class UserService {
 
             const response = await axios
                 .patch(BASE_URL + "/user", userInfo, API_HEADER)
-                .catch(error => {
+                .catch((error) => {
                     return error.response;
                 });
 
@@ -100,7 +96,7 @@ class UserService {
             street: data.street,
             city: data.city,
             state: data.state,
-            zipcode: data.zipcode
+            zipcode: data.zipcode,
         };
         API_HEADER.headers.Authorization = token;
         let response = await axios.patch(BASE_URL + "/user", userData, API_HEADER);
@@ -113,12 +109,15 @@ class UserService {
         try {
             const user = {
                 newPassword: encryptMd5(newPassword),
-                oldPassword: encryptMd5(oldPassword)
+                oldPassword: encryptMd5(oldPassword),
             };
 
             API_HEADER.headers.Authorization = token;
-            const response = await axios.post(BASE_URL + "/users/resetUserPassword", user,
-                API_HEADER);
+            const response = await axios.post(
+                BASE_URL + "/users/resetUserPassword",
+                user,
+                API_HEADER
+            );
 
             return response;
         } catch (error) {
@@ -129,12 +128,10 @@ class UserService {
     async resetPass(data) {
         try {
             const response = await axios
-                .post(
-                    BASE_URL + "/user/forgotPassword",
-                    data,
-                    API_HEADER
-                )
-                .catch(error => {
+                .get(BASE_URL + "/users/sendEmailResetPasswd", {
+                    params: { email: data.email }
+                })
+                .catch((error) => {
                     return error.response;
                 });
 
