@@ -73,6 +73,7 @@ class CoinService {
                 numberConfirmations: 1,
                 smallerUnit: "SRT",
                 status: "active",
+                price: 0
             }];
 
             const promises = availableCoins.map(async(coin, index) => {
@@ -113,6 +114,12 @@ class CoinService {
                         );
 
                         availableCoins[index].address = responseBalance.data.addr;
+                        let responsePrice = await axios.get(
+                            BASE_URL + "/users/getTokenPrice", {
+                                headers: { "Authorization": token }
+                            });
+                        availableCoins[index].price = responsePrice.data.price;
+                        availableCoins[index].totalPrice = responsePrice.data.price * parseInt(availableCoins[index].balance.available);
                     } else {
                         availableCoins[index].status = "inactive";
                         availableCoins[index].balance = undefined;
