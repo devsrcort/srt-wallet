@@ -100,7 +100,7 @@ class CoinsInfo extends React.Component {
   };
 
   render() {
-    let { user, coins, wallet } = this.props;
+    let { setWalletSendModalOpen, user, coins, wallet } = this.props;
     let step = wallet.modal.step;
     let selectedCoin = wallet.selectedCoin ? wallet.selectedCoin : "SRT";
 
@@ -174,7 +174,8 @@ class CoinsInfo extends React.Component {
         <button
           className={style.sentButton}
           onClick={() => alert(i18n.t("LOCKED_WALLET"))}
-        >
+          // onClick={() => setWalletSendModalOpen()}
+          >
           {i18n.t("BTN_SEND")}
         </button>
       </div>

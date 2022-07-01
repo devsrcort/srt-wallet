@@ -16,17 +16,23 @@ import BoxResultError from "./boxResultError";
 // STYLE
 import style from "../../style.css";
 
-class SendModal extends React.Component {
+class UserInfoModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 0,
+      step: 0
     };
   }
 
   renderContent = () => {
     let { modal, wallet } = this.props;
-    <div align="center"></div>;
+    if (modal.step === 0) return <BoxAddress coin={wallet.selectedCoin} />;
+    if (modal.step === 1) return <BoxAmount coin={wallet.selectedCoin} />;
+    if (modal.step === 2) return <BoxFee coin={wallet.selectedCoin} />;
+    if (modal.step === 3) return <BoxConfirm coin={wallet.selectedCoin} />;
+    if (modal.step === 4) return <BoxProcess coin={wallet.selectedCoin} />;
+    if (modal.step === 5) return <BoxResult coin={wallet.selectedCoin} />;
+    if (modal.step === 6) return <BoxResultError coin={wallet.selectedCoin} />;
   };
 
   render() {
@@ -39,9 +45,13 @@ SendModal.propTypes = {
   wallet: PropTypes.object.isRequired,
 };
 
-const mapSateToProps = (store) => ({
+const mapSateToProps = store => ({
   wallet: store.wallet,
   modal: store.wallet.modal,
 });
 
-export default connect(mapSateToProps, null)(SendModal);
+
+export default connect(
+  mapSateToProps,
+  null
+)(SendModal);
