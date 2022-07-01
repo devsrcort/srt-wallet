@@ -7,9 +7,6 @@ import { bindActionCreators } from "redux";
 import { setWalletLoading } from "./redux/walletAction";
 import { loadWalletInfo } from "../skeleton/redux/skeletonAction";
 
-// CONSTANTS
-import { blockexplorer } from "../../constants/apiBaseUrl";
-
 // STYLE
 import style from "./style.css";
 

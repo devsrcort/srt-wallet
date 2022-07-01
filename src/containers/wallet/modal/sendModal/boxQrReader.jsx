@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
-  getValidateAddress,
   setWalletSendModalLoading
 } from "../../redux/walletAction";
 import { errorInput } from "../../../errors/redux/errorAction";
@@ -24,14 +23,12 @@ class BoxQrReader extends Component {
     let {
       coin,
       coins,
-      getValidateAddress,
       setWalletSendModalLoading
     } = this.props;
     let coinName = coins[coin].name;
 
     if (data) {
       setWalletSendModalLoading();
-      getValidateAddress(coinName, data);
     }
   };
 
@@ -59,7 +56,6 @@ class BoxQrReader extends Component {
 BoxQrReader.propTypes = {
   coin: PropTypes.string.isRequired,
   coins: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-  getValidateAddress: PropTypes.func.isRequired,
   setWalletSendModalLoading: PropTypes.func.isRequired,
   errorInput: PropTypes.func
 };
@@ -72,7 +68,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       errorInput,
-      getValidateAddress,
       setWalletSendModalLoading
     },
     dispatch

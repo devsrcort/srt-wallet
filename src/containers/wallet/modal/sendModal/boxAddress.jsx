@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
-  getValidateAddress,
   setWalletSendModalLoading
 } from "../../redux/walletAction";
 
@@ -36,12 +35,7 @@ class BoxAddress extends React.Component {
   };
 
   validateAddress = () => {
-    let { address } = this.state;
-    let { coin, getValidateAddress, setWalletSendModalLoading } = this.props;
-
     setWalletSendModalLoading();
-    getValidateAddress(coin, address);
-
     return;
   };
 
@@ -137,7 +131,6 @@ class BoxAddress extends React.Component {
 BoxAddress.propTypes = {
   coin: PropTypes.string.isRequired,
   modal: PropTypes.object.isRequired,
-  getValidateAddress: PropTypes.func.isRequired,
   setWalletSendModalLoading: PropTypes.func.isRequired
 };
 
@@ -149,7 +142,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       setWalletSendModalLoading,
-      getValidateAddress,
     },
     dispatch
   );

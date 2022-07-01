@@ -270,33 +270,6 @@ const user = (state = initialState, action) => {
                 }
             };
 
-        case "VERIFY_EMAIL_LOADING":
-            return {
-                ...state,
-                verifyEmail: {
-                    ...state.verifyEmail,
-                    loading: true
-                }
-            };
-
-        case "VERIFY_EMAIL_SUCCESS":
-            return {
-                ...state,
-                verifyEmail: {
-                    success: true,
-                    loading: false,
-                }
-            };
-
-        case "VERIFY_EMAIL_ERROR":
-            return {
-                ...state,
-                verifyEmail: {
-                    success: false,
-                    loading: false,
-                }
-            };
-
         case "CLEAR_USER_DATA":
             return {
                 ...state,

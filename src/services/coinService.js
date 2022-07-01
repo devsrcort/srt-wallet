@@ -1,10 +1,8 @@
 import axios from "axios";
-import WAValidator from "lunes-address-validator";
 
 // CONSTANTS
 import {
     BASE_URL,
-    LUNESNODE_URL,
     API_HEADER,
     HEADER_RESPONSE,
     TESTNET
@@ -248,25 +246,6 @@ class CoinService {
         }
     }
 
-    async createWalletCoin(coinType, seed, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let response = await axios.post(
-                BASE_URL + "/coin/" + coinType + "/address", {
-                    seed
-                },
-                API_HEADER
-            );
-
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
     async getCoinHistory(coin, address, token) {
         try {
             API_HEADER.headers.Authorization = token;
@@ -275,64 +254,6 @@ class CoinService {
         } catch (error) {
             internalServerError();
             return;
-        }
-    }
-    getAddress() {}
-    async validateAddress(coin, address) {
-        try {
-            let valid = false;
-
-            if (!coin || !address || address.length < 10) {
-                return "error";
-            }
-
-            if (coin === "SRT") {
-                let response = await axios.get(
-                    LUNESNODE_URL + "/addresses/validate/" + address
-                );
-
-                if (!response.data.valid) {
-                    return "error";
-                }
-
-                return response.data.valid;
-            }
-
-            if (TESTNET) {
-                valid = await WAValidator.validate(
-                    address,
-                    coin.toUpperCase(),
-                    "testnet"
-                );
-            } else {
-                valid = await WAValidator.validate(address, coin.toUpperCase());
-            }
-
-            if (!valid) {
-                return "error";
-            }
-
-            return valid;
-        } catch (er) {
-            let error = {
-                error: internalServerError(),
-                er: er
-            };
-            return error;
-        }
-    }
-
-    async shareCoinAddress(coinName, coinAddress) {
-        try {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    text: coinName + ":" + coinAddress,
-                    url: window.location.href
-                });
-            }
-        } catch (error) {
-            internalServerError();
         }
     }
 
