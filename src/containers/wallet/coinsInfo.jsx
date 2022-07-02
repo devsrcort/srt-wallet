@@ -1,4 +1,5 @@
 import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import PropTypes from "prop-types";
 
 // REDUX
@@ -6,6 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
   setWalletSendModalOpen,
+  setUserConfigureOpen,
   setWalletModalStep,
   setWalletLoading,
   resetModalSend,
@@ -26,6 +28,7 @@ import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 //COMPONENTS
 import Modal from "../../components/modal";
 import SendModal from "./modal/sendModal/";
+import UserConfigureModel from "./modal/userInfo/";
 
 // UTILS
 import i18n from "../../utils/i18n";
@@ -35,7 +38,7 @@ class CoinsInfo extends React.Component {
     super();
     this.state = {
       modalSend: false,
-      modalReceive: false,
+      modalUser: false,
     };
   }
 
@@ -100,7 +103,8 @@ class CoinsInfo extends React.Component {
   };
 
   render() {
-    let { setWalletSendModalOpen, user, coins, wallet } = this.props;
+    let { setWalletSendModalOpen, setUserConfigureOpen, user, coins, wallet } =
+      this.props;
     let step = wallet.modal.step;
     let selectedCoin = wallet.selectedCoin ? wallet.selectedCoin : "SRT";
 
@@ -127,6 +131,13 @@ class CoinsInfo extends React.Component {
           }
         />
 
+        <Modal
+          title={i18n.t("SETTINGS_USER")}
+          content={<UserConfigureModel />}
+          show={wallet.modalUser.open}
+          close={() => setUserConfigureOpen()}
+        />
+
         <Grid container className={style.containerInfoBackground}>
           <Grid item className={style.coinInfoBox}>
             <Grid item className={style.coinSymbolBox}>
@@ -139,7 +150,16 @@ class CoinsInfo extends React.Component {
                 <div className={style.alignValuesFlex}>
                   <h4>{i18n.t("HELLO")},</h4>
                   <h4> {userName}</h4>
-                  <img src={"./images/icons/general/setting@1x.png"} width="24" height="24"/>
+                  <a
+                    // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
+                    onClick={() => setUserConfigureOpen(user.name, user.email, user.phonenum)}
+                  >
+                    <img
+                      src={"./images/icons/general/setting@1x.png"}
+                      width="24"
+                      height="24"
+                    />
+                  </a>
                 </div>
 
                 <div className={style.alignValues}>
@@ -147,7 +167,7 @@ class CoinsInfo extends React.Component {
                   <h4>{i18n.t("WALLET_BALANCE")}</h4>
                   <h4>{strBalance} </h4>
                   <hr />
-                  <h4>USD</h4>
+                  <h4>USDT Value</h4>
                   <h4> $ {curTotalPrice}</h4>
                   <hr />
                 </div>
@@ -157,7 +177,13 @@ class CoinsInfo extends React.Component {
           <Grid item className={style.balanceItemMobile}>
             <div className={style.alignButtonsBetween}>
               <h3>{i18n.t("SETTINGS_USER_ADDRESS")}</h3>
-              <img src={"./images/icons/general/copy@1.png"} />
+              <CopyToClipboard
+                text={coin.address}
+                onCopy={() => alert("Address is copied.")}
+              >
+                <img src={"./images/icons/general/copy@1.png"} />
+              </CopyToClipboard>
+
             </div>
             <div className={style.addressValue}>
               <h4>{address}</h4>
@@ -173,9 +199,9 @@ class CoinsInfo extends React.Component {
         </Grid>
         <button
           className={style.sentButton}
-          onClick={() => alert(i18n.t("LOCKED_WALLET"))}
-          // onClick={() => setWalletSendModalOpen()}
-          >
+          // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
+          onClick={() => setWalletSendModalOpen()}
+        >
           {i18n.t("BTN_SEND")}
         </button>
       </div>
@@ -191,6 +217,7 @@ CoinsInfo.propTypes = {
   setWalletLoading: PropTypes.func.isRequired,
   setWalletModalStep: PropTypes.func.isRequired,
   setWalletSendModalOpen: PropTypes.func.isRequired,
+  setUserConfigureOpen: PropTypes.func.isRequired,
   errorRequest: PropTypes.func,
   resetModalSend: PropTypes.func,
 };
@@ -208,6 +235,7 @@ const mapDispatchToProps = (dispatch) =>
       setWalletLoading,
       setWalletModalStep,
       setWalletSendModalOpen,
+      setUserConfigureOpen,
       errorRequest,
       resetModalSend,
     },

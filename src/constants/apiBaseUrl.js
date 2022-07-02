@@ -1,7 +1,6 @@
 export const TESTNET = true;
 export const BASE_URL = TESTNET ?
     "https://app.dev.srt-wallet.io" :
-    // "http://192.168.0.7:33123":
     "https://app.srt-wallet.io";
 
 export const TETHER_URL = "https://api.omniwallet.org";

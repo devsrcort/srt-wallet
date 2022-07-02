@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 // COMPONENTS
+import SendBox from "./sendBox"
 import BoxAddress from "./boxAddress";
 import BoxAmount from "./boxAmount";
 import BoxFee from "./boxFee";
@@ -26,7 +27,8 @@ class SendModal extends React.Component {
 
   renderContent = () => {
     let { modal, wallet } = this.props;
-    <div align="center"></div>;
+    return <SendBox coin={wallet.selectedCoin} />;
+
   };
 
   render() {

@@ -5,34 +5,22 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 // COMPONENTS
-import BoxAddress from "./boxAddress";
-import BoxAmount from "./boxAmount";
-import BoxFee from "./boxFee";
-import BoxConfirm from "./boxConfirm";
-import BoxProcess from "./boxProcess";
-import BoxResult from "./boxResult";
-import BoxResultError from "./boxResultError";
+import UserConfigure from "./userConfigure";
 
 // STYLE
 import style from "../../style.css";
 
-class UserInfoModel extends React.Component {
+class UserConfigureModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 0
+      step: 0,
     };
   }
 
   renderContent = () => {
     let { modal, wallet } = this.props;
-    if (modal.step === 0) return <BoxAddress coin={wallet.selectedCoin} />;
-    if (modal.step === 1) return <BoxAmount coin={wallet.selectedCoin} />;
-    if (modal.step === 2) return <BoxFee coin={wallet.selectedCoin} />;
-    if (modal.step === 3) return <BoxConfirm coin={wallet.selectedCoin} />;
-    if (modal.step === 4) return <BoxProcess coin={wallet.selectedCoin} />;
-    if (modal.step === 5) return <BoxResult coin={wallet.selectedCoin} />;
-    if (modal.step === 6) return <BoxResultError coin={wallet.selectedCoin} />;
+    return <UserConfigure coin={wallet.selectedCoin} />;
   };
 
   render() {
@@ -40,18 +28,14 @@ class UserInfoModel extends React.Component {
   }
 }
 
-SendModal.propTypes = {
+UserConfigureModel.propTypes = {
   modal: PropTypes.object.isRequired,
   wallet: PropTypes.object.isRequired,
 };
 
-const mapSateToProps = store => ({
+const mapSateToProps = (store) => ({
   wallet: store.wallet,
   modal: store.wallet.modal,
 });
 
-
-export default connect(
-  mapSateToProps,
-  null
-)(SendModal);
+export default connect(mapSateToProps, null)(UserConfigureModel);

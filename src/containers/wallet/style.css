@@ -191,7 +191,7 @@
         background-color: #808080;
         align-items: center;
         height: 100%;
-        margin: 5px;
+        margin: 0px 10px 0px -15px;
     }
     
      :local(.coinSymbolBox img) {
@@ -270,6 +270,11 @@
         font-size: 12px;
     }
     
+     :local(.smsCheck) {
+        margin: auto;
+        display: flex;
+    }
+    
     @media only screen and (max-width: 599px) {
          :local(.coinSel img) {
             width: 34px;
@@ -344,6 +349,12 @@
         composes: styleCoinDefalt;
         width: 300px;
         margin: 5px 1% 10px 1%;
+    }
+    
+     :local(.sentButtonOnPopUp) {
+        composes: sentButton from "../../components/bases/buttonBase.css";
+        composes: styleCoinDefalt;
+        width: 300px;
     }
     
      :local(.sentButtonMobile) {
@@ -557,10 +568,38 @@
     }
     
      :local .modalBox {
-        width: 100%;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        color: #fff;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #000000;
+    }
+    
+     :local(.modalBoxSubContainer) {
+        margin: auto;
+        width: 300px;
+        height: 100%;
+        padding: 0px;
+        /* margin: 10px, 5px, 5px, 5px; */
+        background-color: #E0E0E0;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+     :local(.modalBoxSubTitle) {
+        margin-top: 5px;
+        padding-left: 5px;
+        height: 30px;
+        width: 290px;
+        border-radius: 10px;
+        background-color: #808080;
+        text-align: left;
+    }
+    
+     :local(.modalBoxValueContainer) {
+        margin: 0px;
+        width: 300px;
+        height: 30px;
+        justify-content: space-between;
+        background-color: #E0E0E0;
     }
     
     @media only screen and (max-width: 400px) {
@@ -618,7 +657,8 @@
     }
     
      :local .bt {
-        max-width: 300px;
+        height: 40px;
+        width: 100px;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -650,8 +690,9 @@
         border-bottom: solid 1px rgba(0, 0, 0, 0.3);
         text-align: center;
         max-width: 500px;
-        color: #68f285;
+        color: #000000;
         margin: 0px;
+        font-size: 10px;
     }
     
      :local .boxPercent {

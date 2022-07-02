@@ -63,10 +63,10 @@ export function* loadGeneralInfo(action) {
                 street: undefined,
                 profilePicture: undefined,
                 name: responseUser.data.name,
-                phonenum: undefined,
+                phonenum: responseUser.data.phonenumber,
                 username: undefined,
                 zipcode: undefined,
-                email: undefined
+                email: responseUser.data.email
             }
         });
 
@@ -112,10 +112,10 @@ export function* loadWalletInfo(action) {
                     street: undefined,
                     profilePicture: undefined,
                     name: responseUser.data.name,
-                    phonenum: undefined,
+                    phonenum: responseUser.data.phonenumber,
                     username: undefined,
                     zipcode: undefined,
-                    email: undefined
+                    email: responseUser.data.email
                 }
             });
 
