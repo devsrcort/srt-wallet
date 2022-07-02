@@ -9,7 +9,6 @@ import {
     HEADER_REQUEST_FORM,
     TETHER_URL
 } from "../constants/apiBaseUrl";
-import { networks } from "../constants/network";
 
 // ERROR
 import {
@@ -298,50 +297,6 @@ class TransactionService {
             return coin ? coins[coin] : coins;
         } catch (error) {
             internalServerError();
-            return error;
-        }
-    }
-
-    async createAlias(alias, seed) {
-        try {
-            let transaction = new LunesServices();
-            let response = await transaction.createAlias({
-                alias,
-                seed,
-                network: TESTNET ? networks.LUNESTESTNET : networks.LUNES
-            });
-
-            return response;
-        } catch (error) {
-            console.warn(error);
-            return error;
-        }
-    }
-
-    async getAliases(address) {
-        try {
-            let transaction = new LunesServices();
-            let response = await transaction.getAliases({
-                address,
-                network: TESTNET ? networks.LUNESTESTNET : networks.LUNES
-            });
-
-            return response;
-        } catch (error) {
-            return error;
-        }
-    }
-
-    async getAddressByAlias(alias) {
-        try {
-            let transaction = new LunesServices();
-            let response = await transaction.getAddressByAlias({
-                alias,
-                network: TESTNET ? networks.LUNESTESTNET : networks.LUNES
-            });
-
-            return response;
-        } catch (error) {
             return error;
         }
     }

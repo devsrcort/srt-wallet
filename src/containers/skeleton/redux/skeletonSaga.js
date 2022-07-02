@@ -4,7 +4,8 @@ import {
     setAuthToken,
     getAuthToken,
     getUserSeedWords,
-    getDefaultCrypto
+    getDefaultCrypto,
+    getUserPassword
 } from "../../../utils/localStorage";
 import { decryptAes } from "../../../utils/cryptography";
 import CoinService from "../../../services/coinService";
@@ -20,10 +21,15 @@ export function* loadGeneralInfo(action) {
         let token = yield call(getAuthToken);
         let seed = yield call(getUserSeedWords);
 
+        let pwd = action.password;
+        if (!pwd) {
+            pwd = getUserPassword()
+        }
+
         let responseCoins = yield call(
             coinService.getGeneralInfo,
             token,
-            decryptAes(seed, action.password)
+            decryptAes(seed, pwd)
         );
 
         let responseUser = yield call(userService.getUser, token);
@@ -57,10 +63,10 @@ export function* loadGeneralInfo(action) {
                 street: undefined,
                 profilePicture: undefined,
                 name: responseUser.data.name,
-                phonenum: undefined,
+                phonenum: responseUser.data.phonenumber,
                 username: undefined,
                 zipcode: undefined,
-                email: undefined
+                email: responseUser.data.email
             }
         });
 
@@ -88,10 +94,38 @@ export function* loadWalletInfo(action) {
         const token = yield call(getAuthToken);
         const seed = yield call(getUserSeedWords);
         const defaultCrypto = yield call(getDefaultCrypto);
+
+        let pwd = action.password;
+        if (!pwd) {
+            let token = yield call(getAuthToken);
+            let responseUser = yield call(userService.getUser, token);
+
+            yield put({
+                type: "SET_USER_INFO",
+                user: {
+                    birthday: undefined,
+                    city: undefined,
+                    country: undefined,
+                    terms: undefined,
+                    phone: undefined,
+                    state: undefined,
+                    street: undefined,
+                    profilePicture: undefined,
+                    name: responseUser.data.name,
+                    phonenum: responseUser.data.phonenumber,
+                    username: undefined,
+                    zipcode: undefined,
+                    email: responseUser.data.email
+                }
+            });
+
+            pwd = getUserPassword()
+        }
+
         let responseCoins = yield call(
             coinService.getGeneralInfo,
             token,
-            decryptAes(seed, action.password)
+            decryptAes(seed, pwd)
         );
 
         setAuthToken(responseCoins.token);

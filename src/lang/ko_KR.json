@@ -105,7 +105,7 @@
     "CARD_HOME_TITLE": "Recharges",
     "CARD_HOME_TITLE_plural": "Leasing",
     "2FA_INSTRUCTIONS_TITLE": "Device verification",
-    "WALLET_MODAL_SEND_TITLE": "Transaction",
+    "WALLET_MODAL_SEND_TITLE": "토큰 전송",
     "WALLET_MODAL_RECEIVE_TITLE": "받기",
     "TRANSACTION_HISTORY_TITLE": "거래내역",
     "SETTINGS_TITLE": "Choose the right privacy settings for you",
@@ -115,7 +115,7 @@
     "PAYMENT_TITLE": "Invoices",
     "SETTINGS_CARD": "WALLETS",
     "SETTINGS_CARD_plural": "2FA AUTHENTICATION",
-    "SETTINGS_USER": "User profile",
+    "SETTINGS_USER": "사용자 정보",
     "SETTINGS_USER_BACK": "Back to the settings",
     "SECURITY_USER_BACK": "Back to the security",
     "BTN_BACK": "Back",
@@ -384,6 +384,6 @@
     "LOCKED_WALLET": "현재 지갑은 잠금상태입니다.",
     "EXPECTED_WITHDRAWAL_DATE": "출금예정일",
     "WITHDRAWABLE_RATE": "출금가능비율",
-    "HELLO": "안녕하세요"
-
+    "HELLO": "안녕하세요",
+    "ADDRESS_COPY_SUCCESS": "지갑 주소가 복사되었습니다."
 }

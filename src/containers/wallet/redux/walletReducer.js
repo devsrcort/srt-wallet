@@ -38,7 +38,7 @@ const initialState = {
         history: []
     },
     modal: initialModalSendState,
-    modalReceive: {
+    modalUser: {
         open: false
     },
     utxos: {
@@ -108,7 +108,7 @@ const wallet = (state = initialState, action) => {
                     },
                     loading: false
                 },
-                modalReceive: {
+                modalUser: {
                     open: false
                 },
                 coinFee: {
@@ -146,6 +146,16 @@ const wallet = (state = initialState, action) => {
                 modal: {
                     ...state.modal,
                     open: !state.modal.open,
+                    loading: false
+                }
+            };
+
+        case "SET_USER_CONFIGURE_OPEN":
+            return {
+                ...state,
+                modalUser: {
+                    ...state.modalUser,
+                    open: !state.modalUser.open,
                     loading: false
                 }
             };

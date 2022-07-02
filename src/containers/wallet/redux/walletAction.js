@@ -3,6 +3,10 @@ export const setSelectedCoin = coin => ({
     coin
 });
 
+export const setUserConfigureOpen = () => ({
+    type: "SET_USER_CONFIGURE_OPEN"
+});
+
 export const setWalletSendModalOpen = () => ({
     type: "SET_WALLET_MODAL_OPEN"
 });
@@ -56,12 +60,6 @@ export const setWalletSendModalSelectedFeePerByte = fee => ({
     fee
 });
 
-export const getValidateAddress = (coin, address) => ({
-    type: "GET_WALLET_VALIDATE_ADDRESS_API",
-    coin,
-    address
-});
-
 export const setWalletLoading = state => ({
     type: "SET_WALLET_LOADING",
     state
@@ -86,12 +84,6 @@ export const setWalletTransaction = (transaction, password) => ({
 
 export const clearWalletState = () => ({
     type: "CLEAR_WALLET_STATE"
-});
-
-export const shareCoinAddress = (name, address) => ({
-    type: "GET_COIN_ADRESS_API",
-    name,
-    address
 });
 
 export const getCoinFeeValue = coinType => ({

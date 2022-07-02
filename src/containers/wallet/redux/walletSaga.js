@@ -13,67 +13,6 @@ import TransactionService from "../../../services/transactionService";
 const coinService = new CoinService();
 const transactionService = new TransactionService();
 
-export function* validateAddress(action) {
-    try {
-        let address = action.address.replace(action.coin + ":", "").split("?")[0];
-        let response = yield call(
-            coinService.validateAddress,
-            action.coin,
-            address
-        );
-
-        if (response !== "error" && !response.error) {
-            yield put({
-                type: "SET_WALLET_MODAL_ADDRESS",
-                address: address,
-            });
-
-            yield put({
-                type: "SET_WALLET_MODAL_STEP",
-                step: 1,
-            });
-
-            return;
-        } else if (response === "error") {
-            let dataAlias = yield call(transactionService.getAddressByAlias, address);
-
-            let response = yield call(
-                coinService.validateAddress,
-                action.coin,
-                dataAlias.address
-            );
-
-            if (!response.error && response !== "error") {
-                yield put({
-                    type: "SET_WALLET_MODAL_ADDRESS",
-                    address: dataAlias.address,
-                });
-
-                yield put({
-                    type: "SET_WALLET_MODAL_STEP",
-                    step: 1,
-                });
-
-                return;
-            }
-        }
-
-        yield put(modalError(i18n.t("MESSAGE_INVALID_ADDRESS")));
-
-        yield put({
-            type: "SET_WALLET_MODAL_LOADING",
-        });
-
-        return;
-    } catch (error) {
-        yield put({
-            type: "CHANGE_WALLET_ERROR_STATE",
-            state: true,
-        });
-        yield put(internalServerError());
-    }
-}
-
 export function* getWalletSendModalFee(action) {
     try {
         let response = yield call(
@@ -106,14 +45,6 @@ export function* getWalletSendModalFee(action) {
             type: "CHANGE_WALLET_ERROR_STATE",
             state: true,
         });
-        yield put(internalServerError());
-    }
-}
-
-export function* shareCoinAddress(action) {
-    try {
-        yield call(coinService.shareCoinAddress, action.name, action.address);
-    } catch (error) {
         yield put(internalServerError());
     }
 }
