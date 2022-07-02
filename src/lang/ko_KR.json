@@ -384,6 +384,6 @@
     "LOCKED_WALLET": "현재 지갑은 잠금상태입니다.",
     "EXPECTED_WITHDRAWAL_DATE": "출금예정일",
     "WITHDRAWABLE_RATE": "출금가능비율",
-    "HELLO": "안녕하세요"
-
+    "HELLO": "안녕하세요",
+    "ADDRESS_COPY_SUCCESS": "지갑 주소가 복사되었습니다."
 }

@@ -152,7 +152,9 @@ class CoinsInfo extends React.Component {
                   <h4> {userName}</h4>
                   <a
                     // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
-                    onClick={() => setUserConfigureOpen(user.name, user.email, user.phonenum)}
+                    onClick={() =>
+                      setUserConfigureOpen()
+                    }
                   >
                     <img
                       src={"./images/icons/general/setting@1x.png"}
@@ -183,7 +185,6 @@ class CoinsInfo extends React.Component {
               >
                 <img src={"./images/icons/general/copy@1.png"} />
               </CopyToClipboard>
-
             </div>
             <div className={style.addressValue}>
               <h4>{address}</h4>

@@ -3,11 +3,8 @@ export const setSelectedCoin = coin => ({
     coin
 });
 
-export const setUserConfigureOpen = (name, email, phonenum) => ({
-    type: "SET_USER_CONFIGURE_OPEN",
-    name,
-    email,
-    phonenum
+export const setUserConfigureOpen = () => ({
+    type: "SET_USER_CONFIGURE_OPEN"
 });
 
 export const setWalletSendModalOpen = () => ({

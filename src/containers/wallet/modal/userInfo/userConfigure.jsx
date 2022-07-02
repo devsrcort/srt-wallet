@@ -42,7 +42,7 @@ class UserConfigure extends React.Component {
 
     clearMessage();
     resetUser(user.email);
-
+    alert(i18n.t("RESET_EMAIL_SENDED"));
     return;
   };
 
@@ -90,8 +90,6 @@ class UserConfigure extends React.Component {
           <div className={style.modalBoxSubContainer}>
             <ButtonChangePassword
               action={() => this.inputValidator()}
-              // action={() => this.validateAddress()}
-              // loading={modal.loading}
             />
           </div>
         </div>
