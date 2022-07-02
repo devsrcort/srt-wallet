@@ -127,3 +127,11 @@
     composes: actionButtonDefaul;
     composes: bgError from "./colorBase.css";
 }
+
+
+/* 2.3 BUTTON INFO */
+
+:local(.infoChangeButton) {
+    composes: actionButtonDefaul;
+    composes: bgGrayDark from "./colorBase.css";
+}
