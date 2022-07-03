@@ -66,7 +66,8 @@ export function* loadGeneralInfo(action) {
                 phonenum: responseUser.data.phonenumber,
                 username: undefined,
                 zipcode: undefined,
-                email: responseUser.data.email
+                email: responseUser.data.email,
+                d_day: responseUser.data.destDateTime
             }
         });
 
@@ -115,7 +116,8 @@ export function* loadWalletInfo(action) {
                     phonenum: responseUser.data.phonenumber,
                     username: undefined,
                     zipcode: undefined,
-                    email: responseUser.data.email
+                    email: responseUser.data.email,
+                    d_day: responseUser.data.destDateTime
                 }
             });
 

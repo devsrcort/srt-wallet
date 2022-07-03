@@ -116,6 +116,11 @@ class CoinsInfo extends React.Component {
     let curTokenPrice = parseFloat(coin.price).toFixed(2);
     let curTotalPrice = coin.totalPrice.toFixed(2).toLocaleString();
     let userName = user.name;
+    const _day = 1000 * 60 * 60 * 24;
+    const absDay = user.d_day.slice(0, 17).replace('T', ' ') + " GMT+0900";
+    let d_day = new Date(user.d_day) - new Date(Date.now());
+    let destDays = d_day > 0 ? Math.floor(d_day/_day) : 0;
+
     let address = coin.address;
     return (
       <div align="center">
@@ -194,7 +199,7 @@ class CoinsInfo extends React.Component {
             <h4>0 %</h4>
             <hr />
             <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")}</h3>
-            <h4>D- </h4>
+            <h4>D - {destDays} ({absDay})</h4>
             <hr />
           </Grid>
         </Grid>

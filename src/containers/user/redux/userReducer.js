@@ -14,7 +14,8 @@ const initialState = {
         username: undefined,
         email: undefined,
         password: undefined,
-        seed: undefined
+        seed: undefined,
+        d_day: undefined
     },
     twoFactor: false,
     pages: {
@@ -140,7 +141,8 @@ const user = (state = initialState, action) => {
                     username: undefined,
                     email: undefined,
                     password: undefined,
-                    seed: undefined
+                    seed: undefined,
+                    d_day: undefined
                 },
                 loading: false
             };
@@ -168,7 +170,8 @@ const user = (state = initialState, action) => {
                     username: undefined,
                     email: undefined,
                     password: undefined,
-                    seed: undefined
+                    seed: undefined,
+                    d_day: undefined
                 },
                 loading: false
             };
@@ -204,7 +207,8 @@ const user = (state = initialState, action) => {
                     phonenum: action.user.phonenum,
                     zipcode: action.user.zipcode,
                     email: action.user.email,
-                    terms: action.user.terms
+                    terms: action.user.terms,
+                    d_day: action.user.d_day
                 }
             };
 

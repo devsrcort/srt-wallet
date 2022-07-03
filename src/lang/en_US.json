@@ -711,5 +711,5 @@
     "EXPECTED_WITHDRAWAL_DATE": "Expected Withdrawal Date",
     "WITHDRAWABLE_RATE": "Withdrawable Rate",
     "HELLO": "Hello",
-    "ADDRESS_COPY_SUCCESS": "wallet address was copied."
+    "ADDRESS_COPY_SUCCESS": "The wallet address was copied."
 }
