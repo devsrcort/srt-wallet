@@ -385,5 +385,8 @@
     "EXPECTED_WITHDRAWAL_DATE": "출금예정일",
     "WITHDRAWABLE_RATE": "출금가능비율",
     "HELLO": "안녕하세요",
-    "ADDRESS_COPY_SUCCESS": "지갑 주소가 복사되었습니다."
+    "ADDRESS_COPY_SUCCESS": "지갑 주소가 복사되었습니다.",
+    "TRANSFER_FEE": "수수료",
+    "TRANSFER_AMOUNT": "갯수",
+    "TRANSFER_AVAILABLE_AMOUNT": "출금 가능 갯수"
 }

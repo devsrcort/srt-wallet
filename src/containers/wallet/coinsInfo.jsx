@@ -117,7 +117,7 @@ class CoinsInfo extends React.Component {
     let curTotalPrice = coin.totalPrice.toFixed(2).toLocaleString();
     let userName = user.name;
     const _day = 1000 * 60 * 60 * 24;
-    const absDay = user.d_day.slice(0, 17).replace('T', ' ') + " GMT+0900";
+    const absDay = user.d_day.slice(0, 16).replace('T', ' ') + " GMT+0900";
     let d_day = new Date(user.d_day) - new Date(Date.now());
     let destDays = d_day > 0 ? Math.floor(d_day/_day) : 0;
 
@@ -186,7 +186,7 @@ class CoinsInfo extends React.Component {
               <h3>{i18n.t("SETTINGS_USER_ADDRESS")}</h3>
               <CopyToClipboard
                 text={coin.address}
-                onCopy={() => alert("Address is copied.")}
+                onCopy={() => alert(i18n.t("ADDRESS_COPY_SUCCESS"))}
               >
                 <img src={"./images/icons/general/copy@1.png"} />
               </CopyToClipboard>

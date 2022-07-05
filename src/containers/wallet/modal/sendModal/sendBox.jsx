@@ -22,10 +22,12 @@ import style from "../../style.css";
 class SendBox extends React.Component {
   constructor() {
     super();
-    this.state = { address: "", isVisible: false };
+    this.state = { address: "", isVisible: false, amount: 0 };
   }
 
   changeAddress = (address) => this.setState({ address });
+  
+  changeAmount = (amount) => this.setState({ amount });
 
   showQrCodeReader = () => {
     let { isVisible } = this.state;
@@ -43,44 +45,53 @@ class SendBox extends React.Component {
   };
 
   handleQrCodeReader = () => {
-    let { address } = this.state;
+    let { address, amount } = this.state;
     let { coin, modal } = this.props;
 
     return (
       <div>
-        <div className={style.modalBox}>
-          <div className={style.modalBoxSubContainer}>
-            <div>
-              <h4>{i18n.t("MODAL_SEND_ADDRESS")}</h4>
-            </div>
-            <input
-              type="text"
-              name="txtaddress"
-              value={address}
-              onChange={(event) => this.changeAddress(event.target.value)}
-              className={style.inputClear}
-            />
-            <hr />
+        <div className={style.modalBoxSubContainer}>
+          <div>
+            <h4>{i18n.t("MODAL_SEND_ADDRESS")}</h4>
           </div>
+          <input
+            type="text"
+            name="txtaddress"
+            value={address}
+            onChange={(event) => this.changeAddress(event.target.value)}
+            className={style.inputClear}
+          />
+          <hr />
         </div>
 
-        <div className={style.modalBox}>
-          <div className={style.modalBoxSubContainer}>
-            <div>
-              <h4>수수료</h4>
-            </div>
-            <h4> 0 SRT</h4>
-            <hr />
+        <div className={style.modalBoxSubContainer}>
+          <div>
+            <h4>{i18n.t("TRANSFER_AMOUNT")}</h4>
           </div>
+          <input
+            type="text"
+            name="txtamount"
+            value={amount}
+            onChange={(event) => this.changeAmount(event.target.value)}
+            className={style.inputClearAmount}
+          />
+          <p>{i18n.t("TRANSFER_AVAILABLE_AMOUNT")}: 0 SRT</p>
+          <hr />
         </div>
-        <div className={style.modalBox}>
-          <div className={style.modalBoxSubContainer}>
-            <ButtonSend
-              action={() => alert(i18n.t("LOCKED_WALLET"))}
-              // action={() => this.validateAddress()}
-              loading={modal.loading}
-            />
+
+        <div className={style.modalBoxSubContainer}>
+          <div>
+            <h4>{i18n.t("TRANSFER_FEE")}</h4>
           </div>
+          <h4> 0 SRT</h4>
+          <hr />
+        </div>
+        <div className={style.modalBoxSubContainer}>
+          <ButtonSend
+            action={() => alert(i18n.t("LOCKED_WALLET"))}
+            // action={() => this.validateAddress()}
+            loading={modal.loading}
+          />
         </div>
       </div>
     );
