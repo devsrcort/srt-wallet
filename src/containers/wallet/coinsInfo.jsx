@@ -186,7 +186,7 @@ class CoinsInfo extends React.Component {
               <h3>{i18n.t("SETTINGS_USER_ADDRESS")}</h3>
               <CopyToClipboard
                 text={coin.address}
-                onCopy={() => alert("Address is copied.")}
+                onCopy={() => alert(i18n.t("ADDRESS_COPY_SUCCESS"))}
               >
                 <img src={"./images/icons/general/copy@1.png"} />
               </CopyToClipboard>
