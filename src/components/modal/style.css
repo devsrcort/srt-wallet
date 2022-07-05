@@ -1,10 +1,10 @@
 :local(.modalBox) {
     background-color: #E0E0E0;
     border-radius: 8px;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 20px;
+    left: 8px;
+    right: 8px;
+    bottom: 20px;
     margin: auto;
     width: 330px;
     height: 560px;
@@ -19,7 +19,7 @@
 
 :local(.content) {
     align-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 :local(.overlay) {
