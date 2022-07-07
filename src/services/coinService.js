@@ -24,36 +24,6 @@ import {
 } from "../utils/numbers";
 // import i18n from "../utils/i18n.js";
 
-// let getPriceHistory = async(coiName, token) => {
-//     try {
-//         let coinService = new CoinService();
-//         let prices = {
-//             initial: 0.01,
-//             last: 0.01
-//         };
-//         let priceHistories = await coinService.getCoinPriceHistory(
-//             coiName,
-//             "usd",
-//             "1_D",
-//             null,
-//             token
-//         );
-
-//         if (!priceHistories.data.data) return prices;
-
-//         setAuthToken(priceHistories.headers[HEADER_RESPONSE]);
-
-//         let maxHistories = priceHistories.data.data.history.length - 1;
-//         prices.initial = priceHistories.data.data.history[0].price;
-//         prices.last = priceHistories.data.data.history[maxHistories].price;
-
-//         return prices;
-//     } catch (error) {
-//         internalServerError();
-//         return;
-//     }
-// };
-
 class CoinService {
     async getGeneralInfo(token, seed) {
         try {
@@ -135,7 +105,7 @@ class CoinService {
             availableCoins.map(async(coin, index) => {
                 coins[coin.abbreviation] = availableCoins[index];
             });
-            setAuthToken(token);
+
             coins.token = availableCoins.token;
             return coins;
         } catch (error) {
@@ -148,95 +118,6 @@ class CoinService {
         try {
             API_HEADER.headers.Authorization = token;
             let response = await axios.get(BASE_URL + "/coin", API_HEADER);
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
-    async getCoinBalance(email, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let response = await axios.get(
-                BASE_URL + "/users/getbalance", { params: { id: email } },
-                API_HEADER
-            );
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
-    async getCoinPrice(coinType, fiat, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let response = await axios.get(
-                BASE_URL + "/coin/" + coinType + "/price/" + fiat,
-                API_HEADER
-            );
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
-    async getCoinPriceHistory(coinType, fiat, range, interval, token) {
-        try {
-            range = range.split("_");
-            let fromDateIso = "";
-            let date = new Date();
-            let toDateIso = new Date().toISOString();
-            let value = range[0];
-            let typeValue = range[1];
-            const day = 1440;
-            const week = 10080;
-            const mounth = 43200;
-            const year = 525600;
-
-            switch (typeValue.toLowerCase()) {
-                case "d":
-                    fromDateIso = new Date(
-                        date.getTime() - value * day * 60000
-                    ).toISOString();
-
-                    break;
-
-                case "w":
-                    fromDateIso = new Date(
-                        date.getTime() - value * week * 60000
-                    ).toISOString();
-
-                    break;
-
-                case "m":
-                    fromDateIso = new Date(
-                        date.getTime() - value * mounth * 60000
-                    ).toISOString();
-
-                    break;
-
-                case "y":
-                    fromDateIso = new Date(
-                        date.getTime() - value * year * 60000
-                    ).toISOString();
-                    break;
-            }
-
-            API_HEADER.headers.Authorization = token;
-            interval = !interval ? 60 : interval;
-            let response = await axios.get(
-                `${BASE_URL}/coin/${coinType}/history/${fiat}?from=${fromDateIso}&to=${toDateIso}&interval=${interval}`,
-                API_HEADER
-            );
             setAuthToken(response.headers[HEADER_RESPONSE]);
 
             return response;
@@ -351,6 +232,29 @@ class CoinService {
                 transactionData,
                 API_HEADER
             );
+            setAuthToken(response.headers[HEADER_RESPONSE]);
+
+            return response;
+        } catch (error) {
+            console.warn(error, error.response);
+            internalServerError();
+        }
+    }
+
+    async createTransaction(fromAddr, toAddr, amount, fee, token) {
+        try {
+            API_HEADER.headers.Authorization = token;
+
+            let response = await axios.post(BASE_URL +
+                "/users/sendTokenByClient", {
+                    fromAddr: fromAddr,
+                    toAddr: toAddr,
+                    amount: amount,
+                    fee: fee
+                },
+                API_HEADER
+            );
+
             setAuthToken(response.headers[HEADER_RESPONSE]);
 
             return response;

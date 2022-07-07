@@ -34,13 +34,9 @@ export function* loadGeneralInfo(action) {
 
         let responseUser = yield call(userService.getUser, token);
 
-        setAuthToken(responseCoins.token);
+        setAuthToken(responseUser.token);
         delete responseCoins.token;
-
-        // let responseAlias = yield call(
-        //     transactionService.getAliases,
-        //     responseCoins.lunes.address
-        // );
+        delete responseUser.token;
 
         // if (responseAlias.length > 0) {
         //     let firstAlias = responseAlias[0].split(":")[2];
@@ -67,7 +63,8 @@ export function* loadGeneralInfo(action) {
                 username: undefined,
                 zipcode: undefined,
                 email: responseUser.data.email,
-                d_day: responseUser.data.destDateTime
+                d_day: responseUser.data.destDateTime,
+                transferFee: responseUser.data.transferFee
             }
         });
 
@@ -117,7 +114,8 @@ export function* loadWalletInfo(action) {
                     username: undefined,
                     zipcode: undefined,
                     email: responseUser.data.email,
-                    d_day: responseUser.data.destDateTime
+                    d_day: responseUser.data.destDateTime,
+                    transferFee: responseUser.data.transferFee
                 }
             });
 

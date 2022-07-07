@@ -5,7 +5,10 @@ import PropTypes from "prop-types";
 // REDUX
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { setWalletSendModalLoading } from "../../redux/walletAction";
+import {
+  setWalletSendModalLoading,
+  setWalletTransaction,
+} from "../../redux/walletAction";
 
 // MATERIAL UI
 import Hidden from "@material-ui/core/Hidden";
@@ -26,12 +29,20 @@ class SendBox extends React.Component {
   }
 
   changeAddress = (address) => this.setState({ address });
-  
+
   changeAmount = (amount) => this.setState({ amount });
 
-  showQrCodeReader = () => {
-    let { isVisible } = this.state;
-    this.setState({ isVisible: !isVisible });
+  sendToken = () => {
+    let { coin, user, modal, coins, setWalletTransaction } = this.props;
+    let { address, amount} = this.state;
+    setWalletTransaction(
+      {
+        fromAddress: coins[coin].address,
+        toAddress: address,
+        amount: amount,
+        fee: user.transferFee,
+      },
+    );
   };
 
   validateAddress = () => {
@@ -46,7 +57,8 @@ class SendBox extends React.Component {
 
   handleQrCodeReader = () => {
     let { address, amount } = this.state;
-    let { coin, modal } = this.props;
+    let { coin, modal, user } = this.props;
+    const fee = user.transferFee;
 
     return (
       <div>
@@ -83,13 +95,13 @@ class SendBox extends React.Component {
           <div>
             <h4>{i18n.t("TRANSFER_FEE")}</h4>
           </div>
-          <h4> 0 SRT</h4>
+          <h4> {fee} SRT</h4>
           <hr />
         </div>
         <div className={style.modalBoxSubContainer}>
           <ButtonSend
-            action={() => alert(i18n.t("LOCKED_WALLET"))}
-            // action={() => this.validateAddress()}
+            // action={() => alert(i18n.t("LOCKED_WALLET"))}
+            action={() => this.sendToken()}
             loading={modal.loading}
           />
         </div>
@@ -104,18 +116,24 @@ class SendBox extends React.Component {
 
 SendBox.propTypes = {
   coin: PropTypes.string.isRequired,
+  coins: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
   modal: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
   setWalletSendModalLoading: PropTypes.func.isRequired,
+  setWalletTransaction: PropTypes.func.isRequired
 };
 
 const mapSateToProps = (store) => ({
+  user: store.user.user,
   modal: store.wallet.modal,
+  coins: store.skeleton.coins
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       setWalletSendModalLoading,
+      setWalletTransaction
     },
     dispatch
   );

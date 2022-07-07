@@ -7,18 +7,18 @@ import {
     TESTNET,
     HEADER_RESPONSE,
     HEADER_REQUEST_FORM,
-    TETHER_URL
+    TETHER_URL,
 } from "../constants/apiBaseUrl";
 
 // ERROR
 import {
     internalServerError,
-    modalError
+    modalError,
 } from "../containers/errors/statusCodeMessage";
 
 // COINS
 import CoinService from "./coinService";
-import { SRTServices } from "./coins"
+import { SRTServices } from "./coins";
 
 // UTILS
 import i18n from "../utils/i18n";
@@ -31,7 +31,7 @@ class TransactionService {
             API_HEADER.headers.Authorization = token;
             let response = await axios.post(
                 BASE_URL + "/coin/" + coin + "/transaction/utxo", {
-                    fromAddress: address
+                    fromAddress: address,
                 },
                 API_HEADER
             );
@@ -39,11 +39,11 @@ class TransactionService {
 
             setAuthToken(response.headers[HEADER_RESPONSE]);
 
-            response.data.data.utxos.forEach(utxo => {
+            response.data.data.utxos.forEach((utxo) => {
                 utxos.push({
                     txId: utxo.txId,
                     vout: utxo.vout,
-                    value: utxo.value
+                    value: utxo.value,
                 });
             });
 
@@ -59,7 +59,7 @@ class TransactionService {
             API_HEADER.headers.Authorization = token;
             let response = await axios.post(
                 BASE_URL + "/coin/" + coin + "/transaction/broadcast", {
-                    txHex: txhex
+                    txHex: txhex,
                 },
                 API_HEADER
             );
@@ -102,89 +102,29 @@ class TransactionService {
         }
     }
 
-    async transaction(serviceId, transaction, lunesWallet, seed, token) {
+    async transaction(transaction, token) {
         try {
-            let network = undefined;
-            let coinService = new CoinService();
             let {
                 fromAddress,
                 toAddress,
                 fee,
-                feeLunes,
-                describe,
-                price,
                 amount,
-                coin,
-                decimalPoint,
-                lunesUserAddress
             } = transaction;
-            if (!lunesUserAddress ||
-                !lunesWallet ||
-                !fromAddress ||
-                !toAddress ||
-                !seed ||
-                !fee ||
-                !price ||
-                !amount ||
-                !serviceId ||
-                !token ||
-                !coin ||
-                !decimalPoint
-            ) {
-                modalError(i18n.t("MESSAGE_TRANSACTION_FAILED"));
-                return;
-            }
-            let transactionLunes = new SRTServices();
-            let respondeLunes = await transactionLunes.createLunesTransaction({
-                network: network,
-                seed: seed,
-                fromAddress: fromAddress,
-                toAddress: toAddress,
-                amount: convertSmallerCoinUnit(amount, decimalPoint),
-                fee: convertSmallerCoinUnit(fee, decimalPoint)
-            });
 
-            if (respondeLunes === "error" || !respondeLunes) {
-                return;
-            }
-
-            let responseSaveLunes = await coinService.saveTransaction(
-                serviceId,
-                feeLunes,
-                respondeLunes,
-                coin,
-                transaction.price,
-                lunesUserAddress,
-                describe ? describe : "P2P",
+            let coinService = new CoinService();
+            let response = await coinService.createTransaction(
+                fromAddress,
+                toAddress,
+                amount,
+                fee,
                 token
             );
-            return responseSaveLunes;
-        } catch (error) {
-            internalServerError();
-            return error;
-        }
-    }
 
-    async transactionService(coin = undefined, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            let coins = [];
-            let response = await axios.get(
-                BASE_URL + "/service/transferencia",
-                API_HEADER
-            );
+            if (response === "error" || !response) {
+                return;
+            }
 
-            let lunesCoin = await response.data.data.services.map(value => {
-                coins[value.abbreviation] = value;
-            });
-
-            /* eslint-disable */
-            await Promise.all(lunesCoin);
-            /* eslint-enabled */
-
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return coin ? coins[coin] : coins;
+            return response;
         } catch (error) {
             internalServerError();
             return error;
@@ -197,7 +137,7 @@ class TransactionService {
             let coins = [];
             let response = await axios.get(BASE_URL + "/service/recarga", API_HEADER);
 
-            let lunesCoin = await response.data.data.services.map(value => {
+            let lunesCoin = await response.data.data.services.map((value) => {
                 coins[value.abbreviation] = value;
             });
 
@@ -223,7 +163,7 @@ class TransactionService {
                 API_HEADER
             );
 
-            let lunesCoin = await response.data.data.services.map(value => {
+            let lunesCoin = await response.data.data.services.map((value) => {
                 coins[value.abbreviation] = value;
             });
 
@@ -261,7 +201,7 @@ class TransactionService {
             let coins = [];
             let response = await axios.get(BASE_URL + "/service/compra", API_HEADER);
 
-            let lunesCoin = await response.data.data.services.map(value => {
+            let lunesCoin = await response.data.data.services.map((value) => {
                 coins[value.abbreviation] = value;
             });
 
@@ -282,9 +222,12 @@ class TransactionService {
         try {
             API_HEADER.headers.Authorization = token;
             let coins = [];
-            let response = await axios.get(BASE_URL + "/service/assinatura", API_HEADER);
+            let response = await axios.get(
+                BASE_URL + "/service/assinatura",
+                API_HEADER
+            );
 
-            let lunesCoin = await response.data.data.services.map(value => {
+            let lunesCoin = await response.data.data.services.map((value) => {
                 coins[value.abbreviation] = value;
             });
 

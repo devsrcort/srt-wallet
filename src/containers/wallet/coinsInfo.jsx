@@ -153,7 +153,7 @@ class CoinsInfo extends React.Component {
             <Grid item>
               <Grid item className={style.balanceItem}>
                 <div className={style.alignValuesFlex}>
-                  <h4>{i18n.t("HELLO")},</h4>
+                  <h4>{i18n.t("HELLO")},</h4><br/>
                   <h4> {userName}</h4>
                   <a
                     // onClick={() => alert(i18n.t("LOCKED_WALLET"))}

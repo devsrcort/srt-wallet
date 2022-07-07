@@ -105,38 +105,26 @@ export function* getCoinFee(action) {
 
 export function* setWalletTransaction(action) {
     try {
-        let seed = yield call(getUserSeedWords);
         let token = yield call(getAuthToken);
 
-        let lunesWallet = yield call(
-            transactionService.transactionService,
-            action.transaction.coin,
+        let response = yield call(
+            transactionService.transaction,
+            action.transaction,
             token
         );
 
-        if (lunesWallet) {
-            let response = yield call(
-                transactionService.transaction,
-                lunesWallet.id,
-                action.transaction,
-                lunesWallet,
-                decryptAes(seed, action.password),
-                token
-            );
+        if (response) {
+            yield put({
+                type: "SET_WALLET_MODAL_STEP",
+                step: 5,
+            });
 
-            if (response) {
-                yield put({
-                    type: "SET_WALLET_MODAL_STEP",
-                    step: 5,
-                });
+            yield put({
+                type: "SET_WALLET_TRANSACTION",
+                response: response,
+            });
 
-                yield put({
-                    type: "SET_WALLET_TRANSACTION",
-                    response: response,
-                });
-
-                return;
-            }
+            return;
         }
 
         yield put({
