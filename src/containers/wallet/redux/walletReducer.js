@@ -224,7 +224,7 @@ const wallet = (state = initialState, action) => {
                 ...state,
                 modal: {
                     ...state.modal,
-                    amount: action.amount,
+                    amount: action.amount.amount,
                     loading: false
                 }
             };

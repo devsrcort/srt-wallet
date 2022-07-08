@@ -46,19 +46,25 @@ class SendBox extends React.Component {
   sendToken = () => {
     let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
     let { address, amountVal} = this.state;
-    setWalletSendModalLoading();
+    
+    if (modal.amount < parseFloat(amountVal)) {
+      alert(i18n.t("MESSAGE_INVALID_AMOUNT"));
+      document.location.reload(true);
+    }
+    else {
+      setWalletTransaction(
+        {
+          fromAddress: coins[coin].address,
+          toAddress: address,
+          amount: amountVal,
+          fee: 400,
+        },
+      );
+  
+      alert(i18n.t("REQUEST_TRANSFER"));
+      document.location.reload(true);  
+    }
 
-    setWalletTransaction(
-      {
-        fromAddress: coins[coin].address,
-        toAddress: address,
-        amount: amountVal,
-        fee: 400,
-      },
-    );
-
-    alert(i18n.t("REQUEST_TRANSFER"));
-    document.location.reload(true);
   };
 
   validateAddress = () => {
@@ -75,7 +81,7 @@ class SendBox extends React.Component {
     let { address, amountVal } = this.state;
     let { coin, modal, user, coins } = this.props;
     let coinAmt = coins[coin];
-    let availBalance = modal.amount.amount;
+    let availBalance = modal.amount;
     // let availBalance = parseFloat(coinAmt.balance.available) * 0.1;
     const fee =400;
     // const availAmount =0;
