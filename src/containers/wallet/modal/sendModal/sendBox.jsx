@@ -47,7 +47,7 @@ class SendBox extends React.Component {
     let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
     let { address, amountVal} = this.state;
     
-    if (modal.amount < parseFloat(amountVal)) {
+    if (modal.amount < parseFloat(amountVal) || modal.amount >= 0) {
       alert(i18n.t("MESSAGE_INVALID_AMOUNT"));
       document.location.reload(true);
     }
