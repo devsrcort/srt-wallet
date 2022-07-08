@@ -44,8 +44,10 @@ class SendBox extends React.Component {
   }
 
   sendToken = () => {
-    let { coin, user, modal, coins, setWalletTransaction } = this.props;
+    let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
     let { address, amount} = this.state;
+    setWalletSendModalLoading();
+
     setWalletTransaction(
       {
         fromAddress: coins[coin].address,
@@ -54,6 +56,9 @@ class SendBox extends React.Component {
         fee: 400,
       },
     );
+
+    alert(i18n.t("REQUEST_TRANSFER"));
+    document.location.reload(true);
   };
 
   validateAddress = () => {
@@ -133,7 +138,8 @@ SendBox.propTypes = {
   modal: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   setWalletSendModalLoading: PropTypes.func.isRequired,
-  setWalletTransaction: PropTypes.func.isRequired
+  setWalletTransaction: PropTypes.func.isRequired,
+  close: PropTypes.func,
 };
 
 const mapSateToProps = (store) => ({

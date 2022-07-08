@@ -214,7 +214,7 @@ const wallet = (state = initialState, action) => {
                 ...state,
                 modal: {
                     ...state.modal,
-                    feeValue: action.fee,
+                    feeRawValue: action.fee,
                     loading: false
                 }
             };

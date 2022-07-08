@@ -388,5 +388,6 @@
     "ADDRESS_COPY_SUCCESS": "지갑 주소가 복사되었습니다.",
     "TRANSFER_FEE": "수수료",
     "TRANSFER_AMOUNT": "갯수",
-    "TRANSFER_AVAILABLE_AMOUNT": "출금 가능 갯수"
+    "TRANSFER_AVAILABLE_AMOUNT": "출금 가능 갯수",
+    "REQUEST_TRANSFER": "토큰 전송 요청이 완료되었습니다. 잠시 후 거래소에서 토큰을 확인하세요"
 }

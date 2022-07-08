@@ -714,5 +714,6 @@
     "ADDRESS_COPY_SUCCESS": "The wallet address was copied.",
     "TRANSFER_FEE": "Fee",
     "TRANSFER_AMOUNT": "Amount",
-    "TRANSFER_AVAILABLE_AMOUNT": "Number of Withdrawals Available"
+    "TRANSFER_AVAILABLE_AMOUNT": "Number of Withdrawals Available",
+    "REQUEST_TRANSFER": "Success to send token. After few minutes, confirm market!!"
 }
