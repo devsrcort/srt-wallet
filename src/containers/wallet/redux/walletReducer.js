@@ -106,6 +106,8 @@ const wallet = (state = initialState, action) => {
                         selectedFee: undefined,
                         selectedFeePerByte: undefined
                     },
+                    feeRawValue: 0,
+                    amount: 0,
                     loading: false
                 },
                 modalUser: {

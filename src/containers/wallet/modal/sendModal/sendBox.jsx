@@ -51,7 +51,7 @@ class SendBox extends React.Component {
         fromAddress: coins[coin].address,
         toAddress: address,
         amount: amount,
-        fee: 0,
+        fee: 400,
       },
     );
   };
@@ -68,11 +68,11 @@ class SendBox extends React.Component {
 
   handleQrCodeReader = () => {
     let { address, amount } = this.state;
-    let { coin, modal, user } = this.props;
-    // const fee =modal.feeValue;
-    // const availAmount =modal.amount;
-    const fee =0;
-    const availAmount =0;
+    let { coin, modal, user, coins } = this.props;
+    let coinAmt = coins[coin];
+    let availBalance = parseFloat(coinAmt.balance.available) * 0.1;
+    const fee =400;
+    // const availAmount =0;
     return (
       <div>
         <div className={style.modalBoxSubContainer}>
@@ -100,7 +100,7 @@ class SendBox extends React.Component {
             onChange={(event) => this.changeAmount(event.target.value)}
             className={style.inputClearAmount}
           />
-          <p>{i18n.t("TRANSFER_AVAILABLE_AMOUNT")}: {availAmount} SRT</p>
+          <p>{i18n.t("TRANSFER_AVAILABLE_AMOUNT")}: {availBalance} SRT</p>
           <hr />
         </div>
 
