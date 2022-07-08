@@ -16,7 +16,6 @@ import {
 import {
     loadGeneralInfo,
     loadWalletInfo,
-    availableCoins,
     balanceCoins,
     createCoinsAddress
 } from "../skeleton/redux/skeletonSaga";
@@ -25,6 +24,7 @@ import {
     getWalletSendModalFee,
     getCoinFee,
     setWalletTransaction,
+    getWalletTransferAvailable
 } from "../wallet/redux/walletSaga";
 
 export default function* rootSaga() {
@@ -46,7 +46,6 @@ export default function* rootSaga() {
 
         // Skeleton-Saga
         fork(takeLatest, "GET_GENERAL_INFO_API", loadGeneralInfo),
-        fork(takeLatest, "GET_AVAILABLE_COINS_API", availableCoins),
         fork(takeLatest, "GET_BALANCE_COINS_API", balanceCoins),
         fork(takeLatest, "GET_WALLET_INFO_API", loadWalletInfo),
         fork(takeLatest, "POST_CREATE_COINS_ADDRESS_API", createCoinsAddress),
@@ -55,6 +54,7 @@ export default function* rootSaga() {
         fork(takeLatest, "GET_WALLET_COIN_HISTORY_API", getWalletCoinHistory),
         fork(takeLatest, "GET_WALLET_MODAL_SEND_FEE_API", getWalletSendModalFee),
         fork(takeLatest, "SET_WALLET_TRANSACTION_API", setWalletTransaction),
+        fork(takeLatest, "GET_WALLET_TRANSFER_TOKEN_AVAILALBE_API", getWalletTransferAvailable),
 
         // Leasing
         fork(takeLatest, "GET_COIN_FEE_API", getCoinFee),

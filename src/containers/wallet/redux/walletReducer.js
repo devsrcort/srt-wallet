@@ -106,6 +106,8 @@ const wallet = (state = initialState, action) => {
                         selectedFee: undefined,
                         selectedFeePerByte: undefined
                     },
+                    feeRawValue: 0,
+                    amount: 0,
                     loading: false
                 },
                 modalUser: {
@@ -213,6 +215,16 @@ const wallet = (state = initialState, action) => {
                 modal: {
                     ...state.modal,
                     feeValue: action.fee,
+                    loading: false
+                }
+            };
+
+        case "GET_WALLET_TRANSFER_TOKEN_AVAILALBE":
+            return {
+                ...state,
+                modal: {
+                    ...state.modal,
+                    amount: action.amount,
                     loading: false
                 }
             };
