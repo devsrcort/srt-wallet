@@ -62,7 +62,6 @@ class SendBox extends React.Component {
       );
   
       alert(i18n.t("REQUEST_TRANSFER"));
-      document.location.reload(true);  
     }
 
   };
