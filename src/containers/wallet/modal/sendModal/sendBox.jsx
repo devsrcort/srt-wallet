@@ -27,7 +27,7 @@ import style from "../../style.css";
 class SendBox extends React.Component {
   constructor() {
     super();
-    this.state = { address: "", isVisible: false, amount: 0 };
+    this.state = { address: "", isVisible: false, amountVal: 0 };
   }
 
   componentDidMount() {
@@ -39,20 +39,20 @@ class SendBox extends React.Component {
 
   changeAddress = (address) => this.setState({ address });
 
-  changeAmount = (amount) => {
-    this.setState({ amount });
+  changeAmount = (amountVal) => {
+    this.setState({ amountVal });
   }
 
   sendToken = () => {
     let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
-    let { address, amount} = this.state;
+    let { address, amountVal} = this.state;
     setWalletSendModalLoading();
 
     setWalletTransaction(
       {
         fromAddress: coins[coin].address,
         toAddress: address,
-        amount: amount,
+        amount: amountVal,
         fee: 400,
       },
     );
@@ -72,10 +72,11 @@ class SendBox extends React.Component {
   };
 
   handleQrCodeReader = () => {
-    let { address, amount } = this.state;
+    let { address, amountVal } = this.state;
     let { coin, modal, user, coins } = this.props;
     let coinAmt = coins[coin];
-    let availBalance = parseFloat(coinAmt.balance.available) * 0.1;
+    let availBalance = modal.amount.amount;
+    // let availBalance = parseFloat(coinAmt.balance.available) * 0.1;
     const fee =400;
     // const availAmount =0;
     return (
@@ -101,7 +102,7 @@ class SendBox extends React.Component {
           <input
             type="text"
             name="txtamount"
-            value={amount}
+            value={amountVal}
             onChange={(event) => this.changeAmount(event.target.value)}
             className={style.inputClearAmount}
           />
@@ -139,7 +140,6 @@ SendBox.propTypes = {
   user: PropTypes.object.isRequired,
   setWalletSendModalLoading: PropTypes.func.isRequired,
   setWalletTransaction: PropTypes.func.isRequired,
-  close: PropTypes.func,
 };
 
 const mapSateToProps = (store) => ({
