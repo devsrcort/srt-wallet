@@ -1,5 +1,4 @@
 import React from "react";
-import BoxQrReader from "./boxQrReader";
 import PropTypes from "prop-types";
 
 // REDUX
@@ -8,6 +7,9 @@ import { bindActionCreators } from "redux";
 import {
   setWalletSendModalLoading,
   setWalletTransaction,
+  getWalletSendModalFee,
+  getWalletTransferAvailable,
+
 } from "../../redux/walletAction";
 
 // MATERIAL UI
@@ -28,9 +30,18 @@ class SendBox extends React.Component {
     this.state = { address: "", isVisible: false, amount: 0 };
   }
 
+  componentDidMount() {
+    let { coin, getWalletSendModalFee, getWalletTransferAvailable, user,coins } = this.props;
+
+    getWalletSendModalFee(coins[coin].address);
+    getWalletTransferAvailable(coins[coin].address);
+    }
+
   changeAddress = (address) => this.setState({ address });
 
-  changeAmount = (amount) => this.setState({ amount });
+  changeAmount = (amount) => {
+    this.setState({ amount });
+  }
 
   sendToken = () => {
     let { coin, user, modal, coins, setWalletTransaction } = this.props;
@@ -40,7 +51,7 @@ class SendBox extends React.Component {
         fromAddress: coins[coin].address,
         toAddress: address,
         amount: amount,
-        fee: user.transferFee,
+        fee: 0,
       },
     );
   };
@@ -58,8 +69,10 @@ class SendBox extends React.Component {
   handleQrCodeReader = () => {
     let { address, amount } = this.state;
     let { coin, modal, user } = this.props;
-    const fee = user.transferFee;
-
+    // const fee =modal.feeValue;
+    // const availAmount =modal.amount;
+    const fee =0;
+    const availAmount =0;
     return (
       <div>
         <div className={style.modalBoxSubContainer}>
@@ -87,7 +100,7 @@ class SendBox extends React.Component {
             onChange={(event) => this.changeAmount(event.target.value)}
             className={style.inputClearAmount}
           />
-          <p>{i18n.t("TRANSFER_AVAILABLE_AMOUNT")}: 0 SRT</p>
+          <p>{i18n.t("TRANSFER_AVAILABLE_AMOUNT")}: {availAmount} SRT</p>
           <hr />
         </div>
 
@@ -133,7 +146,9 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       setWalletSendModalLoading,
-      setWalletTransaction
+      setWalletTransaction,
+      getWalletSendModalFee,
+      getWalletTransferAvailable
     },
     dispatch
   );

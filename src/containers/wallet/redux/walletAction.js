@@ -31,18 +31,21 @@ export const setWalletSendModalFinalAmount = amount => ({
 });
 
 export const getWalletSendModalFee = (
-    coin,
     fromAddress,
-    toAddress,
-    amount,
-    decimalPoint
+    token
 ) => ({
     type: "GET_WALLET_MODAL_SEND_FEE_API",
-    coin,
     fromAddress,
-    toAddress,
-    amount,
-    decimalPoint
+    token
+});
+
+export const getWalletTransferAvailable = (
+    fromAddress,
+    token
+) => ({
+    type: "GET_WALLET_TRANSFER_TOKEN_AVAILALBE_API",
+    fromAddress,
+    token
 });
 
 export const setWalletSendModalSelectedFee = fee => ({

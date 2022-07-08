@@ -70,17 +70,6 @@ class CoinService {
                             total: parseInt(responseBalance.data.balance),
                         };
 
-                        // BALANCE CONVERTER
-                        availableCoins[index].balance.available = convertBiggestCoinUnit(
-                            availableCoins[index].balance.available,
-                            coin.decimalPoint
-                        );
-
-                        availableCoins[index].balance.total = convertBiggestCoinUnit(
-                            availableCoins[index].balance.total,
-                            coin.decimalPoint
-                        );
-
                         availableCoins[index].address = responseBalance.data.addr;
                         let responsePrice = await axios.get(
                             BASE_URL + "/users/getTokenPrice", {
@@ -114,78 +103,42 @@ class CoinService {
         }
     }
 
-    async getAvailableCoins(token) {
+    async getAvailableAmount(address, token) {
         try {
             API_HEADER.headers.Authorization = token;
-            let response = await axios.get(BASE_URL + "/coin", API_HEADER);
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
-    async getCoinHistory(coin, address, token) {
-        try {
-            API_HEADER.headers.Authorization = token;
-            setAuthToken(token);
-            return {};
-        } catch (error) {
-            internalServerError();
-            return;
-        }
-    }
-
-    async getFee(coinName, fromAddress, toAddress, amount, decimalPoint = 8) {
-        try {
-            let fee = {};
-            let feePerByte = {};
-            let feeLunes = {};
-
-            //API_HEADER.headers.Authorization = token;
-
-            amount = convertSmallerCoinUnit(amount, decimalPoint);
 
             let response = await axios.post(
-                BASE_URL + "/coin/" + coinName + "/transaction/fee", {
-                    fromAddress,
-                    toAddress,
-                    amount
+                BASE_URL + "/users/getAvailTokenAmt", {
+                    fromAddr: address
                 },
                 API_HEADER
             );
 
             setAuthToken(response.headers[HEADER_RESPONSE]);
 
-            let dataFee = response.data.data.fee;
-            let dataFeePerByte = response.data.data.feePerByte;
-            let dataFeeLunes = response.data.data.feeLunes;
+            let amount = { amount: response.data.amount };
+            return amount;
+        } catch (error) {
+            internalServerError();
+            return;
+        }
+    }
 
-            if (response.data.code === 200) {
-                let extraFee = coinName === "SRT" || coinName === "eth" ? 0 : 1000;
+    async getFee(fromAddress, token) {
+        try {
+            API_HEADER.headers.Authorization = token;
 
-                Object.keys(dataFee).map(value => {
-                    fee[value] = convertBiggestCoinUnit(
-                        dataFee[value] + extraFee,
-                        decimalPoint
-                    );
-                });
+            let response = await axios.post(
+                BASE_URL + "/users/getTransferFee", {
+                    fromAddr: fromAddress,
+                },
+                API_HEADER
+            );
 
-                Object.keys(dataFeePerByte).map(value => {
-                    feePerByte[value] = dataFeePerByte[value];
-                });
+            setAuthToken(response.headers[HEADER_RESPONSE]);
 
-                Object.keys(dataFeeLunes).map(value => {
-                    feeLunes[value] = dataFeeLunes[value];
-                });
-            }
-
-            fee = {
-                fee,
-                feePerByte,
-                feeLunes
+            let fee = {
+                feeValue: response.data.fee,
             };
             return fee;
         } catch (error) {

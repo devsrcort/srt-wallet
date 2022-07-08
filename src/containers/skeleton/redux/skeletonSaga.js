@@ -34,9 +34,8 @@ export function* loadGeneralInfo(action) {
 
         let responseUser = yield call(userService.getUser, token);
 
-        setAuthToken(responseUser.token);
+        setAuthToken(responseCoins.token);
         delete responseCoins.token;
-        delete responseUser.token;
 
         // if (responseAlias.length > 0) {
         //     let firstAlias = responseAlias[0].split(":")[2];
@@ -64,7 +63,6 @@ export function* loadGeneralInfo(action) {
                 zipcode: undefined,
                 email: responseUser.data.email,
                 d_day: responseUser.data.destDateTime,
-                transferFee: responseUser.data.transferFee
             }
         });
 
@@ -115,7 +113,6 @@ export function* loadWalletInfo(action) {
                     zipcode: undefined,
                     email: responseUser.data.email,
                     d_day: responseUser.data.destDateTime,
-                    transferFee: responseUser.data.transferFee
                 }
             });
 
@@ -131,22 +128,22 @@ export function* loadWalletInfo(action) {
         setAuthToken(responseCoins.token);
         delete responseCoins.token;
 
-        let responseCoinHistory = yield call(
-            coinService.getCoinHistory,
-            defaultCrypto,
-            responseCoins[defaultCrypto].address,
-            token
-        );
+        // let responseCoinHistory = yield call(
+        //     coinService.getCoinHistory,
+        //     defaultCrypto,
+        //     responseCoins[defaultCrypto].address,
+        //     token
+        // );
 
         yield put({
             type: "GET_GENERAL_INFO",
             coins: responseCoins
         });
 
-        yield put({
-            type: "SET_WALLET_HISTORY",
-            history: responseCoinHistory
-        });
+        // yield put({
+        //     type: "SET_WALLET_HISTORY",
+        //     history: responseCoinHistory
+        // });
 
         yield put({
             type: "CHANGE_LOADING_GENERAL_STATE"
@@ -157,26 +154,6 @@ export function* loadWalletInfo(action) {
         });
         yield put({
             type: "SET_ASSET_LOADING"
-        });
-
-        return;
-    } catch (error) {
-        yield put({
-            type: "CHANGE_SKELETON_ERROR_STATE",
-            state: true
-        });
-        yield put(internalServerError());
-    }
-}
-
-export function* availableCoins() {
-    try {
-        let token = yield call(getAuthToken);
-        let response = yield call(coinService.getAvailableCoins, token);
-
-        yield put({
-            type: "GET_AVAILABLE_COINS",
-            coins: response.data.data.coins
         });
 
         return;

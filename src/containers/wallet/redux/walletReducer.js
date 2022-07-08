@@ -217,6 +217,16 @@ const wallet = (state = initialState, action) => {
                 }
             };
 
+        case "GET_WALLET_TRANSFER_TOKEN_AVAILALBE":
+            return {
+                ...state,
+                modal: {
+                    ...state.modal,
+                    amount: action.amount,
+                    loading: false
+                }
+            };
+
         case "SET_WALLET_MODAL_SEND_SELECTED_FEE":
             return {
                 ...state,

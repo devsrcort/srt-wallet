@@ -6,13 +6,6 @@ import { connect } from "react-redux";
 
 // COMPONENTS
 import SendBox from "./sendBox"
-import BoxAddress from "./boxAddress";
-import BoxAmount from "./boxAmount";
-import BoxFee from "./boxFee";
-import BoxConfirm from "./boxConfirm";
-import BoxProcess from "./boxProcess";
-import BoxResult from "./boxResult";
-import BoxResultError from "./boxResultError";
 
 // STYLE
 import style from "../../style.css";

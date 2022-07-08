@@ -15,24 +15,18 @@ const transactionService = new TransactionService();
 
 export function* getWalletSendModalFee(action) {
     try {
+        let token = yield call(getAuthToken);
+
         let response = yield call(
             coinService.getFee,
-            action.coin,
             action.fromAddress,
-            action.toAddress,
-            action.amount,
-            action.decimalPoint
+            token
         );
 
         if (response) {
             yield put({
                 type: "GET_WALLET_MODAL_SEND_FEE",
                 fee: response,
-            });
-
-            yield put({
-                type: "SET_WALLET_MODAL_STEP",
-                step: 2,
             });
 
             return;
@@ -48,7 +42,36 @@ export function* getWalletSendModalFee(action) {
         yield put(internalServerError());
     }
 }
+export function* getWalletTransferAvailable(action) {
+    try {
 
+        let token = yield call(getAuthToken);
+
+        let response = yield call(
+            coinService.getAvailableAmount,
+            action.fromAddress,
+            token
+        );
+
+        if (response) {
+            yield put({
+                type: "GET_WALLET_TRANSFER_TOKEN_AVAILALBE",
+                amount: response,
+            });
+
+            return;
+        }
+        yield put(internalServerError());
+
+        return;
+    } catch (error) {
+        yield put({
+            type: "CHANGE_WALLET_ERROR_STATE",
+            state: true,
+        });
+        yield put(internalServerError());
+    }
+}
 export function* getWalletCoinHistory(action) {
     try {
         let token = yield call(getAuthToken);
