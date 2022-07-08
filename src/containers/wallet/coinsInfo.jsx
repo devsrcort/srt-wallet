@@ -196,7 +196,7 @@ class CoinsInfo extends React.Component {
               <hr />
             </div>
             <h3>{i18n.t("WITHDRAWABLE_RATE")}</h3>
-            <h4>0 %</h4>
+            <h4>10 %</h4>
             <hr />
             <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")}</h3>
             <h4>D - {destDays} ({absDay})</h4>
