@@ -606,6 +606,11 @@
         background-color: #E0E0E0;
     }
     
+     :local(.modalBoxSubContainer img) {
+        margin: auto;
+        padding: 50px;
+    }
+    
     @media only screen and (max-width: 400px) {
          :local .modalBox {
             font-size: 12px;

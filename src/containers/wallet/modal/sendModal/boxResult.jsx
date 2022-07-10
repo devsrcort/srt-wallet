@@ -9,6 +9,8 @@ import i18n from "../../../../utils/i18n";
 class BoxResult extends React.Component {
   render() {
     return (
+      <div>
+
         <div className={style.modalBoxSubContainer}>
           <img src="/images/icons/confirm/confirm.png" />
           <div>
@@ -17,6 +19,8 @@ class BoxResult extends React.Component {
             </span>
           </div>
       </div>
+      </div>
+
     );
   }
 }
