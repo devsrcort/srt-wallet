@@ -79,7 +79,7 @@
     "PLACEHOLDER_EX_ADDRESS": "Ex: 37n724hxf4XnCFfJFnCzj4TbYryoizdfGCV",
     "SETTINGS_USER_ADDRESS": "Address",
     "MESSAGE_INVALID_ADDRESS": "Invalid Address",
-    "MODAL_SEND_ADDRESS": "Enter the wallet address",
+    "MODAL_SEND_ADDRESS": "Enter the target wallet address",
     "MODAL_SEND_QR_CODE_ADDRESS": "Send Scanning QR Code",
     "MODAL_SEND_TO_ADDRESS": " to the address ",
     "2FA_INSTRUCTIONS": "Confirm the code provided in google authenticator and enter the 6 digits below",

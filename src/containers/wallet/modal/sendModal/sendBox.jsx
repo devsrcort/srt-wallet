@@ -47,23 +47,23 @@ class SendBox extends React.Component {
     let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
     let { address, amountVal} = this.state;
     
-    if (modal.amount < parseFloat(amountVal) || modal.amount <= 0) {
+    if (modal.amount < parseFloat(amountVal) || parseFloat(amountVal) <= 0) {
       alert(i18n.t("MESSAGE_INVALID_AMOUNT"));
-      document.location.reload(true);
+    }
+    else if (coins[coin].address == address || address == "") {
+      alert(i18n.t("MESSAGE_INVALID_ADDRESS"));      
     }
     else {
+      const modAmount = Math.floor(parseFloat(amountVal));
       setWalletTransaction(
         {
           fromAddress: coins[coin].address,
           toAddress: address,
-          amount: amountVal,
+          amount: modAmount,
           fee: 400,
         },
       );
-  
-      alert(i18n.t("REQUEST_TRANSFER"));
     }
-
   };
 
   validateAddress = () => {

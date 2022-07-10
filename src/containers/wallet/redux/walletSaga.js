@@ -139,7 +139,7 @@ export function* setWalletTransaction(action) {
         if (response) {
             yield put({
                 type: "SET_WALLET_MODAL_STEP",
-                step: 5,
+                step: 1,
             });
 
             yield put({
@@ -152,7 +152,7 @@ export function* setWalletTransaction(action) {
 
         yield put({
             type: "SET_WALLET_MODAL_STEP",
-            step: 6,
+            step: 2,
         });
 
         yield put({
