@@ -147,52 +147,20 @@ class CoinService {
         }
     }
 
-    async saveTransaction(
-        serviceId,
-        feeLunes,
-        transaction,
-        coin,
-        price,
-        lunesUserAddress,
-        describe,
-        token
-    ) {
+    async getCoinHistory(coin, address, token) {
         try {
-            API_HEADER.headers.Authorization = token;
-            let transactionData = {
-                serviceId: serviceId,
-                feeLunes: feeLunes,
-                txID: transaction.id,
-                from: transaction.sender,
-                to: transaction.recipient,
-                amount: transaction.amount,
-                fee: transaction.fee,
-                describe: describe ? describe : null,
-                cashback: { address: lunesUserAddress },
-                price: {
-                    USD: price ? price.USD.price : undefined,
-                    EUR: price ? price.EUR.price : undefined,
-                    BRL: price ? price.BRL.price : undefined
-                }
-            };
-
-            let response = await axios.post(
-                BASE_URL +
-                "/coin/" +
-                coin +
-                "/transaction/history/" +
-                transaction.sender,
-                transactionData,
-                API_HEADER
-            );
-            setAuthToken(response.headers[HEADER_RESPONSE]);
-
-            return response;
+          API_HEADER.headers.Authorization = token;
+          let response = await axios.post(
+            BASE_URL + "/users/getTransferHistroy", {"address" : address},
+            API_HEADER
+          );
+          setAuthToken(response.headers[HEADER_RESPONSE]);
+          return response.data.result;
         } catch (error) {
-            console.warn(error, error.response);
-            internalServerError();
+          internalServerError();
+          return;
         }
-    }
+      }
 
     async createTransaction(fromAddr, toAddr, amount, fee, token) {
         try {

@@ -14,7 +14,6 @@ import UserService from "../../../services/userService";
 
 const coinService = new CoinService();
 const userService = new UserService();
-// const transactionService = new TransactionService();
 
 export function* loadGeneralInfo(action) {
     try {
@@ -37,15 +36,6 @@ export function* loadGeneralInfo(action) {
         setAuthToken(responseCoins.token);
         delete responseCoins.token;
 
-        // if (responseAlias.length > 0) {
-        //     let firstAlias = responseAlias[0].split(":")[2];
-
-        //     yield put({
-        //         type: "SET_SKELETON_ALIAS_ADDRESS",
-        //         alias: firstAlias
-        //     });
-        // }
-
         yield put({
             type: "SET_USER_INFO",
             user: {
@@ -63,6 +53,7 @@ export function* loadGeneralInfo(action) {
                 zipcode: undefined,
                 email: responseUser.data.email,
                 d_day: responseUser.data.destDateTime,
+                ratio : responseUser.data.ratio
             }
         });
 
@@ -113,6 +104,7 @@ export function* loadWalletInfo(action) {
                     zipcode: undefined,
                     email: responseUser.data.email,
                     d_day: responseUser.data.destDateTime,
+                    ratio : responseUser.data.ratio
                 }
             });
 
@@ -128,22 +120,22 @@ export function* loadWalletInfo(action) {
         setAuthToken(responseCoins.token);
         delete responseCoins.token;
 
-        // let responseCoinHistory = yield call(
-        //     coinService.getCoinHistory,
-        //     defaultCrypto,
-        //     responseCoins[defaultCrypto].address,
-        //     token
-        // );
+        let responseCoinHistory = yield call(
+            coinService.getCoinHistory,
+            defaultCrypto,
+            responseCoins[defaultCrypto].address,
+            token
+        );
 
         yield put({
             type: "GET_GENERAL_INFO",
             coins: responseCoins
         });
 
-        // yield put({
-        //     type: "SET_WALLET_HISTORY",
-        //     history: responseCoinHistory
-        // });
+        yield put({
+            type: "SET_WALLET_HISTORY",
+            history: responseCoinHistory
+        });
 
         yield put({
             type: "CHANGE_LOADING_GENERAL_STATE"

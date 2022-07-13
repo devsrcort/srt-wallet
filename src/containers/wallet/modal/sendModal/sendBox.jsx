@@ -27,7 +27,7 @@ import style from "../../style.css";
 class SendBox extends React.Component {
   constructor() {
     super();
-    this.state = { address: "", isVisible: false, amountVal: 0 };
+    this.state = { address: "", isVisible: false, amountVal: 0, isSent: false };
   }
 
   componentDidMount() {
@@ -45,24 +45,27 @@ class SendBox extends React.Component {
 
   sendToken = () => {
     let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
-    let { address, amountVal} = this.state;
+    let { address, amountVal, isSent} = this.state;
     
-    if (modal.amount < parseFloat(amountVal) || parseFloat(amountVal) <= 0) {
-      alert(i18n.t("MESSAGE_INVALID_AMOUNT"));
-    }
-    else if (coins[coin].address == address || address == "") {
-      alert(i18n.t("MESSAGE_INVALID_ADDRESS"));      
-    }
-    else {
-      const modAmount = Math.floor(parseFloat(amountVal));
-      setWalletTransaction(
-        {
-          fromAddress: coins[coin].address,
-          toAddress: address,
-          amount: modAmount,
-          fee: 400,
-        },
-      );
+    if (!isSent) {
+      this.setState({isSent: true})
+      if (modal.amount < parseFloat(amountVal) || parseFloat(amountVal) <= 0) {
+        alert(i18n.t("MESSAGE_INVALID_AMOUNT"));
+      }
+      else if (coins[coin].address == address || address == "") {
+        alert(i18n.t("MESSAGE_INVALID_ADDRESS"));      
+      }
+      else {
+        const modAmount = Math.floor(parseFloat(amountVal));
+        setWalletTransaction(
+          {
+            fromAddress: coins[coin].address,
+            toAddress: address,
+            amount: modAmount,
+            fee: 400,
+          },
+        );
+      }  
     }
   };
 
@@ -77,7 +80,7 @@ class SendBox extends React.Component {
   };
 
   handleQrCodeReader = () => {
-    let { address, amountVal } = this.state;
+    let { address, amountVal, isSent } = this.state;
     let { coin, modal, user, coins } = this.props;
     let coinAmt = coins[coin];
     let availBalance = modal.amount;
