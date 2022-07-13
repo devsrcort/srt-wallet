@@ -16,6 +16,7 @@ const initialState = {
         password: undefined,
         seed: undefined,
         d_day: undefined,
+        ratio: undefined,
     },
     twoFactor: false,
     pages: {
@@ -143,6 +144,7 @@ const user = (state = initialState, action) => {
                     password: undefined,
                     seed: undefined,
                     d_day: undefined,
+                    ratio: undefined,
                 },
                 loading: false
             };
@@ -172,6 +174,8 @@ const user = (state = initialState, action) => {
                     password: undefined,
                     seed: undefined,
                     d_day: undefined,
+                    ratio: undefined,
+
                 },
                 loading: false
             };
@@ -209,6 +213,7 @@ const user = (state = initialState, action) => {
                     email: action.user.email,
                     terms: action.user.terms,
                     d_day: action.user.d_day,
+                    ratio: action.user.ratio,
                 }
             };
 

@@ -3,6 +3,7 @@ export const BASE_URL = TESTNET ?
     "https://app.dev.srt-wallet.io" :
     "https://app.srt-wallet.io";
 
+
 export const TETHER_URL = "https://api.omniwallet.org";
 export const HEADER_RESPONSE = "Authorization";
 
@@ -29,6 +30,6 @@ export const API_HEADER = {
 };
 
 export const blockexplorer = {
-    lunes: TESTNET ?
-        "https://blockexplorer-testnet.lunes.io/tx/" : "https://blockexplorer.lunes.io/tx/",
+    SRT: TESTNET ?
+        "https://goerli.etherscan.io/tx/" : "https://etherscan.io/tx/",
 };

@@ -232,7 +232,7 @@
         padding: 5px 10px;
         height: 100%;
         margin-top: 10px;
-        width: 280px;
+        width: 290px;
     }
     
      :local(.balanceItemMobile h4) {
@@ -397,7 +397,7 @@
     }
     
      :local(.contentTransactions::-webkit-scrollbar-thumb) {
-        background-color: #68f285;
+        background-color: #E0E0E0;
     }
     
      :local(.typeItems) {
@@ -410,7 +410,7 @@
         display: flex;
         border: 0;
         border-bottom: 1px;
-        border-color: #3a1d71;
+        border-color: #E0E0E0;
         border-style: solid;
         align-items: center;
         cursor: pointer;
@@ -420,7 +420,7 @@
     }
     
      :local(.itemDataHistorico) {
-        background-color: #381e67;
+        background-color: #404040;
         display: flex;
         cursor: default;
         font-size: 9px;

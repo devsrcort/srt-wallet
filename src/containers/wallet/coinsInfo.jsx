@@ -120,7 +120,7 @@ class CoinsInfo extends React.Component {
     const absDay = user.d_day.slice(0, 16).replace('T', ' ') + " GMT+0900";
     let d_day = new Date(user.d_day) - new Date(Date.now());
     let destDays = d_day > 0 ? Math.floor(d_day/_day) : 0;
-
+    let ratio = user.ratio * 10;
     let address = coin.address;
     return (
       <div align="center">
@@ -153,7 +153,7 @@ class CoinsInfo extends React.Component {
             <Grid item>
               <Grid item className={style.balanceItem}>
                 <div className={style.alignValuesFlex}>
-                  <h4>{i18n.t("HELLO")},</h4><br/>
+                  <h4>{i18n.t("HELLO")},</h4>
                   <h4> {userName}</h4>
                   <a
                     // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
@@ -196,7 +196,7 @@ class CoinsInfo extends React.Component {
               <hr />
             </div>
             <h3>{i18n.t("WITHDRAWABLE_RATE")}</h3>
-            <h4>10 %</h4>
+            <h4>{ratio} %</h4>
             <hr />
             <h3>{i18n.t("EXPECTED_WITHDRAWAL_DATE")}</h3>
             <h4>D - {destDays} ({absDay})</h4>
@@ -205,7 +205,6 @@ class CoinsInfo extends React.Component {
         </Grid>
         <button
           className={style.sentButton}
-          // onClick={() => alert(i18n.t("LOCKED_WALLET"))}
           onClick={() => setWalletSendModalOpen()}
         >
           {i18n.t("BTN_SEND")}
