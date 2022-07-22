@@ -40,13 +40,18 @@ class SendBox extends React.Component {
   changeAddress = (address) => this.setState({ address });
 
   changeAmount = (amountVal) => {
+    amountVal = amountVal.replace(/[^0-9]/g, '')
     this.setState({ amountVal });
   }
 
   sendToken = () => {
-    let { close, coin, user, modal, coins, setWalletTransaction } = this.props;
+    let { close, coin, user, modal, coins, setWalletTransaction, setWalletSendModalLoading } = this.props;
     let { address, amountVal, isSent} = this.state;
-    
+    if (modal.loading) {
+      return;
+    }
+
+    setWalletSendModalLoading();
     if (!isSent) {
       this.setState({isSent: true})
       if (modal.amount < parseFloat(amountVal) || parseFloat(amountVal) <= 0) {
@@ -85,7 +90,7 @@ class SendBox extends React.Component {
     let coinAmt = coins[coin];
     let availBalance = modal.amount;
     // let availBalance = parseFloat(coinAmt.balance.available) * 0.1;
-    const fee =400;
+    const fee = 400;
     // const availAmount =0;
     return (
       <div>

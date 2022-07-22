@@ -69,7 +69,7 @@
     "PLACEHOLDER_EX_ADDRESS": "예시: 37n724hxf4XnCFfJFnCzj4TbYryoizdfGCV",
     "SETTINGS_USER_ADDRESS": "주소",
     "MESSAGE_INVALID_ADDRESS": "잘못된 주소입니다. 지갑 주소를 확인해주세요.",
-    "MODAL_SEND_ADDRESS": "전송할 지갑주소를 넣어주세요.",
+    "MODAL_SEND_ADDRESS": "SRT을 전달할 지갑주소를 넣어주세요.",
     "MODAL_SEND_TO_ADDRESS": " to the address ",
     "2FA_INSTRUCTIONS": "Confirm the code provided in google authenticator and enter the 6 digits below",
     "2FA_INSTRUCTIONS_plural": "",
