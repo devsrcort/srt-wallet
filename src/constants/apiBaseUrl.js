@@ -1,8 +1,7 @@
-export const TESTNET = false;
+export const TESTNET = true;
 export const BASE_URL = TESTNET ?
     "https://app.dev.srt-wallet.io" :
     "https://app.srt-wallet.io";
-
 
 export const TETHER_URL = "https://api.omniwallet.org";
 export const HEADER_RESPONSE = "Authorization";
