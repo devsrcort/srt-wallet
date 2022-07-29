@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import SendBox from "./sendBox"
 import BoxResult from "./boxResult";
 import BoxResultError from "./boxResultError";
+import BoxAlreadyTransfer from "./boxAlreadyTransfer";
 
 // STYLE
 import style from "../../style.css";
@@ -25,6 +26,7 @@ class SendModal extends React.Component {
     if (modal.step === 0) return <SendBox coin={wallet.selectedCoin} />;
     if (modal.step === 1) return <BoxResult coin={wallet.selectedCoin} />;
     if (modal.step === 2) return <BoxResultError coin={wallet.selectedCoin} />;
+    if (modal.step === 3) return <BoxAlreadyTransfer coin={wallet.selectedCoin} />;
   };
 
   render() {

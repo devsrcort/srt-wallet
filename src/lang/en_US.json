@@ -715,5 +715,6 @@
     "TRANSFER_FEE": "Fee",
     "TRANSFER_AMOUNT": "Amount",
     "TRANSFER_AVAILABLE_AMOUNT": "Number of Withdrawals Available",
-    "REQUEST_TRANSFER": "Success to send token. After few minutes, confirm market!!"
+    "REQUEST_TRANSFER": "Success to send token. After few minutes, confirm market!!",
+    "MODAL_ALREADY_SEND_TOKEN": "The token is already being sent. Please send again after a while."
 }

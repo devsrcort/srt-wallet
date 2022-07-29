@@ -7,7 +7,7 @@ import { bindActionCreators } from "redux";
 import { errorRequest } from "../errors/redux/errorAction";
 
 //UTILS
-import { getUsername, clearAll, getUserSeedWords, getUserPassword } from "../../utils/localStorage";
+import { getUsername, clearAll, getUserSeedWords } from "../../utils/localStorage";
 
 // COMPONENTS
 import Login from "./login";
@@ -65,10 +65,6 @@ class Content extends Component {
 
       let { username, seed, password } = this.props.user.user;
       let usernameStorage = getUsername();
-      // let seed = getUserSeedWords();
-      // let password = getUserPassword();
-      // let username = getUsername();
-      // let usernameStorage = getUsername();
 
       if (seed && password && type !== "app" && usernameStorage === username) {
         return this.changeContent(<App />, "app");
