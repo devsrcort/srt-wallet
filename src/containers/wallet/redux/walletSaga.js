@@ -140,6 +140,14 @@ export function* setWalletTransaction(action) {
         return;
       }
 
+      if (response.data.status == "AlreadyTransferToken") {
+        yield put({
+          type: "SET_WALLET_MODAL_STEP",
+          step: 3,
+        });
+        return;
+      }
+
       yield put({
         type: "SET_WALLET_MODAL_STEP",
         step: 1,

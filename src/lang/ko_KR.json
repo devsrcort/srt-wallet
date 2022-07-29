@@ -389,5 +389,6 @@
     "TRANSFER_FEE": "수수료",
     "TRANSFER_AMOUNT": "갯수",
     "TRANSFER_AVAILABLE_AMOUNT": "출금 가능 갯수",
-    "REQUEST_TRANSFER": "토큰 전송 요청이 완료되었습니다. 잠시 후 거래소에서 토큰을 확인하세요"
+    "REQUEST_TRANSFER": "토큰 전송 요청이 완료되었습니다. 잠시 후 거래소에서 토큰을 확인하세요",
+    "MODAL_ALREADY_SEND_TOKEN": "토큰이 이미 전송중입니다. 잠시 후 다시 전송해주세요"
 }

@@ -21,9 +21,7 @@ import Loading from "../../components/loading";
 
 // UTILS
 import i18n from "../../utils/i18n";
-// import { getDefaultFiat, getDefaultCrypto } from "../../utils/localStorage";
 import { formatDate } from "../../utils/numbers";
-import { convertBiggestCoinUnit } from "../../utils/numbers";
 
 class TransactionHistory extends React.Component {
   constructor() {

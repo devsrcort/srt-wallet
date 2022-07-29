@@ -33,11 +33,6 @@ export const getUserSeedWords = () => {
     return userData.secretWord;
 };
 
-export const getUserPassword = () => {
-    let userData = getUserData();
-    return userData.password;
-};
-
 export const compareUserSeedWords = seed => {
     let userData = getUserData();
     if (userData.secretWord === seed) {
