@@ -207,16 +207,6 @@ class TransactionHistory extends React.Component {
         <Grid className={style.containerTransactions}>
           <Grid item xs={11} sm={7} md={6}>
             <div className={style.alignItemsHeaderHistory}>
-              <div
-                className={style.refleshIcon}
-                onClick={() => this.reloadWallet()}
-              >
-                <img
-                  width="15px"
-                  height="15px"
-                  src="images/icons/general/refresh@2x.png"
-                />
-              </div>
               <div className={style.historyTitle}>
                 {i18n.t("TRANSACTION_HISTORY_TITLE")}
               </div>
