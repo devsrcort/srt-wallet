@@ -442,6 +442,7 @@
   right: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 500ms;
+  z-index: 998;
 }
 :local .popup {
   margin: 70px auto;
@@ -451,6 +452,7 @@
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
+  z-index: 999;
 }
 
 :local .popup h2 {
@@ -480,6 +482,6 @@
 
 @media screen and (max-width: 700px) {
   .popup {
-    width: 70%;
+    width: 90%;
   }
 }
