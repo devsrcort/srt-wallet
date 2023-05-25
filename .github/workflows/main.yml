@@ -20,7 +20,7 @@ jobs:
       uses: docker/metadata-action@v3
       with:
         images: |
-          devrndx/ms-srt-wallet-client
+          devsrcorp/ms-srt-wallet-client
         tags: |
           type=semver,pattern={{raw}}
     
