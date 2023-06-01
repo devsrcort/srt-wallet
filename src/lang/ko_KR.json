@@ -390,5 +390,10 @@
     "TRANSFER_AMOUNT": "갯수",
     "TRANSFER_AVAILABLE_AMOUNT": "출금 가능 갯수",
     "REQUEST_TRANSFER": "토큰 전송 요청이 완료되었습니다. 잠시 후 거래소에서 토큰을 확인하세요",
-    "MODAL_ALREADY_SEND_TOKEN": "토큰이 이미 전송중입니다. 잠시 후 다시 전송해주세요"
+    "MODAL_ALREADY_SEND_TOKEN": "토큰이 이미 전송중입니다. 잠시 후 다시 전송해주세요",
+    "PLACEHOLDER_USERNAME": "이름",
+    "PLACEHOLDER_MESSEGE": "메세지",
+    "PLACEHOLDER_USED_EMAIL": "사용하신 Email 주소 (ID)",
+    "PLACEHOLDER_ADDRESS": "받으실 지갑 주소",
+    "NOTI_AVAIL_SEND_MAIL": "6/3 부터 기입 가능합니다."
 }

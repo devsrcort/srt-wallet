@@ -716,5 +716,10 @@
     "TRANSFER_AMOUNT": "Amount",
     "TRANSFER_AVAILABLE_AMOUNT": "Number of Withdrawals Available",
     "REQUEST_TRANSFER": "Success to send token. After few minutes, confirm market!!",
-    "MODAL_ALREADY_SEND_TOKEN": "The token is already being sent. Please send again after a while."
+    "MODAL_ALREADY_SEND_TOKEN": "The token is already being sent. Please send again after a while.",
+    "PLACEHOLDER_USERNAME": "Username",
+    "PLACEHOLDER_MESSEGE": "Message",
+    "PLACEHOLDER_USED_EMAIL": "Used to email on srt wallet",
+    "PLACEHOLDER_ADDRESS": "Wallet Address",
+    "NOTI_AVAIL_SEND_MAIL": "Entry is possible from 6/3."
 }

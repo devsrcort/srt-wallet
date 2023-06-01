@@ -23,10 +23,10 @@ function loading({ error }) {
 }
 
 /* eslint-disable */
-let wallet = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../wallet")),
+let parking = Loadable({
+  loader: () => fakeDelay(400).then(() => import("../../parking")),
   loading: loading,
-  serverSideRequirePath: path.resolve(__dirname, "../../wallet"),
+  serverSideRequirePath: path.resolve(__dirname, "../../parking"),
 });
 
 let errorNotFound = Loadable({
@@ -58,9 +58,9 @@ class App extends Component {
           <Skeleton>
             <Switch>
               {/* INSIDE ROUTES */}
-              <Route exact path="/" component={wallet} />
-              <Route path="/home" component={wallet} />
-              <Route path="/wallet" component={wallet} />
+              <Route exact path="/" component={parking} />
+              <Route path="/home" component={parking} />
+              <Route path="/wallet" component={parking} />
 
               {/* ERRORS PAGE */}
               <Route path="/404" component={errorNotFound} />

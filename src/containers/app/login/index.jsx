@@ -29,29 +29,10 @@ function Transition({ error }) {
 }
 
 /* eslint-disable */
-let login = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../user/login")),
+let parking = Loadable({
+  loader: () => fakeDelay(400).then(() => import("../../parking/notification")),
   loading: Transition,
-  serverSideRequirePath: path.resolve(__dirname, "../../user/login")
-});
-
-let reset = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../user/reset")),
-  loading: Transition,
-  serverSideRequirePath: path.resolve(__dirname, "../../user/reset")
-});
-
-let resetNewPassword = Loadable({
-  loader: () =>
-    fakeDelay(400).then(() => import("../../user/reset/newPassword")),
-  loading: Transition,
-  serverSideRequirePath: path.resolve(__dirname, "../../user/reset/newPassword")
-});
-
-let create = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../user/create")),
-  loading: Transition,
-  serverSideRequirePath: path.resolve(__dirname, "../../user/create")
+  serverSideRequirePath: path.resolve(__dirname, "../../parking/notification")
 });
 
 let errorNotFound = Loadable({
@@ -66,11 +47,6 @@ let errorInternal = Loadable({
   serverSideRequirePath: path.resolve(__dirname, "../../errors/500")
 });
 
-let validate = Loadable({
-  loader: () => fakeDelay(400).then(() => import("../../user/validate")),
-  loading: Transition,
-  serverSideRequirePath: path.resolve(__dirname, "../../user/validate")
-});
 /* eslint-enable */
 
 class Login extends Component {
@@ -109,15 +85,10 @@ class Login extends Component {
             <Grid item xs={12} sm={12} md={5} className={style.colLeft}>
               <Switch>
                 {/* INSIDE ROUTES */}
-                <Route exact path="/" component={login} />
-                <Route exact path="/login" component={login} />
-                <Route exact path="/reset" component={reset} />
-                <Route exact path="/create" component={create} />
-                <Route exact path="/email-verify" component={validate} />
-                {/* ERRORS PAGE */}
+                <Route exact path="/" component={parking} />
                 <Route path="/404" component={errorNotFound} />
                 <Route path="/500" component={errorInternal} />
-                <Route path={"**"} component={login} />
+                <Route path={"**"} component={parking} />
               </Switch>
             </Grid>
 
