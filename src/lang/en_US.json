@@ -719,7 +719,9 @@
     "MODAL_ALREADY_SEND_TOKEN": "The token is already being sent. Please send again after a while.",
     "PLACEHOLDER_USERNAME": "Username",
     "PLACEHOLDER_MESSEGE": "Message",
-    "PLACEHOLDER_USED_EMAIL": "Used to email on srt wallet",
+    "PLACEHOLDER_USED_EMAIL": "email address used on srt wallet",
     "PLACEHOLDER_ADDRESS": "Wallet Address",
-    "NOTI_AVAIL_SEND_MAIL": "Entry is possible from 6/3."
+    "NOTI_AVAIL_SEND_MAIL": "Entry is possible from 6/3.",
+    "NOTI_SUCCESS_SEND_MAIL": "Mail transmission has been completed.",
+    "ERROR_NOT_EXIST_USER": "This email does not exist."
 }

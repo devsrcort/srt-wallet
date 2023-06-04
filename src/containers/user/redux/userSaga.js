@@ -25,6 +25,47 @@ const authService = new AuthService();
 const userService = new UserService();
 const changeLoadingState = "CHANGE_LOADING_STATE";
 
+export function* sendUserInfo(action) {
+    try {
+        let response = yield call(
+            userService.sendMailUserInfo,
+            action.username,
+            action.email, 
+            action.address, 
+            action.message
+        );
+
+        if (response.error) {
+            yield put(response.error);
+            yield put({
+                type: changeLoadingState
+            });
+            return;
+        }
+
+        if (response.data.status == 'NotexistsUser') {
+            yield put(modalError(i18n.t("ERROR_NOT_EXIST_USER")));
+        }
+
+        yield put({
+            type: "POST_USER_INFO_SEND",
+            twoFactor: false,
+            pages: {
+                login: 0
+            }
+        });
+
+        yield put(modalSuccess(i18n.t("NOTI_SUCCESS_SEND_MAIL")));
+
+        return;
+    } catch (error) {
+        yield put({
+            type: changeLoadingState
+        });
+        yield put(internalServerError());
+    }
+}
+
 export function* authenticateUser(action) {
     try {
         let username = yield call(getUsername);

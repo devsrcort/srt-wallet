@@ -93,3 +93,11 @@ export const verifyEmail = hash => ({
     type: "VERIFY_EMAIL_SAGA",
     hash
 });
+
+export const sendUserInfoByMail  = (username, email, address, message) => ({
+    type: "POST_USER_INFO_SEND_API",
+    username,
+    email,
+    address,
+    message, 
+});

@@ -10,7 +10,8 @@ import {
     setUserSeed,
     updateUserConsentsSaga,
     editUserData,
-    updateUserPasswordSaga
+    updateUserPasswordSaga,
+    sendUserInfo
 } from "../user/redux/userSaga";
 
 import {
@@ -43,6 +44,7 @@ export default function* rootSaga() {
         fork(takeLatest, "PATH_USER_CONSENTS_API", updateUserConsentsSaga),
         fork(takeLatest, "PATH_USER_DATA_API", editUserData),
         fork(takeLatest, "PATH_USER_PASSWORD_API", updateUserPasswordSaga),
+        fork(takeLatest, "POST_USER_INFO_SEND_API", sendUserInfo),
 
         // Skeleton-Saga
         fork(takeLatest, "GET_GENERAL_INFO_API", loadGeneralInfo),

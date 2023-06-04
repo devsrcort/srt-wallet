@@ -1,4 +1,7 @@
 import axios from "axios";
+// import AWS from 'aws-sdk';
+// AWS.config.update({ region: "ap-northeast-2" });
+
 import {
     BASE_URL,
     API_HEADER,
@@ -103,6 +106,27 @@ class UserService {
                 user,
                 API_HEADER
             );
+
+            return response;
+        } catch (error) {
+            return internalServerError();
+        }
+    }
+
+    async sendMailUserInfo(userName, email, address, message) {
+        try {
+            const response = await axios
+                .get(BASE_URL + "/users/sendEmailUserInfo", {
+                    params: { 
+                        email: email,
+                        userName: userName, 
+                        address: address,
+                        message: message
+                     }
+                })
+                .catch((error) => {
+                    return error.response;
+                });
 
             return response;
         } catch (error) {

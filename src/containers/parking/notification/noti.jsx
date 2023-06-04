@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 // REDUX
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { loading } from "../redux/parkingAction";
+import { loading, sendUserInfoByMail } from "../../user/redux/userAction";
 import { clearMessage, errorInput } from "../../errors/redux/errorAction";
 
 // COMPONENTS
@@ -14,7 +13,6 @@ import Footer from "../footer";
 
 // UTILS
 import { inputValidator } from "../../../utils/inputValidator";
-import { getUsername } from "../../../utils/localStorage";
 import i18n from "../../../utils/i18n";
 
 // STYLE
@@ -81,7 +79,7 @@ class Noti extends React.Component {
   inputValidator = () => {
     let { inputs } = this.state;
     let { userName, email, address, message } = this.state.inputs;
-    let { errorInput } = this.props;
+    let { errorInput, sendUserInfoByMail } = this.props;
     let { messageError, errors } = inputValidator(inputs);
 
     if (errors.length > 0) {
@@ -93,6 +91,7 @@ class Noti extends React.Component {
     } else {
       loading();
       clearMessage();
+      sendUserInfoByMail(userName.value, email.value, address.value, message.value);
     }
   };
 
@@ -122,8 +121,7 @@ class Noti extends React.Component {
                 필요성이 대폭 감소하게 되었습니다.
               </p>
               <p>
-                아래 폼에 지갑 관련 정보를 기입해주시면 일괄 처리하여 <br/> SRT 전송을 진행하겠습니다.
-                <br/><br/>폼 기입은 6/3 부터 가능합니다. 
+                아래 폼에 지갑 관련 정보를 기입해주시면 일괄 처리하여 <br/> SRT 전송을 진행하겠습니다.<br/>
               </p>
               <p>많은 협조 부탁드립니다.</p>
               <p>감사합니다.</p>
@@ -203,8 +201,7 @@ class Noti extends React.Component {
               : style.buttonBorderGreen
           }
           onClick={() => {
-            // this.inputValidator();
-            alert(i18n.t("NOTI_AVAIL_SEND_MAIL"));
+            this.inputValidator();
           }}
         >
           {i18n.t("BTN_SEND")}
@@ -217,6 +214,7 @@ class Noti extends React.Component {
 }
 
 Noti.propTypes = {
+  sendUserInfoByMail:PropTypes.func,
   clearMessage: PropTypes.func,
   errorInput: PropTypes.func,
   user: PropTypes.object,
@@ -230,6 +228,7 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       clearMessage,
+      sendUserInfoByMail,
       errorInput,
     },
     dispatch

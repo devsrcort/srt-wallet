@@ -56,6 +56,20 @@ const user = (state = initialState, action) => {
                 },
                 loading: false
             };
+        case "POST_USER_INFO_SEND":
+                return {
+                    ...state,
+                    user: {
+                        ...state.user,
+                    },
+                    twoFactor: action.twoFactor,
+                    pages: {
+                        login: action.pages.login,
+                        create: 0,
+                        reset: 0
+                    },
+                    loading: false
+                };
 
         case "GET_USER_2FA":
             return {
