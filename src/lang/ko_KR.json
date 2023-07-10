@@ -397,5 +397,6 @@
     "PLACEHOLDER_ADDRESS": "받으실 지갑 주소",
     "NOTI_AVAIL_SEND_MAIL": "6/3 부터 기입 가능합니다.",
     "NOTI_SUCCESS_SEND_MAIL": "메일 전송이 완료되었습니다.",
-    "ERROR_NOT_EXIST_USER": "존재하지 않는 이메일입니다."
+    "ERROR_NOT_EXIST_USER": "존재하지 않는 이메일입니다.",
+    "WRONG_RECV_ADDRESS" : "받으실 지갑 주소가 잘못되었습니다. 확인해주시기 바랍니다."
 }

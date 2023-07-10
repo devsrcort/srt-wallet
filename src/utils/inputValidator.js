@@ -6,7 +6,7 @@ import i18n from "./i18n";
 import { validateMnemonic } from "./mnemonicSeed";
 import { isValid as isValidCpf } from "@fnando/cpf";
 import { isValid as isValidCnpj } from "@fnando/cnpj";
-
+import { isValidAddress } from "ethereumjs-util";
 /*
 DOCUMENTATION:
 
@@ -92,6 +92,14 @@ export const inputValidator = inputs => {
                     inputName.push(placeholder), errors.push(name);
 
                 /* CUSTOM VALIDATIONS */
+
+                if (name === "address") { 
+                    if (!isValidAddress(value.trim()) ||
+                        isEmpty(trim(value.toString()))) {
+                        errors.push(name);
+                        messageError = i18n.t("WRONG_RECV_ADDRESS");
+                    }
+                }
 
                 // Check field of text
                 if (name === "text") {

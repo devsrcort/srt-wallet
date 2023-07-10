@@ -723,5 +723,6 @@
     "PLACEHOLDER_ADDRESS": "Wallet Address",
     "NOTI_AVAIL_SEND_MAIL": "Entry is possible from 6/3.",
     "NOTI_SUCCESS_SEND_MAIL": "Mail transmission has been completed.",
-    "ERROR_NOT_EXIST_USER": "This email does not exist."
+    "ERROR_NOT_EXIST_USER": "This email does not exist.",
+    "WRONG_RECV_ADDRESS" : "The wallet address to receive is incorrect. Please check."
 }
