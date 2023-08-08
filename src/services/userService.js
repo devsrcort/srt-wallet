@@ -2,6 +2,8 @@ import axios from "axios";
 // import AWS from 'aws-sdk';
 // AWS.config.update({ region: "ap-northeast-2" });
 
+import userEmailHash from "./srtHashEmail.json";
+
 import {
     BASE_URL,
     API_HEADER,
@@ -13,7 +15,7 @@ import {
     internalServerError,
 } from "../containers/errors/statusCodeMessage";
 import { setAuthToken, getUsername } from "../utils/localStorage";
-import { encryptMd5 } from "../utils/cryptography";
+import { encryptMd5, encryptSha512 } from "../utils/cryptography";
 import i18n from "../utils/i18n";
 
 class UserService {
@@ -113,20 +115,33 @@ class UserService {
         }
     }
 
-    async sendMailUserInfo(userName, email, address, message) {
-        try {
-            const response = await axios
-                .get(BASE_URL + "/users/sendEmailUserInfo", {
-                    params: { 
-                        email: email,
-                        userName: userName, 
-                        address: address,
-                        message: message
-                     }
-                })
-                .catch((error) => {
-                    return error.response;
-                });
+  async sendMailUserInfo(userName, email, address, message) {
+    try {
+        const userEmails = userEmailHash["HashList"];
+        const hashedEmail = encryptSha512(email.trim());
+        let isUserEmail = false;
+        for (let i = 0; i < userEmails.length; i++) {
+            if (hashedEmail === userEmails[i]) {
+            isUserEmail = true;
+            }
+        }
+
+        if (!isUserEmail) {
+            return { data: { status: "NotexistsUser" } };
+        }
+
+        const response = await axios
+        .get(BASE_URL + "/users/sendEmailUserInfo", {
+            params: {
+            email: email,
+            userName: userName,
+            address: address,
+            message: message,
+            },
+        })
+        .catch((error) => {
+            return error.response;
+        });
 
             return response;
         } catch (error) {
