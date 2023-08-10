@@ -1,7 +1,7 @@
 default: start
 
 project:=srt-wallet-client-managed-project
-service:=ms-srt-wallet-client
+service:=srt-wallet
 NODE_ENV?=dev
 COMMIT_HASH = $(shell git rev-parse --verify HEAD)
 

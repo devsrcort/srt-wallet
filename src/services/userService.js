@@ -1,11 +1,11 @@
 import axios from "axios";
-// import AWS from 'aws-sdk';
-// AWS.config.update({ region: "ap-northeast-2" });
+
 
 import userEmailHash from "./srtHashEmail.json";
 
 import {
     BASE_URL,
+    MAIL_BASE_URL,
     API_HEADER,
     HEADER_REQUEST,
     HEADER_RESPONSE,
@@ -130,8 +130,7 @@ class UserService {
             return { data: { status: "NotexistsUser" } };
         }
 
-        const response = await axios
-        .get(BASE_URL + "/users/sendEmailUserInfo", {
+        const response = await axios.get(MAIL_BASE_URL + "/users/sendEmailUserInfo", {
             params: {
             email: email,
             userName: userName,
